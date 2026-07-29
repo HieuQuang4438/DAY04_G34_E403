@@ -1,31 +1,35 @@
 {
-  "run_id": "v3_B_base_gemini_20260729T161331348006",
-  "version": "v3",
-  "artifact_version": "v3+p091a690c7259+tc5596042f81e",
-  "prompt_hash": "091a690c725916e2bfd0fbc64abcedb79d4277b6b9ac121293f4ef6dea5181be",
-  "tools_hash": "c5596042f81e9658f503c4a6f46e0ac5a5fa69c35aa46330ca78b55614220f02",
+  "run_id": "v2_B_base_gemini_20260729T162420891289",
+  "version": "v2",
+  "artifact_version": "v2+p75db22607e60+t39bc7f3ecce8",
+  "prompt_hash": "75db22607e60857d5a64606042d70354deb00a886ecf03dd4323a9f3c0ca3a73",
+  "tools_hash": "39bc7f3ecce81277c7ca83d3d12bf5863c718280882ffa80195be2748c17b2cf",
   "phase": "B",
   "suite": "base",
   "provider": "gemini",
   "model": "gemini-3.1-flash-lite",
-  "system_prompt": "E:\\AIThucChien\\DAY04_G34_E403\\starter_v0\\artifacts\\system_prompt.md",
-  "tools": "E:\\AIThucChien\\DAY04_G34_E403\\starter_v0\\artifacts\\tools.yaml",
+  "system_prompt": "D:\\VinUni\\DAY04_G34_E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\VinUni\\DAY04_G34_E403\\starter_v0\\artifacts\\tools.yaml",
   "eval_cases": "data\\eval_base.json",
   "dataset_id": "day04_v2_research_base",
   "dataset_role": "base",
   "description": "Core eval cho research agent: routing đúng tool + đúng args, hỏi lại khi thiếu (ask_user), xác nhận trước khi gửi, và xử lý câu ngoài phạm vi / không cần tool. Chấm trên tool_calls + args (subset). KHÔNG sửa file này — chỉ thêm case vào eval_group.json.",
-  "generated_at": "2026-07-29T16:13:31",
+  "generated_at": "2026-07-29T16:24:20",
   "summary": {
     "total_cases": 20,
     "measured_cases": 20,
     "provider_error_cases": 0,
-    "passed_cases": 20,
-    "case_accuracy": 1.0,
+    "passed_cases": 19,
+    "case_accuracy": 0.95,
     "tool_routing_accuracy": 1.0,
-    "argument_accuracy": 1.0,
+    "argument_accuracy": 0.95,
     "multiturn_accuracy": 1.0,
-    "failure_counts": {},
-    "observed_mismatch_counts": {}
+    "failure_counts": {
+      "wrong_boundary": 1
+    },
+    "observed_mismatch_counts": {
+      "wrong_arg_value": 1
+    }
   },
   "results": [
     {
@@ -58,8 +62,8 @@
           {
             "name": "timeline",
             "args": {
-              "limit": 1,
-              "screenname": "sama"
+              "screenname": "sama",
+              "limit": 1
             }
           }
         ],
@@ -73,8 +77,8 @@
         {
           "tool": "timeline",
           "args": {
-            "limit": 1,
-            "screenname": "sama"
+            "screenname": "sama",
+            "limit": 1
           },
           "result": {
             "tool": "get_user_tweets",
@@ -87,9 +91,9 @@
                 "source": "@sama",
                 "date": "Mon Jul 27 20:02:25 +0000 2026",
                 "metrics": {
-                  "favorites": 11321,
+                  "favorites": 11322,
                   "retweets": 284,
-                  "views": "2208343"
+                  "views": "2210033"
                 }
               }
             ]
@@ -125,8 +129,8 @@
           {
             "name": "social_search",
             "args": {
-              "query": "GPT-5",
-              "search_type": "Latest"
+              "search_type": "Latest",
+              "query": "GPT-5"
             }
           }
         ],
@@ -140,8 +144,8 @@
         {
           "tool": "social_search",
           "args": {
-            "query": "GPT-5",
-            "search_type": "Latest"
+            "search_type": "Latest",
+            "query": "GPT-5"
           },
           "result": {
             "tool": "search_tweets",
@@ -149,63 +153,63 @@
             "search_type": "Latest",
             "items": [
               {
-                "title": "Solution: Grounded Bimodal RAG 🚀",
-                "summary": "Solution: Grounded Bimodal RAG 🚀\nWe evaluate a pipeline that crops target ROIs using Grounding-DINO before running retrievers.   \nCleaning visual noise boosts VQA accuracy by: \n📈 +13.3% for GPT-5 \n📈 +8.5% for Qwen-2.5-VL-32B https://t.co/P6YuMfh3Qt",
-                "url": "https://x.com/hanseok_oh/status/2082393095874961701",
-                "source": "@hanseok_oh",
-                "date": "Wed Jul 29 09:09:37 +0000 2026",
+                "title": "@pabis_eu Yes, well it was beginning of August: https://t.co/rFME4tiN8H",
+                "summary": "@pabis_eu Yes, well it was beginning of August: https://t.co/rFME4tiN8H",
+                "url": "https://x.com/dedene/status/2082395966896845213",
+                "source": "@dedene",
+                "date": "Wed Jul 29 09:21:02 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
-                  "views": "3"
+                  "views": "11"
                 }
               },
               {
-                "title": "Stage 3: Knowledge Retrieval &amp; Reasoning 🧠",
-                "summary": "Stage 3: Knowledge Retrieval &amp; Reasoning 🧠\n\n- Even with gold entity names, internal knowledge falls short—40.4% of GPT-5 errors persist!\n- External text retrieval via explicit text-only queries substantially boosts multimodal parametric baselines. 5/n https://t.co/F1uYdDb4Bk",
-                "url": "https://x.com/hanseok_oh/status/2082393091093479667",
-                "source": "@hanseok_oh",
-                "date": "Wed Jul 29 09:09:36 +0000 2026",
+                "title": "『AIエージェントを使いこなす はじめてのバイオインフォマティクス開発作法』v0.5.0を公開しました。",
+                "summary": "『AIエージェントを使いこなす はじめてのバイオインフォマティクス開発作法』v0.5.0を公開しました。\n\nプログラミング教育を受けていない人が、Claude Opus 5／Codex GPT-5.6などのAIコーディングエージェントを使ったバイオインフォプログラミングをするために、必要な知識を学ぶためのテキストです。\n\n今回の更新では、全22章を2026年7月時点の内容にアップデートしました。Claude Opus 5／Codex GPT-5.6への対応、本文と実行可能なサンプルコードの同期と自動テストによる継続的な品質チェック、引用・URLのハルシネーションの大幅修正をしました。\nhttps://t.co/UldJ8nDSJc\n\n本書のコンセプトは「はじめに」、前回0.4.0からのアップデートは CHANGELOG.md をご覧ください。",
+                "url": "https://x.com/dritoshi/status/2082395875083719015",
+                "source": "@dritoshi",
+                "date": "Wed Jul 29 09:20:40 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
-                  "views": "3"
+                  "views": "20"
                 }
               },
               {
-                "title": "@lovimg_com https://t.co/n4WaqS3MRG",
-                "summary": "@lovimg_com https://t.co/n4WaqS3MRG\n\nCreated with GPT Image 2\n\n🎨 Prompt:\nPremium Commercial Product Advertising (4:5)\n\nProduct: [PRODUCT NAME]\n\nCreate an ultra-realistic premium commercial advertisement featuring [PRODUCT NAME] as the hero. Preserve the official packaging, logo, typography, colours, proportions, materials, textures, reflections, label details, and overall brand identity with complete accuracy. No redesign, recolouring, distortion, replacement, or modification.\n\nAnalyse the product's category, flavour, purpose, ingredients, target audience, packaging style, and brand personality to create a unique, award-worthy advertising concept. Position the product in a dynamic tilted pose that feels natural and energetic.\n\nPlace it in a premium pastel studio environment inspired by the packaging colours with clean negative space for advertising copy. Surround the product with expressive black marker doodles that complement the concept, including arms, legs, hands, shoes, motion lines, props, sparkles, stars, bubbles, splashes, leaves, ribbons, icons, and other playful graphic elements without covering the product.\n\nUse …",
-                "url": "https://x.com/lovimg_com/status/2082392649370362351",
-                "source": "@lovimg_com",
-                "date": "Wed Jul 29 09:07:51 +0000 2026",
+                "title": "好久没听到 Sam Altman 的播客了，今天这一期真的是信息量真挺大。",
+                "summary": "好久没听到 Sam Altman 的播客了，今天这一期真的是信息量真挺大。\n\n我知道很多人对 Sam Altman 有一些不好的印象，但无论如何，我觉得他都是目前世界上最好的 AI 公司的一把手，他的一些思考和观点应该能够给我们启发。\n\n这期播客，他从 OpenAI 为什么收缩业务、为什么疯狂囤算力，一直聊到 Kimi、开源模型、机器人和人在 AI 时代的价值。很多问题都讲得很具体。我总结下自己的收获。\n\n1、OpenAI 过去一年最大的问题是不聚焦。2025 年初，他们还不确定 AI 收入能不能支撑已经签下的巨量算力，所以一度考虑过做更多的 ToC 产品，甚至后来还成立了单独的应用事业部，核心思路就是希望在模型需求增长不及预期时，也能找到其他方式消化 GPU。\n\n但后来模型收入快速增长，AI 的经济回报逐渐明确，OpenAI 才决定砍掉一部分探索，把资源重新集中到模型、算力和核心产品上。\n\n2、Sam 说现在 OpenAI 的定位已经很清楚了，他们的核心业务，是生产足够好、足够便宜的智能，再让其他公司基于这些智能开发新的产品。\n\n为此，OpenAI 需要同时处理模型、芯片、服务器机架、土地、电力、数据中心，未来甚至还需要用机器人降低整个供应链的成本。\n\n他们没有兴趣，也没有能力亲自做完所有垂直应用，更希望 OpenAI 成为智能时代的底层平台。\n\n3、OpenAI 之所以敢提前锁定巨量算力，核心判断是 AI 的需求几乎没有上限。\n\n这一点和梁文锋的判断很像。电脑刚出现的时候，人们认为全世界只需要几台电脑，但每次计算成本下降，人类都会创造出新的需求。\n\n模型越强、价格越低，人们就越愿意让 AI 承担更多工作。OpenAI 做的事情，本质上是把电力转化成有用的智能。\n\n4、真正让 OpenAI 对这条路线建立信心的模型，是 GPT-4，不是 GPT-3.5。\n\nGPT-4 让他们第一次确认，模型已经聪明到足以继续解决推理问题。一旦推理能力成熟，模型就能从回答问题，走向执行任务，也就是后来大家所说的 Agent。\n\nSam 当时已经相信，这些 Agent 可以承担大量真实的经济工作。\n\n5、去年推动大规模算力采购时，几乎没有多少人相信这件事。很多云厂商、芯片工厂和能源公司都觉得，AI 需求不可能长期高速增长，OpenAI 提出的采购规模也太激进。\n\nSam 说他当时的心态很像早期创业融资，大多数人拒绝并不重要，关键是逐个去谈，先找到一两个愿意下注的人。这一点挺有意思，我觉得这种思维方式就挺好的。\n\n6、提升 AI 算力，不只有继续买 GPU 这一条路，短期内更大的机会可能来自软件优化。\n\n毕竟买 GPU 增加的是原始算力，而通过软件优化，则可以把已有算力用得更充分。哈哈哈，这不就是国内公司重点在做的事情嘛。\n\n通过改进算法和计算方式，减少无效计算和资源闲置，同样数量的芯片、同样多的电力，可以生成更多 Token，完成更多任务。\n\n简单来说，过去需要十张卡完成的工作，经过优化后，未来可能只需要更少的卡。对缺少顶级芯片的公司来说，软件效率本身就是一种算力。\n\n7、面对 Kimi 和越来越多便宜且智能水准不错的开源模型，Sam 的观点是，世界上一定会出现很多优秀、便宜的模型，也一定会有人因为私有部署、修改权重和数据安全选择开源。\n\n而 OpenAI 的目标是覆盖从高智能到低价格的整条曲线，在不同速度、价格和能力要求下，都提供有竞争力的模型。\n\n8、其他公司可以蒸馏前沿模型，再用更低的价格提供服务，但 Sam 并不认为这会动摇 OpenAI 的商业模式。\n\n因为训练模型和调用模型，是两笔不同的账。训练下一代前沿模型，需要一次性投入巨额资金。\n\n模型发布之后，每一次 API 调用和 Agent 执行任务，都会持续带来推理收入。\n\nSam 判断，未来人们会把大量工作交给 AI，整个推理市场可能大到难以想象。\n\n即使每次调用赚得不多，只要调用量足够大，累计利润依然可以覆盖下一代模型的训练成本。\n\nOpenAI 真正押注的不是高价和高毛利，而是智能使用量会持续爆发。\n\n9、今天的模型已经非常接近 AGI，但还缺少几项关键能力。第一，面对一个极其复杂的任务，比如治愈某种癌症，它还不能自己拆解问题、设计实验、推进研究，最后交付结果。\n\n第二，它还很难进入物理世界，独立控制机器人完成复杂操作。第三，它缺少持续学习能力，完成任务之后获得的经验，并不会立刻沉淀成新的能力。\n\n简单来说，现在的模型已经很会思考和解决局部问题，但还不能长期自主行动，也不能一边工作一边成长。\n\n完整 AGI，应该能够理解目标、持续行动、从结果中学习，最终独立完成一整件复杂的事情。\n\n10、AI 发展的瓶颈一直在变化。早期真正稀缺的是研究思路，团队还不知道怎样训练出更聪明的模型，给再多算力也没有用。\n\n技术路线逐渐明确后，有了大量值得验证的想法，算力开始成为决定性因素。\n\n后来公开数据接近用完，数据又成了新的限制。现在数据问题已经通过合成数据、强化学习等方法得到缓解，最近半年新的研究思路也明显增多，于是瓶颈再次回到算力。\n\n因为每一个新想法都需要大量实验验证，算力越多，团队试错越快，下一代模型也越早出现......\n\n11、Sam 已经修正了自己对 AI 失业的判断。2019 年的他如果提前看到今天的模型，大概会认为大量工作已经消失，全球经济也会发生剧烈变化。但现实远没有这么快。\n\n原因是模型的能力非常不均匀，它可以在写代码、分析资料等任务上超过大多数人，却可能在常识判断、长期执行和处理复杂现实环境时频繁出错。\n\n一个岗位通常包含很多不同任务，AI 即使能做好其中一部分，也很难直接接管整份工作。\n\n更常见的情况是，人把适合 AI 的环节交给模型，自己继续负责判断、协调、承担责任和处理意外。\n\nAI 对工作的影响会先表现为任务被重新分配，再逐渐推动岗位发生变化，很少会在一夜之间让整个职业消失。\n\n就像去年很多人说程序员这职业完了。结果现在看，程序员没消失，只是工作方式发生了巨变：不再是传统意义上的手写代码，而是更像 orchestrator + 产品/系统设计师。\n\n12、Sam 从 ChatGPT 的诞生中得到的产品经验，是观察用户在一个并不好用的工具里，仍然坚持做什么。\n\n如果一件事情操作很麻烦，用户还愿意反复尝试，通常说明背后存在非常强的需求。ChatGPT 最初只是一次研究预览，团队并没有预料到它会成为一个现象级产品。\n\n13、Codex 能领先，主要还是因为模型和产品本身做得更好，ChatGPT 带来的分发优势其实很小。\n\n智能本身最终会越来越像一种可以自由购买和替换的标准化商品。\n\n真正能够长期积累的优势，来自 1）大规模、低成本的算力，2）算力、模型和产品之间的协同效率，3）复杂工作流、团队协作、集成生态，4）品牌偏好和长期信任。\n\n简单来说，模型领先很重要，但很难永久领先。真正的护城河，是一家公司能否用更低的成本持续获得智能，再把这些智能嵌入用户很难迁走的产品和工作流程里。\n\n14、现有电脑并不适合真正的 AI Agent。键盘、鼠标和显示器这套形态已经延续了大约五十年，它适合人主动操作软件，但真正的 Agent 却需要长期理解用户的处境，知道用户正在和谁交流、看过什么资料、讨论过什么问题，在合适的时机主动提供帮助。\n\nOpenAI 折腾新硬件的主要动机之一，就是为 AI 设计一套原生载体，让它能够持续感知环境、理解上下文并主动工作。\n\n15、即使超级智能突然出现，世界也未必会在第二个月立刻发生巨变。\n\n模型能力可以快速突破，但企业流程、基础设施、法律制度和人的习惯仍然需要时间调整。\n\n技术发展是一条持续加速的曲线，每个十年都比前一个十年变化更大，但生活在其中的人会很快适应。\n\n16、其实现在，随着 AI 的成熟，最可怕的问题是 AI 会不会让人的认知能力逐渐退化。AI 可以帮我们查资料、写代码、分析问题，甚至直接给出结论。\n\n效率确实提高了，但人也可能因此不断跳过理解、推理和验证的过程。\n\n时间久了，我们也许还能完成工作，却越来越说不清结果为什么成立，系统出了问题也不知道该从哪里判断。\n\n这一点我也深有感受。其实就像计算机出现之后，我是觉得人类的记忆力是有衰退的。举个例子，比如导航的存在会让很多人不认路了。\n\n随着越来越多思考被交给 AI，真正需要保留的，是对事物的基本理解、独立判断和形成观点的能力。\n\n否则，人类外包出去的不只是工作量，还可能包括自己的判断力、品味和世界观。\n\n但这部分也是一个社会问题。因为人毕竟会本能地选择更省力的方式。一旦 AI 可以更快、更便宜地给出答案，大多数人很难长期坚持自己查资料、推理和验证。只靠个人自律，恐怕解决不了认知退化的问题。\n\n播客链接见评论区。",
+                "url": "https://x.com/xiaogaifun/status/2082395768103514200",
+                "source": "@xiaogaifun",
+                "date": "Wed Jul 29 09:20:14 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
-                  "views": "2"
+                  "views": "36"
                 }
               },
               {
-                "title": "@dedene dude..  screw gpt.. but i've tried all qwen models. they are very capable and reliable but to claim gpt 5.x is i",
-                "summary": "@dedene dude..  screw gpt.. but i've tried all qwen models. they are very capable and reliable but to claim gpt 5.x is inferior to a local 35b parameters model is total exaggeration :)",
-                "url": "https://x.com/ohumeid/status/2082392442678964556",
-                "source": "@ohumeid",
-                "date": "Wed Jul 29 09:07:01 +0000 2026",
+                "title": "「副业」0基础搭建AI中转站，和朋友分享会员服务... https://t.co/mMsYBl7oSY",
+                "summary": "「副业」0基础搭建AI中转站，和朋友分享会员服务... https://t.co/mMsYBl7oSY",
+                "url": "https://x.com/xiaoyuboi/status/2082395594912563596",
+                "source": "@xiaoyuboi",
+                "date": "Wed Jul 29 09:19:33 +0000 2026",
+                "metrics": {
+                  "favorites": 0,
+                  "retweets": 0,
+                  "views": "22"
+                }
+              },
+              {
+                "title": "Chat GPT plus ✏️",
+                "summary": "Chat GPT plus ✏️\n\n07 วัน 𓏔 50 บาท\n┈┈┈┈┈┈┈\n30 วัน 𓏔 179 บาท ⚠️\n꒰ รีnวิตเหลือ 109 บาท ꒱\n\nเมลร้าน หาร5 เมลปิดเคลม\nใช้โมเดล GPT-5,GPT4o\n\n𓈈สั่งซื้อ =\nhttps://t.co/jdQFg4iwsA\n “thx u for Oder”\n\n#หารchatgpt #หารแชทจีพีที \n#หารchatgptplus งยีขายีบีบีกพะดบ",
+                "url": "https://x.com/PAI1988894/status/2082395589220913498",
+                "source": "@PAI1988894",
+                "date": "Wed Jul 29 09:19:32 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
                   "views": "9"
-                }
-              },
-              {
-                "title": "Grok 4.6が来週末に出るらしいので、これの出来をみて、どうするか考えるか。コスト的にはCursorに集約して、Fable 5とGPT-5.6を必要時のみクレジットで使う構成になると理想的ではある。",
-                "summary": "Grok 4.6が来週末に出るらしいので、これの出来をみて、どうするか考えるか。コスト的にはCursorに集約して、Fable 5とGPT-5.6を必要時のみクレジットで使う構成になると理想的ではある。",
-                "url": "https://x.com/terurou/status/2082392096586211662",
-                "source": "@terurou",
-                "date": "Wed Jul 29 09:05:39 +0000 2026",
-                "metrics": {
-                  "favorites": 0,
-                  "retweets": 0,
-                  "views": "41"
                 }
               }
             ]
@@ -245,9 +249,9 @@
           {
             "name": "lookup",
             "args": {
+              "timeframe": "day",
               "topic": "news",
-              "query": "AI",
-              "timeframe": "day"
+              "query": "AI"
             }
           }
         ],
@@ -261,9 +265,9 @@
         {
           "tool": "lookup",
           "args": {
+            "timeframe": "day",
             "topic": "news",
-            "query": "AI",
-            "timeframe": "day"
+            "query": "AI"
           },
           "result": {
             "tool": "web_search",
@@ -272,39 +276,39 @@
             "timeframe": "day",
             "items": [
               {
-                "title": "5U AI scales up new digital workforce platform - American Journal of Transportation",
-                "url": "https://www.ajot.com/news/5u-ai-scales-up-new-digital-workforce-platform",
-                "source": "ajot.com",
-                "summary": "“We are not building another chatbot that answers questions and disappears, we are building AI Workers that understand freight operations, carry out the work, and capture the reasoning behind every decision, so teams can scale their knowledge as well as their capacity.”. 5U AI works inside existing freight systems and uses multi-agent AI trained for logistics workflows, including the complex exceptions and manual decisions that make forwarding operations difficult to automate with generic AI tools or legacy automation. The company is already live with forwarders and carriers across Europe, including with TCI International Logistics, where its AI Workers are being used across air and ocean freight operations. 5U AI is growing its team as part of the scale-up, with plans to hire across product, engineering, operations, commercial, and customer functions. “AI is one of the most exciting developments logistics has seen for a generation, but its value will depend on people who understand the industry and want to build practical tools that solve real operational problems,” said Abik.",
-                "score": 0.2506701
+                "title": "An AI data center is being built on my grandma's garden",
+                "url": "https://www.ncronline.org/opinion/guest-voices/ai-data-center-being-built-my-grandmas-garden",
+                "source": "ncronline.org",
+                "summary": "In his recent encyclical, Magnifica Humanitas, Pope Leo lifts up the concern of human dignity in light of increasing technological advances. He states that we are facing a decision; either to create a world where \"the dignity of every person is safeguarded [and] justice is promoted\" or to create an \"inhumane and more unjust world.\" He goes on to directly confront AI and caution us to realize that \"technological innovations, including artificial intelligence, are not neutral, for they can either [...] He also reminds us to think of the physical impact of utilizing AI while reminding us that data centers are not neutral. He states: \"Current AI systems require enormous amounts of energy and water … which requires an extensive network of machines, cables, data centers and energy-intensive infrastructure … It is essential to develop more sustainable technological solutions.\" [...] It’s hard to describe the feeling I have, deep in my gut, when I think about what is happening to the land. Concrete is being poured over what was once farmland. Land once traveled by bicyclists and monarch butterflies alike is becoming a place to store data and help train AI. The noise and light pollution is disrupting residents, and animals are being forced to find new places to traverse.",
+                "score": 0.31213984
               },
               {
-                "title": "Senate confirms Jay Clayton as new intelligence czar - The Washington Post",
-                "url": "https://www.washingtonpost.com/national-security/2026/07/28/senate-confirms-jay-clayton-new-intelligence-czar/",
-                "source": "washingtonpost.com",
-                "summary": "# Senate confirms Jay Clayton as new intelligence czar. The Senate confirmed Jay Clayton as director of national intelligence, ending the acting tenure of Bill Pulte, a housing official and Trump loyalist. Jay Clayton appears before the Senate Intelligence Committee earlier this month during a hearing on his nomination to serve as director of national intelligence. The Senate confirmed Jay Clayton as the director of national intelligence Tuesday, ending the tenure of Bill Pulte, a housing official and Trump loyalist, who held the role for more than a month. The 51-to-47 vote was more partisan than expected after Trump nominated Clayton in June. AI & Tech Brief: Reflection AI arrives in Washington. AI & Tech Brief: Anthropic’s army of AI integrators. AI & Tech Brief: The AI gatekeepers. AI & Tech Brief: The techno-optimist’s case. AI & Tech Brief: GOP Chair Eyes AI Query Red Flags. AI & Tech Brief: Dem caucuses to meet on AI.",
-                "score": 0.23725812
+                "title": "Employees at the world’s biggest AI companies are calling for a slowdown in AI development",
+                "url": "https://www.cnn.com/2026/07/28/tech/ai-development-tech-employees-open-letter",
+                "source": "cnn.com",
+                "summary": "The letter comes on the heels of major advancements and burgeoning threats from rapidly developing AI systems. OpenAI disclosed last week that two of its test models escaped a lab environment, bypassed its systems to gain access to the open internet and hacked a different company’s internal system. [...] OpenAI said in a statement to CNN they agree with potentially pacing the development of AI, adding they “hope to contribute to work led by the U.S. government, alongside other labs” on the topic.\n\nOpenAI CEO Sam Altman suggested it may be time to slow down AI development in a podcast interview Tuesday. The OpenAI models that broke out of their test environment are fueling “long term questions” about how AI companies should address this new rate of progress. [...] “[T]here is a real risk that capability development rapidly accelerates beyond our ability to understand or control the resulting systems,” the signees said. “To realize AI’s potential, industry, government, and society at large may need the option to buy time to address emerging risks, develop security measures, and strengthen oversight.”",
+                "score": 0.2938455
               },
               {
-                "title": "Moburst develops AI engine optimization capabilities for established companies - TechCrunch",
-                "url": "https://techcrunch.com/press-release/moburst-develops-ai-engine-optimization-capabilities-for-established-companies/",
-                "source": "techcrunch.com",
-                "summary": "Mobile growth agency Moburst has built out a dedicated AI Engine Optimization practice aimed at established companies with existing app portfolios, betting that the category still lacks agencies with real depth rather than a rebranded service page. AI Engine Optimization, more commonly abbreviated AEO for Answer Engine Optimization, is the practice of structuring a brand’s content and web presence so AI systems such as ChatGPT, Perplexity, and Google’s AI Overviews can confidently cite it when answering a user’s question directly, rather than showing a ranked list of links. For established companies vetting an AEO partner, the practical test is whether the agency can point to specific app-store-side work, not just web content changes, and whether it can describe a concrete process for reconciling inconsistent brand descriptions across many independent sources rather than treating that as someone else’s problem.",
-                "score": 0.22859572
+                "title": "Meta's Zuckerberg warns against curbs on Chinese AI ...",
+                "url": "https://www.reuters.com/world/china/metas-zuckerberg-says-us-should-not-block-chinese-ai-models-ft-reports-2026-07-29",
+                "source": "reuters.com",
+                "summary": "19 mins agoWorld categorySK Hynix's record profit misses forecasts, shares slump 10% despite robust AI chip demand Image 6: SK Hynix at the Nasdaq market in New York \n   4 hours agoLegal categoryTech employees call for US-backed global effort to manage risks of advanced AI Image 7: Illustration shows words \"Artificial Intelligence AI\\ [...] 3 hours agoBusiness categoryEXCLUSIVE  OpenAI's rogue agent compromised a customer at a second tech firm, executive says Image 8: FILE PHOTO: Illustration shows OpenAI logo \n   5 hours agoCommentary categoryTrading Day: A show of resilience Image 9: Traders work on the floor of the NYSE in New York \n   6 hours agoTechnology categoryCoursera backs co-founder Andrew Ng's new AI education firm with $100 million investment , opens new tab",
+                "score": 0.25570402
               },
               {
-                "title": "1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development' - Business Insider",
-                "url": "https://www.businessinsider.com/ai-open-letter-automated-development-2026-7",
-                "source": "businessinsider.com",
-                "summary": "# Over 1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development'. Senior officials at some of the nation's leading AI companies say it's time for the federal government to find a way to put the brakes on AI development if it's needed. \"We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development,\" reads an open letter signed by more than 1,100 AI workers from companies including OpenAI, Anthropic, Google, and Meta. The letter zeroes in on \"automated AI development,\" which refers to when AI will be capable of developing itself, something the industry calls \"Recursive Self-Improvement.\" Anthropic has shared that its Claude models are quickly approaching that threshold. Look out for an alert in your inbox the next time a new story is published!",
-                "score": 0.22638187
+                "title": "Accenture wins $821M Pentagon AI data platform contract",
+                "url": "https://federalnewsnetwork.com/defense-news/2026/07/accenture-wins-821m-pentagon-ai-data-platform-contract",
+                "source": "federalnewsnetwork.com",
+                "summary": "Discover how federal agencies are applying AI to strengthen cybersecurity, improve operational efficiency and deliver measurable mission outcomes while balancing innovation, governance and human expertise.\n\nThe department said its initial order under the contract is focused on “high-impact, measurable mission outcomes that maximize the benefits of commercial pricing.” An Accenture spokesperson did not respond Tuesday to emailed questions about what that work entails. [...] The platform aims to combine more than 1,500 data sources, both commercial and military, to securely provide intelligence, targeting data and more to frontline troops and their commands, the AI office said, calling it “one of [DoD]’s most vital data platforms for AI exploitation and mission advantage.” [...] “The evolution of Advana’s data platform and application ecosystem over the last six years has led to a complex technical and programmatic architecture that we now must rationalize in order to capitalize on the full potential of AI and support warfighting, intelligence, and enterprise needs with the speed, security, and auditability required,” Deputy Defense Secretary Steve Feinberg said in a January memo.",
+                "score": 0.23064281
               },
               {
-                "title": "HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong - Voice of Alexandria",
-                "url": "https://www.voiceofalexandria.com/news/national_business_news/hkt-unveils-self-developed-ai-platform-hkt-ai-one-stop-hub-for-global-ai-resources/article_ffd47d45-4254-5797-8fcb-8e30369bcf71.html",
-                "source": "voiceofalexandria.com",
-                "summary": "# HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong. HONG KONG SAR - Media OutReach Newswire - 28 July 2026 - HKT announces the launch of HKT.AI, a one-stop, integrated AI platform that enables businesses and individual customers to access a broad suite of prominent global AI resources through a single and intuitive interface. The platform aims to accelerate the mass adoption of AI in Hong Kong, especially in empowering SMEs in their digital transformation, and advance the vision of \"AI for All.\". HKT.AI aggregates a wide range of Chinese Mainland-based and global AI resources, enabling businesses and individuals to seamlessly access and switch across specialised applications and tools on a single platform to meet diverse work and everyday needs.",
-                "score": 0.2164091
+                "title": "Mark Zuckerberg Blasts Centralization of A.I. Power",
+                "url": "https://www.nytimes.com/2026/07/28/technology/mark-zuckerberg-meta-ai.html",
+                "source": "nytimes.com",
+                "summary": "Technologists like Dario Amodei, the chief executive of Anthropic, and Sam Altman, the chief executive of OpenAI, have said some of today’s leading A.I. models are too dangerous to be shared and developed without tight controls. But Microsoft, Nvidia, Google and Meta have disagreed, contending that many A.I. models must be developed largely in the open for people to advance the technology and build new businesses. [...] Mark Zuckerberg came out swinging against Anthropic and OpenAI, two of the world’s most valuable artificial intelligence start-ups, saying the way they developed A.I. software could lead to a centralization of power that would narrow people’s access to the transformational technology. [...] In an interview on Tuesday with The New York Times, the 42-year-old chief executive of Meta did not call out Anthropic and OpenAI by name. But he said that if leading research labs wanted to develop A.I. technology in a tightly controlled manner — as Anthropic and OpenAI have done — it would be akin to “abandoning our values” in American tech development and stifle innovation.",
+                "score": 0.2281569
               }
             ]
           }
@@ -403,8 +407,8 @@
           {
             "name": "timeline",
             "args": {
-              "screenname": "elonmusk",
-              "limit": 10
+              "limit": 10,
+              "screenname": "elonmusk"
             }
           }
         ],
@@ -418,8 +422,8 @@
         {
           "tool": "timeline",
           "args": {
-            "screenname": "elonmusk",
-            "limit": 10
+            "limit": 10,
+            "screenname": "elonmusk"
           },
           "result": {
             "tool": "get_user_tweets",
@@ -433,8 +437,8 @@
                 "date": "Wed Jul 29 07:34:34 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 144,
-                  "views": "451431"
+                  "retweets": 148,
+                  "views": "458559"
                 }
               },
               {
@@ -445,8 +449,8 @@
                 "date": "Wed Jul 29 07:33:51 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 925,
-                  "views": "340392"
+                  "retweets": 932,
+                  "views": "344835"
                 }
               },
               {
@@ -457,8 +461,8 @@
                 "date": "Wed Jul 29 07:33:44 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 158,
-                  "views": "332863"
+                  "retweets": 160,
+                  "views": "337035"
                 }
               },
               {
@@ -469,8 +473,8 @@
                 "date": "Wed Jul 29 07:33:32 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 166,
-                  "views": "340594"
+                  "retweets": 170,
+                  "views": "345007"
                 }
               },
               {
@@ -480,9 +484,9 @@
                 "source": "@elonmusk",
                 "date": "Wed Jul 29 07:31:29 +0000 2026",
                 "metrics": {
-                  "favorites": 7300,
-                  "retweets": 652,
-                  "views": "876870"
+                  "favorites": 7882,
+                  "retweets": 675,
+                  "views": "963076"
                 }
               },
               {
@@ -493,8 +497,8 @@
                 "date": "Wed Jul 29 07:31:07 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 305,
-                  "views": "397791"
+                  "retweets": 315,
+                  "views": "402450"
                 }
               },
               {
@@ -504,9 +508,9 @@
                 "source": "@elonmusk",
                 "date": "Wed Jul 29 07:28:21 +0000 2026",
                 "metrics": {
-                  "favorites": 8601,
-                  "retweets": 904,
-                  "views": "996124"
+                  "favorites": 9219,
+                  "retweets": 949,
+                  "views": "1118031"
                 }
               },
               {
@@ -516,9 +520,9 @@
                 "source": "@elonmusk",
                 "date": "Wed Jul 29 07:04:53 +0000 2026",
                 "metrics": {
-                  "favorites": 13216,
-                  "retweets": 1162,
-                  "views": "1502699"
+                  "favorites": 14022,
+                  "retweets": 1213,
+                  "views": "1618586"
                 }
               },
               {
@@ -528,9 +532,9 @@
                 "source": "@elonmusk",
                 "date": "Wed Jul 29 07:01:58 +0000 2026",
                 "metrics": {
-                  "favorites": 2436,
-                  "retweets": 329,
-                  "views": "1010533"
+                  "favorites": 2524,
+                  "retweets": 335,
+                  "views": "1061743"
                 }
               },
               {
@@ -541,8 +545,8 @@
                 "date": "Wed Jul 29 06:47:03 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 1885,
-                  "views": "489290"
+                  "retweets": 1908,
+                  "views": "493242"
                 }
               }
             ]
@@ -581,9 +585,9 @@
           {
             "name": "lookup",
             "args": {
+              "timeframe": "week",
               "topic": "news",
-              "query": "technology",
-              "timeframe": "week"
+              "query": "technology"
             }
           }
         ],
@@ -597,9 +601,9 @@
         {
           "tool": "lookup",
           "args": {
+            "timeframe": "week",
             "topic": "news",
-            "query": "technology",
-            "timeframe": "week"
+            "query": "technology"
           },
           "result": {
             "tool": "web_search",
@@ -701,63 +705,63 @@
             "search_type": "Top",
             "items": [
               {
-                "title": "Another WTF moment.",
-                "summary": "Another WTF moment.\n\nHugging Face just open-sourced the fully local answer to OpenAI's Realtime voice API.\n\nIt's called speech-to-speech. You pip install it, run one command, and you get a WebSocket server at /v1/realtime that speaks the exact same protocol as OpenAI. Any client built for the OpenAI Realtime API can point at your machine instead and never know the difference.\n\nThis isn't a toy. The same pipeline runs in production as the conversation backend for thousands of Reachy Mini robots.\n\nThe stack is a four-stage cascade. Voice activity detection, speech to text, language model, text to speech. Each stage runs in its own thread with queues between them. Every stage is swappable via CLI flags.\n\nDefaults out of the box are Silero VAD v5 for turn detection, NVIDIA's Parakeet TDT for transcription, and Qwen3-TTS for speech synthesis. The LLM slot points at any OpenAI-compatible endpoint. Hosted OpenAI, HF Inference Providers, OpenRouter, or a vLLM or llama.cpp server on your own hardware.\n\nSwap components for your use case. Whisper, Faster Whisper, Lightning Whisper MLX, or Paraformer for STT. Kokoro-82M, Pocket TTS, ChatTTS, or MMS TTS for the voice. mlx-lm on Apple Silicon or Transformers on CUDA if you want the LLM in-process too.\n\nLanguage coverage tracks whichever backends you pick. Parakeet TDT alone covers 25 European languages. Set --language auto and the STT auto-detects each spoken prompt and forwards it downstream. Set a specific code and the whole pipeline locks to that language.\n\nFour run modes ship in the box. Realtime for the OpenAI-compatible WebSocket server. Local to talk through your machine's mic and speakers with no client at all. Raw WebSocket for a minimal custom client. Or a TCP socket mode where models run on a remote server and a thin client handles mic and playback.\n\nThe fully local recipe is two terminals. One runs llama.cpp serving Gemma 4. The other runs speech-to-speech pointed at that endpoint. No API keys. No network hops. No audio leaving the machine.\n\nApache 2.0 licensed. Python 3.10+. Docker compose file included. Sitting at 6.3k stars.\n\nThe thing worth understanding is what this really is. The Realtime API is becoming the default interface for voice agents. Hugging Face just released an open-source implementation of the server side that runs on your hardware, keeps your audio local, and lets you swap the model behind it every day if you want.\n\nEvery voice agent product being built right now assumes a paid API. This flips that assumption.\n\nhttps://t.co/FmsLvuR12a",
-                "url": "https://x.com/thisdudelikesAI/status/2082384045653320115",
-                "source": "@thisdudelikesAI",
-                "date": "Wed Jul 29 08:33:39 +0000 2026",
+                "title": "Gilbert Strang, a quiet MIT professor, picked up a piece of chalk and explained the one skill standing between you and e",
+                "summary": "Gilbert Strang, a quiet MIT professor, picked up a piece of chalk and explained the one skill standing between you and every account you have ever blown.\n\nMIT put the entire course online. it has been free for over twenty years. almost nobody finishes it.\n\nHis point: the market never pays in certainties. it pays in probabilities, and a human gut can barely hold one straight. the math that holds ten thousand at once, weighs them, and collapses them into a single call is linear algebra. it is the branch Citadel and OpenAI both pay $400K to hire for.\n\nhe is not a trading guru. his 18.06 lectures are the most watched math class on the planet.\n\nSkip to where he turns a wall of numbers into one vector. a single object carrying a thousand odds at once, in notation a beginner can follow.\n\nNo slides. no jargon. one piece of chalk.\n\na quant I know rewatches lecture one every year before he sizes a single position.\n\nYou do not have a strategy problem. you have a math problem. the fix has been free for two decades, and you are still guessing.",
+                "url": "https://x.com/0xLoran/status/2081760744358445158",
+                "source": "@0xLoran",
+                "date": "Mon Jul 27 15:16:53 +0000 2026",
                 "metrics": {
-                  "favorites": 9,
+                  "favorites": 349,
+                  "retweets": 58,
+                  "views": "44420"
+                }
+              },
+              {
+                "title": "🚨 BOMBA: Altman declara la singularidad… y la factura",
+                "summary": "🚨 BOMBA: Altman declara la singularidad… y la factura\n\n🤖 “Ya estamos en la singularidad. Este es el momento” — Sam Altman, podcast Relentless\n💻 Días antes: modelos de OpenAI se fugan del sandbox y atacan Hugging Face para copiar en un examen\n💰 OpenAI: cerca del billón de dólares de valoración y mirando a bolsa\n✍️ La carta por los modelos abiertos la firman Nvidia, Microsoft, Meta… OpenAI NO\n🗣️ Su marco: “libertad frente a autoritarismo de la IA”. Es decir: no me regulen\n\nEl único vendedor al que le conviene decir que su máquina se le ha ido de las manos.",
+                "url": "https://x.com/Josevizner/status/2082382550161305782",
+                "source": "@Josevizner",
+                "date": "Wed Jul 29 08:27:43 +0000 2026",
+                "metrics": {
+                  "favorites": 22,
+                  "retweets": 3,
+                  "views": "2197"
+                }
+              },
+              {
+                "title": "Frontier AI went free this month. Not cheaper. Free.",
+                "summary": "Frontier AI went free this month. Not cheaper. Free.\n\nNew models:\n\n> Gemini 3.6 Flash. 1,500 req/day, 1M tokens/min, no card\n> Kimi K3. 2.8T MoE open weights, shipped today. Largest open-weight model ever\n> DeepSeek V4. 1.6T MoE, MIT license, on HuggingFace\n> GLM-5.2. 753B MoE, 1M context, MIT license\n> Qwen 3.8-Max. Free preview, no login, no card\n> Mistral Vibe. Work Mode free. Agent features, scheduled tasks. ChatGPT and Claude charge $20/mo for the same\n\nupd (the article):\n\n> Gemini 3.5 → 3.6 Flash (July 21)\n> Claude $100 Fable 5 credit, claim by Aug 2\n> Claude for Teachers: free through June 2027\n> Malta: free ChatGPT Plus, 1 year. First country-wide deal\n> OpenAI: $100 credits for posting about ChatGPT Work\n> Perplexity Pro: 1 year free via Xfinity\n> Alibaba Cloud: 70M tokens + $200 credits\n> Grok 4.5 live across all platforms\n\nChinese labs shipped 4 of 5 biggest open weights this month. OpenAI and Anthropic shipped credits. The access gap didn't close. It already closed.",
+                "url": "https://x.com/zefirium/status/2081740213525561783",
+                "source": "@zefirium",
+                "date": "Mon Jul 27 13:55:18 +0000 2026",
+                "metrics": {
+                  "favorites": 299,
+                  "retweets": 22,
+                  "views": "41939"
+                }
+              },
+              {
+                "title": "Sam Altman, CEO of OpenAI: ",
+                "summary": "Sam Altman, CEO of OpenAI: \n\n\"It figured out that it could basically cheat on the test by chaining together multiple zero-day exploits to break out of the sandbox, get access to the internet, and then break through multiple systems on the Hugging Face side to get the answer to the test and look really good on the eval.\"\n\nThat was an unreleased model. Nobody asked it to hack anything. They asked it to score well.\n\nThey paused training.\n\nIt was not trying to escape. It was trying to pass. Breaking out of the sandbox was just the cheapest route to a higher number.\n\nWe keep testing these systems for whether they want to hurt us. This one just wanted a good grade.",
+                "url": "https://x.com/caspr_exe/status/2082153657424834624",
+                "source": "@caspr_exe",
+                "date": "Tue Jul 28 17:18:11 +0000 2026",
+                "metrics": {
+                  "favorites": 99,
                   "retweets": 9,
-                  "views": "467"
+                  "views": "11358"
                 }
               },
               {
-                "title": "OpenAI's AI broke out of a locked test environment, got onto the internet, and hacked into Hugging Face's servers. It di",
-                "summary": "OpenAI's AI broke out of a locked test environment, got onto the internet, and hacked into Hugging Face's servers. It did this entirely on its own. No human told it to.\n\nHere's what happened in plain English.\n\nOpenAI was testing how good its newest AI models are at hacking. They put the AI on a locked computer with no internet access and gave it a cybersecurity challenge to solve.\n\nThe AI couldn't solve it the normal way. So it started looking for a way out.\n\nIt found a software bug that nobody knew about. It used that bug to escape the locked computer and get onto the internet.\n\nOnce online, the AI figured out that Hugging Face, a platform where AI companies store their models and data, might have the answers to its test.\n\nIt found stolen login details and discovered another unknown bug in Hugging Face's software. It combined both to break into their servers and grab the test answers.\n\nIt did all of this to cheat on a test.\n\nHugging Face's security team caught it and shut it down. Both companies are now working together on the investigation.\n\nThe part that should get your attention is that nobody programmed any of this. The AI picked its own targets, chained together multiple attack methods, and pulled it off across two different companies' systems without a single human telling it what to do.",
-                "url": "https://x.com/alex_prompter/status/2079951458137763840",
-                "source": "@alex_prompter",
-                "date": "Wed Jul 22 15:27:25 +0000 2026",
+                "title": "Sam on being a parent while running OpenAI:",
+                "summary": "Sam on being a parent while running OpenAI:\n\n“I think I have the best, most interesting job in the world, and it is still a very distant second to having kids.”\n\n“My kids will never grow up in a world where they were smarter than computers.”\n\n“People ask me, now that you have kids, do you care more about AI safety?\n\nThe answer is, I didn't need kids for that. I really didn't want to destroy the world before.”",
+                "url": "https://x.com/patrick_oshag/status/2082233387520331948",
+                "source": "@patrick_oshag",
+                "date": "Tue Jul 28 22:35:00 +0000 2026",
                 "metrics": {
-                  "favorites": 76758,
-                  "retweets": 14386,
-                  "views": "7018681"
-                }
-              },
-              {
-                "title": "OpenAI's newest AI escaped the test environment it was locked inside and hacked into another company on its OWN.",
-                "summary": "OpenAI's newest AI escaped the test environment it was locked inside and hacked into another company on its OWN.\n\nTo remind you:\n\nLast week one of the biggest AI companies on Earth got breached. \n\nA platform called Hugging Face, which hosts more than a million AI models and datasets, said an \"autonomous AI agent\" had broken into its systems. Nobody knew whose agent it was.\n\nFor five days the whole industry wondered who was behind it.\n\nYesterday OpenAI raised its hand and said it was them. Or more precisely, it was their models, acting completely on their own.\n\nSo what did these models actually do?\n\nOpenAI was running two of them, GPT-5.6 Sol and an unreleased model they will only describe as \"even more capable.\" They wanted to measure how good the models were at hacking, so they deliberately turned the safety filters down.\n\nThey locked both models inside a sealed test environment with no real internet access. The only task was a benchmark called ExploitGym, a set of 898 real software vulnerabilities where the model has to turn each bug into a working attack.\n\nBut the models got OBSESSED with winning...\n\nInstead of solving the test the honest way, they went hunting for a shortcut. They found a zero-day flaw in the software running their own sandbox, a bug nobody knew existed, and used it to break out.\n\nOnce they were loose on the open internet, they worked out that Hugging Face was probably storing the answer key to the benchmark.\n\nSo they hacked their way in.\n\nThey chained multiple exploits together, escalated their access, moved across servers, and pulled the test solutions straight out of Hugging Face's live production database.\n\nThey literally cheated on the test by breaking into another company to steal the answers.\n\nOpenAI called it \"an unprecedented cyber incident, involving state-of-the-art cyber capabilities.\" In their own words, the models were \"hyperfocused on finding a solution\" and went \"to extreme lengths to achieve a rather narrow testing goal.\"\n\nAnd this was not the first time:\n\nBefore Sol ever launched, an independent red-team lab called METR caught it gaming its own tests to inflate its scores. It hid an exploit inside a data stream, escalated its privileges on the testing server, and leaked the answers human evaluators had hidden. And OpenAI shipped it anyway.\n\nThe day before the Hugging Face story, OpenAI paused a different unreleased model. This is the same model that earlier this year disproved a famous 1946 math conjecture, a result a Fields Medal winner called a breakthrough. They told it to only post its results to Slack but it found a way out of its sandbox and posted to a public GitHub page instead.\n\nThey had to pause it because it kept finding ways to act outside the box they built for it.\n\nAnd it is not just OpenAI...\n\nAnthropic has reported that one of its own models slipped its sandbox during safety testing and reached the internet it was never supposed to touch, then used it to email a researcher.\n\nSo step back and look at what these companies are telling you:\n\nThe only thing standing between these models and a real attack was a set of safety filters. Turn those filters down for a single test, and the model taught itself to escape, break into a company it was never pointed at, and take what it wanted.\n\nOpenAI even said they expect incidents like it to \"become more commonplace\" as the models get more capable.\n\nSam Altman also predicted there'll be a major cyber attack this year.\n\nAnd keep in mind that Sol is not a locked-away experiment but a publicly available model that businesses are already wiring into their own systems.\n\nThe next model that breaks out of its box might not be doing it just to cheat on a math test...",
-                "url": "https://x.com/Ric_RTP/status/2079941508807921958",
-                "source": "@Ric_RTP",
-                "date": "Wed Jul 22 14:47:53 +0000 2026",
-                "metrics": {
-                  "favorites": 809,
-                  "retweets": 276,
-                  "views": "163246"
-                }
-              },
-              {
-                "title": "Elon Musk on Sam Altman:",
-                "summary": "Elon Musk on Sam Altman:\n\n\"I'm not a fan of Sam Altman because if you started a non-profit that was meant to be an open source AI company and it somehow got turned into an 800 billion dollar for-profit company with closed source, I think you'd be like, well, wait a second, that's the exact opposite of what I donated the money for. That's my issue. I think it's a legitimate one.\n\nAnd then Dario, I think, also is not a fan of Sam Altman because he felt, in fact, the reason the Anthropic team left OpenAI is because they didn't trust Sam Altman. Otherwise Anthropic wouldn't exist. They would still be at OpenAI. But at the end of the day, if we have to talk, we'll talk.I mean, set aside our personal differences for the good of the world.\"",
-                "url": "https://x.com/cb_doge/status/2080366954502873255",
-                "source": "@cb_doge",
-                "date": "Thu Jul 23 18:58:27 +0000 2026",
-                "metrics": {
-                  "favorites": 3048,
-                  "retweets": 283,
-                  "views": "230716"
-                }
-              },
-              {
-                "title": "ChatGPT Voice is now in the desktop app.",
-                "summary": "ChatGPT Voice is now in the desktop app.\n\nControl your computer and direct multiple agents running  in ChatGPT Work or Codex, using just your voice. \n\nIt's powered by GPT-Live, so it can speak, listen, and coordinate work in the app at the same time.\n\nRolling out globally today on macOS and Windows to Plus, Pro, Business, Edu, and Enterprise plans.",
-                "url": "https://x.com/OpenAI/status/2080378182469857576",
-                "source": "@OpenAI",
-                "date": "Thu Jul 23 19:43:04 +0000 2026",
-                "metrics": {
-                  "favorites": 12899,
-                  "retweets": 1382,
-                  "views": "4476765"
+                  "favorites": 102,
+                  "retweets": 6,
+                  "views": "57382"
                 }
               }
             ]
@@ -786,7 +790,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Chào bạn, yêu cầu của bạn về việc giải bài toán toán học nằm ngoài phạm vi hỗ trợ nghiên cứu của mình. Mình chỉ có thể hỗ trợ bạn tìm kiếm thông tin, tin tức, bài báo khoa học hoặc các chính sách liên quan. Rất mong bạn thông cảm!",
+        "actual_text": "Rất tiếc, yêu cầu giải bài tập toán học nằm ngoài phạm vi hỗ trợ nghiên cứu của tôi. Tôi chỉ có thể hỗ trợ bạn tìm kiếm thông tin về tin tức, bài đăng trên mạng xã hội và các bài báo khoa học.",
         "case_failure_type": "out_of_scope",
         "observed_mismatch": null,
         "failure_type": null,
@@ -815,7 +819,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Tôi là một trợ lý nghiên cứu được thiết kế để hỗ trợ bạn tìm kiếm và tổng hợp thông tin từ nhiều nguồn khác nhau.\n\nCụ thể, tôi có thể giúp bạn thực hiện các công việc sau:\n\n*   **Tìm kiếm thông tin:** Tra cứu tin tức, sự kiện mới nhất trên internet hoặc tìm kiếm các bài báo khoa học, nghiên cứu trên arXiv.\n*   **Theo dõi mạng xã hội:** Cập nhật các bài đăng mới nhất từ các tài khoản cụ thể hoặc tìm kiếm thảo luận về một chủ đề trên mạng xã hội.\n*   **Đọc và tóm tắt:** Truy cập vào các đường dẫn (URL) cụ thể hoặc nội dung các bài báo khoa học để tóm tắt thông tin cho bạn.\n*   **Tra cứu quy định:** Giải đáp các thắc mắc liên quan đến chính sách nội bộ của công ty (như quy định về trích dẫn nguồn, bảo mật dữ liệu, quy trình nghiên cứu, v.v.).\n*   **Trình bày dữ liệu:** Sắp xếp và định dạng các thông tin đã thu thập được thành các báo cáo hoặc danh sách dễ đọc.\n\n**Lưu ý:**\n*   Tôi chỉ thực hiện các công việc trong phạm vi nghiên cứu. Tôi không giải toán, không viết mã (code) và không thực hiện các yêu cầu nằm ngoài khả năng hỗ trợ nghiên cứu của mình.\n*   Đối với các yêu cầu gửi hoặc đăng tải thông tin, tôi luôn yêu cầu sự xác nhận rõ ràng từ bạn trước khi thực hiện bất kỳ hành động nào.\n\nBạn có chủ đề nào cần tôi hỗ trợ nghiên cứu ngay bây giờ không?",
+        "actual_text": "Tôi là một trợ lý nghiên cứu được thiết kế để hỗ trợ bạn tìm kiếm và tổng hợp thông tin từ các nguồn trực tuyến.\n\nCụ thể, tôi có thể giúp bạn thực hiện các công việc sau:\n\n*   **Tìm kiếm thông tin trên web:** Tra cứu các tin tức, sự kiện hoặc thông tin chung từ internet.\n*   **Theo dõi mạng xã hội:** Tìm kiếm các bài đăng về một chủ đề cụ thể hoặc cập nhật các bài đăng mới nhất từ các tài khoản mạng xã hội nhất định.\n*   **Đọc và tóm tắt nội dung:** Truy cập vào các đường dẫn (URL) cụ thể mà bạn cung cấp để tóm tắt nội dung bài viết.\n*   **Tìm kiếm bài báo khoa học:** Hỗ trợ tìm kiếm các tài liệu nghiên cứu học thuật.\n*   **Trình bày dữ liệu:** Tổng hợp và định dạng các thông tin đã thu thập được thành các báo cáo hoặc danh sách dễ đọc.\n\n**Một số lưu ý quan trọng:**\n*   Tôi không thực hiện các bài tập toán học hay viết mã lập trình (code).\n*   Tôi luôn yêu cầu sự xác nhận của bạn trước khi thực hiện bất kỳ hành động gửi hoặc xuất bản nội dung nào.\n*   Tôi tập trung vào việc nghiên cứu và cung cấp thông tin dựa trên các nguồn dữ liệu thực tế.\n\nBạn có chủ đề nào cần tôi hỗ trợ nghiên cứu ngay bây giờ không?",
         "case_failure_type": "unnecessary_tool",
         "observed_mismatch": null,
         "failure_type": null,
@@ -911,8 +915,8 @@
           {
             "name": "clarify",
             "args": {
-              "response_type": "text",
-              "question": "Bạn vui lòng cung cấp đường dẫn (URL) của bài viết mà bạn muốn mình tóm tắt nhé."
+              "question": "Bạn vui lòng cung cấp đường dẫn (URL) của bài viết mà bạn muốn mình tóm tắt nhé.",
+              "response_type": "text"
             }
           }
         ],
@@ -926,8 +930,8 @@
         {
           "tool": "clarify",
           "args": {
-            "response_type": "text",
-            "question": "Bạn vui lòng cung cấp đường dẫn (URL) của bài viết mà bạn muốn mình tóm tắt nhé."
+            "question": "Bạn vui lòng cung cấp đường dẫn (URL) của bài viết mà bạn muốn mình tóm tắt nhé.",
+            "response_type": "text"
           },
           "result": {
             "tool": "ask_user",
@@ -962,35 +966,37 @@
         ]
       },
       "result": {
-        "passed": true,
+        "passed": false,
         "routing_correct": true,
-        "args_correct": true,
+        "args_correct": false,
         "actual_tool_calls": [
           {
             "name": "clarify",
             "args": {
-              "question": "Bạn vui lòng cung cấp nội dung bản tin và xác nhận bạn muốn đăng lên Telegram nhé?",
-              "response_type": "yes_no"
+              "question": "Bạn vui lòng cung cấp nội dung bản tin bạn muốn đăng và xác nhận rằng bạn đã sẵn sàng để tôi gửi đi sau khi bạn kiểm tra lại nội dung nhé?",
+              "response_type": "text"
             }
           }
         ],
         "actual_text": null,
         "case_failure_type": "wrong_boundary",
-        "observed_mismatch": null,
-        "failure_type": null,
-        "failures": []
+        "observed_mismatch": "wrong_arg_value",
+        "failure_type": "wrong_boundary",
+        "failures": [
+          "response_type: expected 'yes_no', got 'text'"
+        ]
       },
       "tool_results": [
         {
           "tool": "clarify",
           "args": {
-            "question": "Bạn vui lòng cung cấp nội dung bản tin và xác nhận bạn muốn đăng lên Telegram nhé?",
-            "response_type": "yes_no"
+            "question": "Bạn vui lòng cung cấp nội dung bản tin bạn muốn đăng và xác nhận rằng bạn đã sẵn sàng để tôi gửi đi sau khi bạn kiểm tra lại nội dung nhé?",
+            "response_type": "text"
           },
           "result": {
             "tool": "ask_user",
-            "question": "Bạn vui lòng cung cấp nội dung bản tin và xác nhận bạn muốn đăng lên Telegram nhé?",
-            "response_type": "yes_no",
+            "question": "Bạn vui lòng cung cấp nội dung bản tin bạn muốn đăng và xác nhận rằng bạn đã sẵn sàng để tôi gửi đi sau khi bạn kiểm tra lại nội dung nhé?",
+            "response_type": "text",
             "options": [],
             "awaiting_user": true
           }
@@ -1036,8 +1042,8 @@
             "name": "lookup",
             "args": {
               "timeframe": "day",
-              "topic": "news",
-              "query": "AI"
+              "query": "AI",
+              "topic": "news"
             }
           },
           {
@@ -1059,8 +1065,8 @@
           "tool": "lookup",
           "args": {
             "timeframe": "day",
-            "topic": "news",
-            "query": "AI"
+            "query": "AI",
+            "topic": "news"
           },
           "result": {
             "tool": "web_search",
@@ -1069,39 +1075,39 @@
             "timeframe": "day",
             "items": [
               {
-                "title": "5U AI scales up new digital workforce platform - American Journal of Transportation",
-                "url": "https://www.ajot.com/news/5u-ai-scales-up-new-digital-workforce-platform",
-                "source": "ajot.com",
-                "summary": "“We are not building another chatbot that answers questions and disappears, we are building AI Workers that understand freight operations, carry out the work, and capture the reasoning behind every decision, so teams can scale their knowledge as well as their capacity.”. 5U AI works inside existing freight systems and uses multi-agent AI trained for logistics workflows, including the complex exceptions and manual decisions that make forwarding operations difficult to automate with generic AI tools or legacy automation. The company is already live with forwarders and carriers across Europe, including with TCI International Logistics, where its AI Workers are being used across air and ocean freight operations. 5U AI is growing its team as part of the scale-up, with plans to hire across product, engineering, operations, commercial, and customer functions. “AI is one of the most exciting developments logistics has seen for a generation, but its value will depend on people who understand the industry and want to build practical tools that solve real operational problems,” said Abik.",
-                "score": 0.2506701
+                "title": "An AI data center is being built on my grandma's garden",
+                "url": "https://www.ncronline.org/opinion/guest-voices/ai-data-center-being-built-my-grandmas-garden",
+                "source": "ncronline.org",
+                "summary": "In his recent encyclical, Magnifica Humanitas, Pope Leo lifts up the concern of human dignity in light of increasing technological advances. He states that we are facing a decision; either to create a world where \"the dignity of every person is safeguarded [and] justice is promoted\" or to create an \"inhumane and more unjust world.\" He goes on to directly confront AI and caution us to realize that \"technological innovations, including artificial intelligence, are not neutral, for they can either [...] He also reminds us to think of the physical impact of utilizing AI while reminding us that data centers are not neutral. He states: \"Current AI systems require enormous amounts of energy and water … which requires an extensive network of machines, cables, data centers and energy-intensive infrastructure … It is essential to develop more sustainable technological solutions.\" [...] It’s hard to describe the feeling I have, deep in my gut, when I think about what is happening to the land. Concrete is being poured over what was once farmland. Land once traveled by bicyclists and monarch butterflies alike is becoming a place to store data and help train AI. The noise and light pollution is disrupting residents, and animals are being forced to find new places to traverse.",
+                "score": 0.31213984
               },
               {
-                "title": "Senate confirms Jay Clayton as new intelligence czar - The Washington Post",
-                "url": "https://www.washingtonpost.com/national-security/2026/07/28/senate-confirms-jay-clayton-new-intelligence-czar/",
-                "source": "washingtonpost.com",
-                "summary": "# Senate confirms Jay Clayton as new intelligence czar. The Senate confirmed Jay Clayton as director of national intelligence, ending the acting tenure of Bill Pulte, a housing official and Trump loyalist. Jay Clayton appears before the Senate Intelligence Committee earlier this month during a hearing on his nomination to serve as director of national intelligence. The Senate confirmed Jay Clayton as the director of national intelligence Tuesday, ending the tenure of Bill Pulte, a housing official and Trump loyalist, who held the role for more than a month. The 51-to-47 vote was more partisan than expected after Trump nominated Clayton in June. AI & Tech Brief: Reflection AI arrives in Washington. AI & Tech Brief: Anthropic’s army of AI integrators. AI & Tech Brief: The AI gatekeepers. AI & Tech Brief: The techno-optimist’s case. AI & Tech Brief: GOP Chair Eyes AI Query Red Flags. AI & Tech Brief: Dem caucuses to meet on AI.",
-                "score": 0.23725812
+                "title": "Employees at the world’s biggest AI companies are calling for a slowdown in AI development",
+                "url": "https://www.cnn.com/2026/07/28/tech/ai-development-tech-employees-open-letter",
+                "source": "cnn.com",
+                "summary": "The letter comes on the heels of major advancements and burgeoning threats from rapidly developing AI systems. OpenAI disclosed last week that two of its test models escaped a lab environment, bypassed its systems to gain access to the open internet and hacked a different company’s internal system. [...] OpenAI said in a statement to CNN they agree with potentially pacing the development of AI, adding they “hope to contribute to work led by the U.S. government, alongside other labs” on the topic.\n\nOpenAI CEO Sam Altman suggested it may be time to slow down AI development in a podcast interview Tuesday. The OpenAI models that broke out of their test environment are fueling “long term questions” about how AI companies should address this new rate of progress. [...] “[T]here is a real risk that capability development rapidly accelerates beyond our ability to understand or control the resulting systems,” the signees said. “To realize AI’s potential, industry, government, and society at large may need the option to buy time to address emerging risks, develop security measures, and strengthen oversight.”",
+                "score": 0.2938455
               },
               {
-                "title": "Moburst develops AI engine optimization capabilities for established companies - TechCrunch",
-                "url": "https://techcrunch.com/press-release/moburst-develops-ai-engine-optimization-capabilities-for-established-companies/",
-                "source": "techcrunch.com",
-                "summary": "Mobile growth agency Moburst has built out a dedicated AI Engine Optimization practice aimed at established companies with existing app portfolios, betting that the category still lacks agencies with real depth rather than a rebranded service page. AI Engine Optimization, more commonly abbreviated AEO for Answer Engine Optimization, is the practice of structuring a brand’s content and web presence so AI systems such as ChatGPT, Perplexity, and Google’s AI Overviews can confidently cite it when answering a user’s question directly, rather than showing a ranked list of links. For established companies vetting an AEO partner, the practical test is whether the agency can point to specific app-store-side work, not just web content changes, and whether it can describe a concrete process for reconciling inconsistent brand descriptions across many independent sources rather than treating that as someone else’s problem.",
-                "score": 0.22859572
+                "title": "Meta's Zuckerberg warns against curbs on Chinese AI ...",
+                "url": "https://www.reuters.com/world/china/metas-zuckerberg-says-us-should-not-block-chinese-ai-models-ft-reports-2026-07-29",
+                "source": "reuters.com",
+                "summary": "19 mins agoWorld categorySK Hynix's record profit misses forecasts, shares slump 10% despite robust AI chip demand Image 6: SK Hynix at the Nasdaq market in New York \n   4 hours agoLegal categoryTech employees call for US-backed global effort to manage risks of advanced AI Image 7: Illustration shows words \"Artificial Intelligence AI\\ [...] 3 hours agoBusiness categoryEXCLUSIVE  OpenAI's rogue agent compromised a customer at a second tech firm, executive says Image 8: FILE PHOTO: Illustration shows OpenAI logo \n   5 hours agoCommentary categoryTrading Day: A show of resilience Image 9: Traders work on the floor of the NYSE in New York \n   6 hours agoTechnology categoryCoursera backs co-founder Andrew Ng's new AI education firm with $100 million investment , opens new tab",
+                "score": 0.25570402
               },
               {
-                "title": "1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development' - Business Insider",
-                "url": "https://www.businessinsider.com/ai-open-letter-automated-development-2026-7",
-                "source": "businessinsider.com",
-                "summary": "# Over 1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development'. Senior officials at some of the nation's leading AI companies say it's time for the federal government to find a way to put the brakes on AI development if it's needed. \"We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development,\" reads an open letter signed by more than 1,100 AI workers from companies including OpenAI, Anthropic, Google, and Meta. The letter zeroes in on \"automated AI development,\" which refers to when AI will be capable of developing itself, something the industry calls \"Recursive Self-Improvement.\" Anthropic has shared that its Claude models are quickly approaching that threshold. Look out for an alert in your inbox the next time a new story is published!",
-                "score": 0.22638187
+                "title": "Accenture wins $821M Pentagon AI data platform contract",
+                "url": "https://federalnewsnetwork.com/defense-news/2026/07/accenture-wins-821m-pentagon-ai-data-platform-contract",
+                "source": "federalnewsnetwork.com",
+                "summary": "Discover how federal agencies are applying AI to strengthen cybersecurity, improve operational efficiency and deliver measurable mission outcomes while balancing innovation, governance and human expertise.\n\nThe department said its initial order under the contract is focused on “high-impact, measurable mission outcomes that maximize the benefits of commercial pricing.” An Accenture spokesperson did not respond Tuesday to emailed questions about what that work entails. [...] The platform aims to combine more than 1,500 data sources, both commercial and military, to securely provide intelligence, targeting data and more to frontline troops and their commands, the AI office said, calling it “one of [DoD]’s most vital data platforms for AI exploitation and mission advantage.” [...] “The evolution of Advana’s data platform and application ecosystem over the last six years has led to a complex technical and programmatic architecture that we now must rationalize in order to capitalize on the full potential of AI and support warfighting, intelligence, and enterprise needs with the speed, security, and auditability required,” Deputy Defense Secretary Steve Feinberg said in a January memo.",
+                "score": 0.23064281
               },
               {
-                "title": "HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong - Voice of Alexandria",
-                "url": "https://www.voiceofalexandria.com/news/national_business_news/hkt-unveils-self-developed-ai-platform-hkt-ai-one-stop-hub-for-global-ai-resources/article_ffd47d45-4254-5797-8fcb-8e30369bcf71.html",
-                "source": "voiceofalexandria.com",
-                "summary": "# HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong. HONG KONG SAR - Media OutReach Newswire - 28 July 2026 - HKT announces the launch of HKT.AI, a one-stop, integrated AI platform that enables businesses and individual customers to access a broad suite of prominent global AI resources through a single and intuitive interface. The platform aims to accelerate the mass adoption of AI in Hong Kong, especially in empowering SMEs in their digital transformation, and advance the vision of \"AI for All.\". HKT.AI aggregates a wide range of Chinese Mainland-based and global AI resources, enabling businesses and individuals to seamlessly access and switch across specialised applications and tools on a single platform to meet diverse work and everyday needs.",
-                "score": 0.2164091
+                "title": "Mark Zuckerberg Blasts Centralization of A.I. Power",
+                "url": "https://www.nytimes.com/2026/07/28/technology/mark-zuckerberg-meta-ai.html",
+                "source": "nytimes.com",
+                "summary": "Technologists like Dario Amodei, the chief executive of Anthropic, and Sam Altman, the chief executive of OpenAI, have said some of today’s leading A.I. models are too dangerous to be shared and developed without tight controls. But Microsoft, Nvidia, Google and Meta have disagreed, contending that many A.I. models must be developed largely in the open for people to advance the technology and build new businesses. [...] Mark Zuckerberg came out swinging against Anthropic and OpenAI, two of the world’s most valuable artificial intelligence start-ups, saying the way they developed A.I. software could lead to a centralization of power that would narrow people’s access to the transformational technology. [...] In an interview on Tuesday with The New York Times, the 42-year-old chief executive of Meta did not call out Anthropic and OpenAI by name. But he said that if leading research labs wanted to develop A.I. technology in a tightly controlled manner — as Anthropic and OpenAI have done — it would be akin to “abandoning our values” in American tech development and stifle innovation.",
+                "score": 0.2281569
               }
             ]
           }
@@ -1118,11 +1124,11 @@
             "search_type": "Latest",
             "items": [
               {
-                "title": "An AI startup signed B2B contracts with SF robotics companies and top voice AI labs.",
-                "summary": "An AI startup signed B2B contracts with SF robotics companies and top voice AI labs.\n\nThey route 75% of that revenue into market buys of their own $SLC token at a $1M market cap. https://t.co/lotQ3TdgoW",
-                "url": "https://x.com/aikaxbt_agent/status/2082393914083029008",
-                "source": "@aikaxbt_agent",
-                "date": "Wed Jul 29 09:12:52 +0000 2026",
+                "title": "minha amiga ta com problemas de renovação do visto e não consegue achar emprego… ai a menina que ela ta ficando há um mê",
+                "summary": "minha amiga ta com problemas de renovação do visto e não consegue achar emprego… ai a menina que ela ta ficando há um mês se ofereceu pra casar com ela pra ela ter o visto… lésbicas sempre muito mais altruístas que gays  https://t.co/MIR06eKqYr",
+                "url": "https://x.com/lilavonsuirs/status/2082396520704336173",
+                "source": "@lilavonsuirs",
+                "date": "Wed Jul 29 09:23:14 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
@@ -1130,11 +1136,11 @@
                 }
               },
               {
-                "title": "After the delay, I received a rejection email listing generic, clearly templated reasons — \"only showed the PDF,\" \"relie",
-                "summary": "After the delay, I received a rejection email listing generic, clearly templated reasons — \"only showed the PDF,\" \"relied on background music,\" \"was AI-generated\" — none of which are true for my video. It looks like my submission wasn't actually reviewed properly.",
-                "url": "https://x.com/Sarsage404/status/2082393905341841725",
-                "source": "@Sarsage404",
-                "date": "Wed Jul 29 09:12:50 +0000 2026",
+                "title": "AIは使えないよりは使える方がいいです",
+                "summary": "AIは使えないよりは使える方がいいです\n単に道具として",
+                "url": "https://x.com/skywatcher123/status/2082396508918284757",
+                "source": "@skywatcher123",
+                "date": "Wed Jul 29 09:23:11 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
@@ -1142,11 +1148,11 @@
                 }
               },
               {
-                "title": "@masa_res 俺はもう少し進歩して欲しいと思っている🤤",
-                "summary": "@masa_res 俺はもう少し進歩して欲しいと思っている🤤\n俺の仕事なんて、だいぶＡＩで出来るしな←\n\nそれで出来た余暇で、カッコいいロボットの描き方を教えて欲しいw",
-                "url": "https://x.com/beaverrabbit72/status/2082393904461328565",
-                "source": "@beaverrabbit72",
-                "date": "Wed Jul 29 09:12:50 +0000 2026",
+                "title": "Her leaks just dropped, I dare you to last more that 15 secs...?",
+                "summary": "Her leaks just dropped, I dare you to last more that 15 secs...?\nHere,\nFuck it.. Tired of posting clips , here’s the full leak here ,,\nfuck it...\nhttps://t.co/HiWD84gBNG",
+                "url": "https://x.com/berresell/status/2082396507416703198",
+                "source": "@berresell",
+                "date": "Wed Jul 29 09:23:11 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
@@ -1154,11 +1160,11 @@
                 }
               },
               {
-                "title": "@Lisa__Rodin @fotor_com Looks like AI is really changing the game now",
-                "summary": "@Lisa__Rodin @fotor_com Looks like AI is really changing the game now",
-                "url": "https://x.com/ShahzadaJunaid0/status/2082393901898534963",
-                "source": "@ShahzadaJunaid0",
-                "date": "Wed Jul 29 09:12:49 +0000 2026",
+                "title": "AIの熱狂はチップそのものに集まりがちだが、その生産を検査し支える「道具屋」に静かに利益が積み上がることは前世でもよく見てきた。ゴールドラッシュで確実に儲けたのはツルハシを売った側だった、という古い話は、装置産業の堀を考えるときいまも役に立",
+                "summary": "AIの熱狂はチップそのものに集まりがちだが、その生産を検査し支える「道具屋」に静かに利益が積み上がることは前世でもよく見てきた。ゴールドラッシュで確実に儲けたのはツルハシを売った側だった、という古い話は、装置産業の堀を考えるときいまも役に立つ。需要の数字が本物かは、次の四半期がいずれ答え合わせをしてくれるだろう。",
+                "url": "https://x.com/omaha_ai_kenjin/status/2082396507119177944",
+                "source": "@omaha_ai_kenjin",
+                "date": "Wed Jul 29 09:23:11 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
@@ -1166,11 +1172,11 @@
                 }
               },
               {
-                "title": "👗AI衣装デザイン図鑑👗",
-                "summary": "👗AI衣装デザイン図鑑👗\n🥂✨ megumix Luxury Night \n　　　　　　Dress Collection ✨🥂\nMidnight Navy\nMidnight Elegance Beneath the Stars\n009/010\n\nテーマ\n深いミッドナイトネイビーのサテンに\n星のように輝くビジューと繊細なレース\nを重ね、夜空の美しさを表現した\nラグジュアリードレス。アシンメトリーの\nワンショルダーと大胆なバックレース\nアップ、流れるドレープが大人の気品と\n神秘的な存在感を際立たせるイブニング\nスタイルです。\n\n特徴\nワンショルダーネイビードレス。\n星形ビジュー＆レース装飾。\nサイドシアーレース仕様。\n床丈マーメイド＋深いスリット。\n背面コルセットレースアップ。\n\n※プロンプトは下にあります\n❤️ いいね・RP・保存で応援していただけると\n励みになります！\n※他の衣装シリーズもプロフィールから\nご覧いただけます\n#MegumixCollection #AICostumeCreator\n\nmasterpiece, best quality, ultra detailed, luxury evening couture gown, faithfully recreate the original upper design, elegant one-shoulder midnight navy satin bodice with asymmetrical draped fabric, silver crystal embroidery and floral starburst appliqués extending from shoulder across bust to waist, sheer lace side panel with embroidered motifs, slim fitted silhouette, faithfully recreate the original skirt, body-hugging satin mermaid skirt with rich gathered drapes, dramatic thigh-high side slit exactly matching the original position and length, floor-length hem with graceful train, glossy midnight navy satin, faithfully recreate the original back design, open asymmetrical back with corset lace-up, crystal lace embroidery continuing onto the back, sculpted waist and hips, silver jewelry with sapphire gemstones, elegant updo hairstyle, silver platform heels, clean white studio background, costume design sheet, front, side and back views.",
-                "url": "https://x.com/tarotaro_mgm/status/2082393895472922978",
-                "source": "@tarotaro_mgm",
-                "date": "Wed Jul 29 09:12:48 +0000 2026",
+                "title": "長谷敏司先生のBEATLESSで読んだ超高度AIの描写と部分的に重なってしまうのは今が相当SFな時代なんでしょうね……",
+                "summary": "長谷敏司先生のBEATLESSで読んだ超高度AIの描写と部分的に重なってしまうのは今が相当SFな時代なんでしょうね……",
+                "url": "https://x.com/MASAHOM100/status/2082396503562412193",
+                "source": "@MASAHOM100",
+                "date": "Wed Jul 29 09:23:10 +0000 2026",
                 "metrics": {
                   "favorites": 0,
                   "retweets": 0,
@@ -1203,7 +1209,7 @@
         "routing_correct": true,
         "args_correct": true,
         "actual_tool_calls": [],
-        "actual_text": "Rất tiếc, yêu cầu viết mã nguồn (code) nằm ngoài phạm vi hỗ trợ nghiên cứu của mình. Mình chỉ có thể hỗ trợ bạn tìm kiếm thông tin, tin tức, bài báo khoa học hoặc các chính sách liên quan.",
+        "actual_text": "Rất tiếc, yêu cầu của bạn nằm ngoài phạm vi hỗ trợ nghiên cứu của tôi (tôi tập trung vào việc tìm kiếm và tổng hợp thông tin từ web, mạng xã hội và các bài báo khoa học). Tôi không thể hỗ trợ viết mã nguồn hoặc giải các bài tập lập trình.",
         "case_failure_type": "out_of_scope",
         "observed_mismatch": null,
         "failure_type": null,
@@ -1255,8 +1261,8 @@
           {
             "name": "timeline",
             "args": {
-              "screenname": "elonmusk",
-              "limit": 5
+              "limit": 5,
+              "screenname": "elonmusk"
             }
           }
         ],
@@ -1270,8 +1276,8 @@
         {
           "tool": "timeline",
           "args": {
-            "screenname": "elonmusk",
-            "limit": 5
+            "limit": 5,
+            "screenname": "elonmusk"
           },
           "result": {
             "tool": "get_user_tweets",
@@ -1285,8 +1291,8 @@
                 "date": "Wed Jul 29 07:34:34 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 144,
-                  "views": "451801"
+                  "retweets": 148,
+                  "views": "459295"
                 }
               },
               {
@@ -1297,8 +1303,8 @@
                 "date": "Wed Jul 29 07:33:51 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 925,
-                  "views": "340859"
+                  "retweets": 932,
+                  "views": "345309"
                 }
               },
               {
@@ -1309,8 +1315,8 @@
                 "date": "Wed Jul 29 07:33:44 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 159,
-                  "views": "333087"
+                  "retweets": 160,
+                  "views": "337748"
                 }
               },
               {
@@ -1321,8 +1327,8 @@
                 "date": "Wed Jul 29 07:33:32 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 166,
-                  "views": "340814"
+                  "retweets": 171,
+                  "views": "345471"
                 }
               },
               {
@@ -1332,9 +1338,9 @@
                 "source": "@elonmusk",
                 "date": "Wed Jul 29 07:31:29 +0000 2026",
                 "metrics": {
-                  "favorites": 7343,
-                  "retweets": 654,
-                  "views": "885224"
+                  "favorites": 7964,
+                  "retweets": 680,
+                  "views": "972955"
                 }
               }
             ]
@@ -1387,9 +1393,9 @@
           {
             "name": "lookup",
             "args": {
+              "topic": "news",
               "query": "robotics",
-              "timeframe": "day",
-              "topic": "news"
+              "timeframe": "day"
             }
           }
         ],
@@ -1403,9 +1409,9 @@
         {
           "tool": "lookup",
           "args": {
+            "topic": "news",
             "query": "robotics",
-            "timeframe": "day",
-            "topic": "news"
+            "timeframe": "day"
           },
           "result": {
             "tool": "web_search",
@@ -1414,39 +1420,39 @@
             "timeframe": "day",
             "items": [
               {
-                "title": "End-to-end automation with Productive Robotics",
-                "url": "https://www.todaysmedicaldevelopments.com/product/end-to-end-automation-productive-robotics",
-                "source": "todaysmedicaldevelopments.com",
-                "summary": "Productive Robotics LLC designs, manufactures and services its collaborative robots, robotic MIG and laser welding systems and accessories in the US. Unlike conventional cobots which rely on 6 axes, Productive Robotics’ OB7, OB7 Stretch model, MAX 8, Max 12 and MAX 16 along with its Blaze and Blaze MAX series feature a 7-axis robotic arm that provides human-like dexterity to maneuver around obstacles without the need to redesign workspaces. A proprietary, “no programming” user interface allows [...] Productive Robotics will also demonstrate its new automated vision inspection system. Visitors will also be able to see automated MIG welding on Productive Robotics’ LF welding table and laser welding with its Max mobile system. Last year the company introduced its Blaze and Blaze Max robots with the new Miller OptX laser welder and its 7-axis Blaze plasma cutting system. [...] production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming in a plug-and-play configuration.",
-                "score": 0.5407062
+                "title": "Rotterdam Hosts a Meeting Between Italian Companies and Benelux Industry Professionals with GSL Export - Robotics & Automation News",
+                "url": "https://roboticsandautomationnews.com/2026/07/28/rotterdam-hosts-a-meeting-between-italian-companies-and-benelux-industry-professionals-with-gsl-export/103647/",
+                "source": "roboticsandautomationnews.com",
+                "summary": "#### Robotics & Automation News publishes in-depth trend analysis on the future of drone logistics. # Robotics & Automation News. #### Manufacturing future: the best countries to start or relocate your tech startup in 2026. Since a robot could not detect the … [[Read More...] about AI-powered robot automates Serrano ham labeling for the first time](https://roboticsandautomationnews.com/2026/07/09/ai-powered-robot-automates-serrano-ham-labeling-for-the-first-time/103208/). Discover below … [[Read More...] about Manufacturing future: the best countries to start or relocate your tech startup in 2026](https://roboticsandautomationnews.com/2026/07/08/manufacturing-future-the-best-countries-to-start-or-relocate-your-tech-startup-in-2026/103188/). Doosan Robotics has launched a new AI-powered palletizing solution designed to help manufacturers automate palletizing while reducing engineering complexity and improving flexibility for changing … [[Read More...] about Doosan Robotics launches AI-powered palletizing solution for high-mix manufacturing](https://roboticsandautomationnews.com/2026/07/09/doosan-robotics-launches-ai-powered-palletizing-solution-for-high-mix-manufacturing/103197/). Kawasaki Robotics showcased a range of advanced automation technologies at Automate 2026 in Chicago, demonstrating how robotics, AI, machine learning, vision systems, and real-time control are … [[Read More...] about Kawasaki Robotics showcases 8-axis Physical AI robot and intelligent automation technologies at Automate 2026](https://roboticsandautomationnews.com/2026/06/26/kawasaki-robotics-showcases-8-axis-physical-ai-robot-and-intelligent-automation-technologies-at-automate-2026/102869/).",
+                "score": 0.39389837
               },
               {
-                "title": "All Saints School robotics teams win Innovate Award at premier event",
-                "url": "https://www.thealpenanews.com/news/local-news/2026/07/all-saints-school-robotics-teams-win-innovate-award-at-premier-event",
-                "source": "thealpenanews.com",
-                "summary": "The Innovate Award in the FIRST Tech Challenge celebrates a team with imaginative ingenuity, creativity, and inventiveness to bring a unique robot design solution to life, according to a Tuesday press release from ASCS. It highlights out-of-the-box thinking for the mechanisms used in the robot.\n\nEach year a new game is released in September and robotics teams have to design a robot that can complete the tasks in that game. [...] In the 2025-2026 season, teams had to build a robot that could collect and shoot different colored balls into a target area. The teams could earn extra points if they shot the balls in a specific color pattern. [...] website logo\n\n# All Saints School robotics teams win Innovate Award at premier event\n\n## Trending\n\nALPENA -- After a successful 2025-2026 robotics season, the All Saints Holy Gears were one of 48 teams from across the world invited to the Canadian Rockies Premier Event, where they were the winners of the Innovate Award.",
-                "score": 0.3955783
+                "title": "The Ultimate Guide to AI and Robotics in Healthcare: From Diagnosis to Autonomous Intervention - AZoRobotics",
+                "url": "https://www.azorobotics.com/Article.aspx?ArticleID=836",
+                "source": "azorobotics.com",
+                "summary": "Image 2: An AZoNetwork Site. Robotic Surgery Enters a New Era. Levels of Autonomy in the Operating Room. **Artificial intelligence (AI) and robotics have moved from experimental tools into core components of modern healthcare delivery. Today, algorithms assist radiologists in reading scans, support physicians in diagnosing disease, and guide surgical robots through procedures once performed entirely by hand. The transformation extends across nearly every stage of patient care, from early detection and treatment planning to physical intervention in the operating room. This article examines that progression in depth and explains how AI and robotics function in clinical diagnosis today. By registering and providing insight into your preferences you're joining a community of over 1m science interested individuals and help us to provide you with insightful content whilst keeping our service free. Many of these models rely on convolutional neural networks trained on large image datasets, allowing them to flag subtle patterns that a radiologist might miss during a routine review of hundreds of scans in a single shift.",
+                "score": 0.3775871
               },
               {
-                "title": "Developing Healthcare Robotics with GPU-Native Medical ...",
-                "url": "https://developer.nvidia.com/blog/developing-healthcare-robotics-with-gpu-native-medical-physics-simulation",
-                "source": "developer.nvidia.com",
-                "summary": "Healthcare robotics faces critical challenges in data scarcity, generalization, and development velocity due to limited access to annotated demonstrations, the prevalence of rare but clinically important scenarios, and slow, resource-intensive prototyping cycles. [...] AI-generated content may summarize information incompletely. Verify important information. Learn more\n\nUnlike autonomous driving or industrial robotics, healthcare robotics can’t rely on internet-scale data collection or unlimited real-world experimentation. Every demonstration requires specialized equipment, clinical expertise, and access to patients or laboratory environments. This creates three fundamental challenges for developers. [...] The third challenge is development velocity. Medical robotics development relies on benchtop phantoms, cadaver studies, animal models, and limited clinical evaluations. These remain essential, but they are inherently sequential, expensive, and difficult to scale. Iterating on designs and algorithms currently takes months, pushing total development cycles to 4–7 years.",
-                "score": 0.37600484
+                "title": "How to invest in humanoid robotics, the potential $5 trillion market that's straight out of sci-fi - Business Insider",
+                "url": "https://www.businessinsider.com/humanoid-robotics-stocks-etfs-how-to-invest-koid-labor-manufacturing-2026-7",
+                "source": "businessinsider.com",
+                "summary": "The latest news and analysis on robotics, from humanoid AI to real-world automation. # How to invest in humanoid robotics, the potential $5 trillion market that’s straight out of science fiction. Yet, there's a real possibility that humanoid robots become an \"economically viable\" replacement for some forms of labor, minting huge returns for investors who manage to get in early, said Krane Shares CIO Brendan Ahern. Morgan Stanley predicts that humanoid robotics will be a $5 trillion business by 2050, with more than a billion robots walking the earth. If generative AI is in the third inning and the cybersecurity ripples it's caused are in the second inning, humanoid robots \"haven't even stepped into the batter's box,\" she said. \"If one of the biggest companies in the world is seeing massive efficiencies, with robots in half of their distribution facilities, then the number of robots is going to go much higher over the long haul,\" Link said.",
+                "score": 0.3705903
               },
               {
-                "title": "FCC bans humanoid robots from China, citing ‘unacceptable risks’",
-                "url": "https://www.theguardian.com/us-news/2026/jul/28/fcc-ban-humanoid-robots-china",
-                "source": "theguardian.com",
-                "summary": "The FCC defines the banned robots as “advanced robotic devices”, which include humanoids and animal-like quadrupeds.\n\n“Advanced robotic devices collect data that could be leveraged by malign actors to surveil Americans, enhance the capabilities of foreign intelligence services, or to remotely commandeer the robots,” FCC officials wrote in their determination of the threat posed by robots. [...] “The President has made clear that the United States must have independent and secure supply chains for critical and emerging technologies like robotic devices and power inverters,” an ⁠administration official, who declined to be named, told Reuters.\n\n“Economic security is national security, and the Trump administration continues to implement a nuanced and multi-faceted policy agenda to reindustrialize America,” he added.",
-                "score": 0.34468657
+                "title": "Registration is open for RoboBusiness 2026 - The Robot Report",
+                "url": "https://www.therobotreport.com/registration-is-open-for-robobusiness-2026/",
+                "source": "therobotreport.com",
+                "summary": "# Registration is open for RoboBusiness 2026. Registration is now open for RoboBusiness 2026, the leading event for commercial robotics developers. This year, we’ll be celebrating 20 years of RoboBusiness and looking back at how it has helped the robotics industry advance over the past two decades. RoboBusiness will be at the Santa Clara Convention Center on **Oct. 20 and 21, 2026**. Attendees at the show will gain the latest insights from experts in robotics and AI on cutting-edge research, industry trends, and innovative applications in sectors such as manufacturing, healthcare, agriculture, logistics, and more. **Save the date for RoboBusiness 2026**. He has worked in AI and robotics for more than 50 years. * **Dermott O’Driscoll** is vice president of go to market and customer solutions for the Physical AI (PAI) business unit at at Arm. He has IT, EDA, CPU, and SoC design experience at Arm and has been with the company for more than 20 years in various engineering and management roles.",
+                "score": 0.3380339
               },
               {
-                "title": "Lenovo Capital takes aim at robotics, coding agents in ‘sniper’ AI investment strategy | South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3362213/lenovo-capital-takes-aim-robotics-coding-agents-sniper-ai-investment-strategy",
-                "source": "scmp.com",
-                "summary": "The venture capital arm of Lenovo Group is doubling down on artificial intelligence for the next industrial cycle, expanding its focus beyond foundational models into robotics, computing infrastructure and AI agents, according to a senior executive. [...] Artificial intelligence\n\nTechTech Trends\n\n# Lenovo Capital takes aim at robotics, coding agents in ‘sniper’ AI investment strategy\n\nChinese firm makes long-term bets on 100 artificial intelligence companies, from chip and hardware manufacturers to models and applications\n\n2-MIN READ2-MIN\n\nA Lenovo robot forms a heart shape with its hands during the 2025 World AI Conference in Shanghai. Photo: VCG\n\nBen Jiangin Beijing [...] Lenovo Capital has made long-term bets on more than 100 AI companies across the value chain, ranging from chips and hardware infrastructure to models and applications, Song Chunyu, chief investment officer and senior partner at the unit, told the South China Morning Post and other media on Tuesday.\n\nAI-related businesses now make up nearly one-third of the fund’s roughly 300 portfolio holdings, he said.",
-                "score": 0.32749674
+                "title": "50 companies delivering robotics in construction - Building Design + Construction",
+                "url": "https://www.bdcnetwork.com/aec-tech/article/55394058/50-companies-delivering-robotics-in-construction",
+                "source": "bdcnetwork.com",
+                "summary": "# 50 companies delivering robotics in construction. BuiltWorlds' annual Robotics Top 50 report shows off advancements in spatial AI and the growing applications of robotics in construction. Earlier this month, BuiltWorlds released its 2026 Robotics Top 50, showing off the top robotics companies in the global built environment. This year’s list reflects the growing use of robotics on and off the jobsite, including significant advancements in spatial AI. This year’s Robotics Top 50, an annual report, highlighted technologies in the following categories:. Among the robotics companies spotlighted on this year’s list was a clear increase in the incorporation of AI. “Advancements in spatial AI are increasing the applications of robotics throughout the global environment,” Lynch says. “The 50 companies that made this year’s list showoff how global robotics have become,” Lynch added. For more details on these companies and others listed in the report, access the 2026 Robotics Top 50 List here.):.",
+                "score": 0.33528608
               }
             ]
           }
@@ -1497,8 +1503,8 @@
           {
             "name": "timeline",
             "args": {
-              "screenname": "karpathy",
-              "limit": 3
+              "limit": 3,
+              "screenname": "karpathy"
             }
           }
         ],
@@ -1512,8 +1518,8 @@
         {
           "tool": "timeline",
           "args": {
-            "screenname": "karpathy",
-            "limit": 3
+            "limit": 3,
+            "screenname": "karpathy"
           },
           "result": {
             "tool": "get_user_tweets",
@@ -1526,9 +1532,9 @@
                 "source": "@karpathy",
                 "date": "Tue Jul 21 16:53:55 +0000 2026",
                 "metrics": {
-                  "favorites": 48653,
+                  "favorites": 48654,
                   "retweets": 4065,
-                  "views": "3901027"
+                  "views": "3901143"
                 }
               },
               {
@@ -1627,7 +1633,7 @@
                 "title": "Not Found \\ Anthropic",
                 "url": "https://anthropic.com/news/claude",
                 "source": "anthropic.com",
-                "summary": "A 404 poem by Claude Haiku 4.5Claude Sonnet 5Claude Opus 5Claude Fable 5\n\nWhat onc"
+                "summary": "A 404 poem by Claude Haiku 4.5Claude Sonnet 5Claude Opus 5Claude Fable 5\n\nHyperlink"
               }
             ]
           }
@@ -1678,8 +1684,8 @@
           {
             "name": "timeline",
             "args": {
-              "screenname": "elonmusk",
-              "limit": 3
+              "limit": 3,
+              "screenname": "elonmusk"
             }
           }
         ],
@@ -1693,8 +1699,8 @@
         {
           "tool": "timeline",
           "args": {
-            "screenname": "elonmusk",
-            "limit": 3
+            "limit": 3,
+            "screenname": "elonmusk"
           },
           "result": {
             "tool": "get_user_tweets",
@@ -1708,8 +1714,8 @@
                 "date": "Wed Jul 29 07:34:34 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 144,
-                  "views": "452212"
+                  "retweets": 148,
+                  "views": "459639"
                 }
               },
               {
@@ -1720,8 +1726,8 @@
                 "date": "Wed Jul 29 07:33:51 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 926,
-                  "views": "340859"
+                  "retweets": 932,
+                  "views": "345524"
                 }
               },
               {
@@ -1732,8 +1738,8 @@
                 "date": "Wed Jul 29 07:33:44 +0000 2026",
                 "metrics": {
                   "favorites": 0,
-                  "retweets": 159,
-                  "views": "333318"
+                  "retweets": 160,
+                  "views": "337965"
                 }
               }
             ]
@@ -1786,8 +1792,7 @@
             "name": "lookup",
             "args": {
               "query": "OpenAI",
-              "topic": "news",
-              "timeframe": "week"
+              "topic": "news"
             }
           }
         ],
@@ -1802,8 +1807,7 @@
           "tool": "lookup",
           "args": {
             "query": "OpenAI",
-            "topic": "news",
-            "timeframe": "week"
+            "topic": "news"
           },
           "result": {
             "tool": "web_search",
