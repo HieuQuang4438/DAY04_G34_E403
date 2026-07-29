@@ -67,6 +67,12 @@ def _function_call_args(call: Any) -> dict[str, Any]:
     return {}
 
 
+def _is_rate_limited(exc: Exception) -> bool:
+    """True when the request failed on quota/rate limit, so another key may work."""
+    text = f"{type(exc).__name__}: {exc}".lower()
+    return any(marker in text for marker in ("429", "resource_exhausted", "rate limit", "quota"))
+
+
 class GeminiProvider:
     """Gemini provider supporting native and OpenAI-compatible endpoints."""
 
@@ -80,6 +86,22 @@ class GeminiProvider:
         self.api_key_env = api_key_env
         self.base_url = base_url or os.getenv("GEMINI_BASE_URL")
         self.default_model = default_model or os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+        self._key_index = 0
+
+    def api_keys(self) -> list[str]:
+        """`GEMINI_API_KEY`, then `GEMINI_API_KEY_2`, `_3`, ... while they are set."""
+        keys: list[str] = []
+        primary = os.getenv(self.api_key_env)
+        if primary:
+            keys.append(primary)
+        suffix = 2
+        while True:
+            extra = os.getenv(f"{self.api_key_env}_{suffix}")
+            if not extra:
+                break
+            keys.append(extra)
+            suffix += 1
+        return keys
 
     def complete(
         self,
@@ -90,11 +112,51 @@ class GeminiProvider:
         temperature: float = 0.0,
         tool_choice: Any | None = None,
     ) -> ModelResponse:
+        keys = self.api_keys()
+        if not keys:
+            raise RuntimeError(f"Missing API key env var: {self.api_key_env}")
+
+        last_exc: Exception | None = None
+        for offset in range(len(keys)):
+            index = (self._key_index + offset) % len(keys)
+            try:
+                response = self._complete_with_key(
+                    keys[index],
+                    messages,
+                    tools,
+                    model=model,
+                    temperature=temperature,
+                    tool_choice=tool_choice,
+                )
+            except Exception as exc:
+                if not _is_rate_limited(exc):
+                    raise
+                last_exc = exc
+                continue
+            # Stay on the key that worked instead of retrying the exhausted one.
+            self._key_index = index
+            return response
+
+        raise RuntimeError(
+            f"All {len(keys)} {self.api_key_env} key(s) are rate limited: {last_exc}"
+        ) from last_exc
+
+    def _complete_with_key(
+        self,
+        api_key: str,
+        messages: list[dict[str, str]],
+        tools: list[dict[str, Any]] | None,
+        *,
+        model: str | None,
+        temperature: float,
+        tool_choice: Any | None,
+    ) -> ModelResponse:
         if self.base_url:
             compatible_provider = OpenAIProvider(
                 api_key_env=self.api_key_env,
                 base_url=self.base_url,
                 default_model=self.default_model,
+                api_key=api_key,
             )
             return compatible_provider.complete(
                 messages,
@@ -109,10 +171,6 @@ class GeminiProvider:
             from google.genai import types
         except ImportError as exc:
             raise RuntimeError("Install live provider dependency first: pip install google-genai") from exc
-
-        api_key = os.getenv(self.api_key_env)
-        if not api_key:
-            raise RuntimeError(f"Missing API key env var: {self.api_key_env}")
 
         system_instruction, contents = _to_gemini_contents(messages)
         declarations = _to_gemini_declarations(tools)

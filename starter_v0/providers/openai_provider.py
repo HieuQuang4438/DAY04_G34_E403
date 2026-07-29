@@ -16,10 +16,13 @@ class OpenAIProvider:
         api_key_env: str = "OPENAI_API_KEY",
         base_url: str | None = None,
         default_model: str = "gpt-4o-mini",
+        api_key: str | None = None,
     ) -> None:
         self.api_key_env = api_key_env
         self.base_url = base_url
         self.default_model = default_model
+        # Explicit key wins over the env var, so callers can rotate keys.
+        self.api_key = api_key
 
     def complete(
         self,
@@ -35,7 +38,7 @@ class OpenAIProvider:
         except ImportError as exc:
             raise RuntimeError("Install live provider dependency first: pip install openai") from exc
 
-        api_key = os.getenv(self.api_key_env)
+        api_key = self.api_key or os.getenv(self.api_key_env)
         if not api_key:
             raise RuntimeError(f"Missing API key env var: {self.api_key_env}")
 
