@@ -9,14 +9,51 @@
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: >
+      Hỏi người dùng khi thiếu thông tin cần thiết hoặc khi cần xác nhận lần đầu
+      trước một hành động có side effect như gửi hoặc publish.
+
+      Chỉ dùng response_type="yes_no" khi yêu cầu gửi/publish chưa được xác nhận.
+
+      Không dùng tool này nếu lượt ngay trước đã hỏi xác nhận và người dùng vừa trả lời
+      rõ ràng như: "có", "đồng ý", "ok", "xác nhận", "gửi đi", "có gửi đi",
+      "yes", hoặc "confirm". Trong trường hợp đó, thực hiện hành động đang chờ với
+      confirmed=true.
+
+      Nếu người dùng trả lời rõ ràng là "không", "hủy", "đừng gửi" hoặc "no",
+      hủy hành động và không gọi tool gửi.
+
+      Chỉ hỏi lại khi câu trả lời thực sự mơ hồ.
     parameters:
       type: object
       properties:
-        question: {type: string, default: "", description: "Câu hỏi"}
-        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời"}
-        options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
-      required: [question]
+        question:
+          type: string
+          default: ""
+          description: "Câu hỏi ngắn gọn, nêu rõ thông tin còn thiếu hoặc hành động cần xác nhận."
+
+        response_type:
+          type: string
+          enum: [ text, yes_no, choice ]
+          default: "text"
+          description: >
+            Dùng "yes_no" cho xác nhận lần đầu trước hành động gửi/publish.
+            Dùng "text" khi cần người dùng bổ sung thông tin tự do.
+            Dùng "choice" khi người dùng cần chọn một trong các options.
+            Không dùng "yes_no" lần nữa nếu người dùng đã xác nhận rõ ở lượt hiện tại.
+
+        options:
+          type: array
+          default: [ ]
+          items:
+            type: string
+          description: >
+            Danh sách lựa chọn khi response_type="choice".
+            Để [] với response_type="text" hoặc "yes_no".
+
+      required:
+        - question
+        - response_type
 
   - name: timeline
     description: "Lấy các bài đăng gần đây."
@@ -88,14 +125,14 @@ tools:
       required: [text]
 
   - name: policy
-    description: "Tìm trong tài liệu nội bộ."
+    description: "Tìm trong tài liệu policy nội bộ của công ty. Dùng cho câu hỏi về source/citation, data privacy, external publishing, AI research workflow, hoặc tool usage. Luôn chọn policy_area cụ thể nếu có thể."
     parameters:
       type: object
       properties:
         query: {type: string, default: "", description: "Truy vấn"}
-        policy_area: {type: string, enum: [all, ai_research, source_citation, data_privacy, external_publishing, tool_usage], default: "all", description: "Nhóm"}
+        policy_area: {type: string, enum: [all, ai_research, source_citation, data_privacy, external_publishing, tool_usage], default: "all", description: "Nhóm policy: source/citation/source verification/arXiv citation -> source_citation; API keys/secrets/prompts/customer data/privacy -> data_privacy; sending/publishing/Telegram/approval/external channels -> external_publishing; research workflow -> ai_research; tool usage -> tool_usage; otherwise all."}
         top_k: {type: integer, default: 3, description: "Số mục"}
-      required: [query]
+      required: [query, policy_area]
 
   - name: papers
     description: "Tìm bài báo khoa học."

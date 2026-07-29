@@ -1,0 +1,1025 @@
+{
+  "transcript_id": "v3_gemini_20260729T171420345909",
+  "version": "v3",
+  "artifact_version": "v3+p53dabac66a62+tc1d6189116f0",
+  "prompt_hash": "53dabac66a626a24a34a61fe1ba3b0b3bb3570b50af2bfae915ebcc884cc1271",
+  "tools_hash": "c1d6189116f037b47879399758c3096b25873ef2553ddcb1df96bc52f9dae99d",
+  "provider": "gemini",
+  "model": "",
+  "system_prompt": "C:\\Users\\Quynh Ho\\Documents\\GitHub\\DAY04_G34_E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\Quynh Ho\\Documents\\GitHub\\DAY04_G34_E403\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T17:14:20",
+  "updated_at": "2026-07-29T17:17:48",
+  "surface": "streamlit",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T17:14:27",
+      "user": "Hello",
+      "status": "answered",
+      "assistant_text": "Chào bạn! Tôi là trợ lý nghiên cứu của bạn. Tôi có thể giúp bạn tìm kiếm thông tin trên web, tra cứu các bài báo khoa học, cập nhật tin tức từ mạng xã hội hoặc kiểm tra các quy định nội bộ. Tôi có thể làm gì cho bạn hôm nay?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Chào bạn! Tôi là trợ lý nghiên cứu của bạn. Tôi có thể giúp bạn tìm kiếm thông tin trên web, tra cứu các bài báo khoa học, cập nhật tin tức từ mạng xã hội hoặc kiểm tra các quy định nội bộ. Tôi có thể làm gì cho bạn hôm nay?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-07-29T17:14:28"
+    },
+    {
+      "turn_index": 2,
+      "started_at": "2026-07-29T17:14:46",
+      "user": "bạn gửi text \" Xin chào tôi là AI20K\" sang telegram",
+      "status": "waiting_for_user",
+      "assistant_text": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "question": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+                "response_type": "yes_no"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "clarify",
+              "args": {
+                "question": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+                "response_type": "yes_no"
+              },
+              "result": {
+                "tool": "ask_user",
+                "question": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+                "response_type": "yes_no",
+                "options": [],
+                "awaiting_user": true
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+            "response_type": "yes_no"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn có muốn gửi nội dung \"Xin chào tôi là AI20K\" sang Telegram không?",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T17:14:47"
+    },
+    {
+      "turn_index": 3,
+      "started_at": "2026-07-29T17:14:56",
+      "user": "yes",
+      "status": "answered",
+      "assistant_text": "Nội dung \"Xin chào tôi là AI20K\" đã được gửi thành công tới Telegram.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "send",
+              "args": {
+                "confirmed": true,
+                "text": "Xin chào tôi là AI20K"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "send",
+              "args": {
+                "confirmed": true,
+                "text": "Xin chào tôi là AI20K"
+              },
+              "result": {
+                "tool": "send_telegram",
+                "status": "sent"
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Nội dung \"Xin chào tôi là AI20K\" đã được gửi thành công tới Telegram.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "send",
+          "args": {
+            "confirmed": true,
+            "text": "Xin chào tôi là AI20K"
+          },
+          "result": {
+            "tool": "send_telegram",
+            "status": "sent"
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T17:14:59"
+    },
+    {
+      "turn_index": 4,
+      "started_at": "2026-07-29T17:15:35",
+      "user": "tóm tắt 5 bài báo khoa học gửi sang telegram giúp tôi",
+      "status": "waiting_for_user",
+      "assistant_text": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "papers",
+              "args": {
+                "query": "AI research",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "papers",
+              "args": {
+                "query": "AI research",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "arxiv_search",
+                "query": "AI research",
+                "api_query": "all:AI AND all:research",
+                "total_results": 17770,
+                "items": [
+                  {
+                    "arxiv_id": "2601.16513v1",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+                    "summary": "Introduction. AI Ethics is framed distinctly across actors and stakeholder groups. We report results from a case study of OpenAI analysing ethical AI discourse. Method. Research addressed: How has OpenAI's public discourse leveraged 'ethics', 'safety', 'alignment' and adjacent related concepts over time, and what does discourse signal about framing in practice? A structured corpus, differentiating between communication for a general audience and communication with an academic audience, was assembled from public documentation. Analysis. Qualitative content analysis of ethical themes combined inductively derived and deductively applied codes. Quantitative analysis leveraged computational content analysis methods via NLP to model topics and quantify changes in rhetoric over time. Visualizations report aggregate results. For reproducible results, we have released our code at https://github.com/famous-blue-raincoat/AI_Ethics_Discourse. Results. Results indicate that safety and risk discourse dominate OpenAI's public communication and documentation, without applying academic and advocacy ethics frameworks or vocabularies. Conclusions. Implications for governance are presented, along with discussion of ethics-washing practices in industry.",
+                    "authors": [
+                      "Melissa Wilfley",
+                      "Mengting Ai",
+                      "Madelyn Rose Sanfilippo"
+                    ],
+                    "published": "2026-01-23T07:26:45Z",
+                    "updated": "2026-01-23T07:26:45Z",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2505.00174v2",
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "summary": "Drawing on 1,178 safety and reliability papers from 9,439 generative AI papers (January 2020 - March 2025), we compare research outputs of leading AI companies (Anthropic, Google DeepMind, Meta, Microsoft, and OpenAI) and AI universities (CMU, MIT, NYU, Stanford, UC Berkeley, and University of Washington). We find that corporate AI research increasingly concentrates on pre-deployment areas -- model alignment and testing & evaluation -- while attention to deployment-stage issues such as model bias has waned. Significant research gaps exist in high-risk deployment domains, including healthcare, finance, misinformation, persuasive and addictive features, hallucinations, and copyright. Without improved observability into deployed AI, growing corporate concentration could deepen knowledge deficits. We recommend expanding external researcher access to deployment data and systematic observability of in-market AI behaviors.",
+                    "authors": [
+                      "Ilan Strauss",
+                      "Isobel Moure",
+                      "Tim O'Reilly",
+                      "Sruly Rosenblat"
+                    ],
+                    "published": "2025-04-30T20:44:42Z",
+                    "updated": "2025-05-05T21:12:46Z",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "pdf_url": "https://arxiv.org/pdf/2505.00174v2",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.AI",
+                    "categories": [
+                      "cs.AI"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2401.15284v6",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "summary": "The rapid adoption of generative artificial intelligence (AI) in scientific research, particularly large language models (LLMs), has outpaced the development of ethical guidelines, leading to a \"Triple-Too\" problem: too many high-level ethical initiatives, too abstract principles lacking contextual and practical relevance, and too much focus on restrictions and risks over benefits and utilities. Existing approaches--principlism (reliance on abstract ethical principles), formalism (rigid application of rules), and technological solutionism (overemphasis on technological fixes)--offer little practical guidance for addressing ethical challenges of AI in scientific research practices. To bridge the gap between abstract principles and day-to-day research practices, a user-centered, realism-inspired approach is proposed here. It outlines five specific goals for ethical AI use: 1) understanding model training and output, including bias mitigation strategies; 2) respecting privacy, confidentiality, and copyright; 3) avoiding plagiarism and policy violations; 4) applying AI beneficially compared to alternatives; and 5) using AI transparently and reproducibly. Each goal is accompanied by actionable strategies and realistic cases of misuse and corrective measures. I argue that ethical AI application requires evaluating its utility against existing alternatives rather than isolated performance metrics. Additionally, I propose documentation guidelines to enhance transparency and reproducibility in AI-assisted research. Moving forward, we need targeted professional development, training programs, and balanced enforcement mechanisms to promote responsible AI use while fostering innovation. By refining these ethical guidelines and adapting them to emerging AI capabilities, we can accelerate scientific progress without compromising research integrity.",
+                    "authors": [
+                      "Zhicheng Lin"
+                    ],
+                    "published": "2024-01-27T03:53:25Z",
+                    "updated": "2025-06-20T02:59:45Z",
+                    "url": "http://arxiv.org/abs/2401.15284v6",
+                    "pdf_url": "https://arxiv.org/pdf/2401.15284v6",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY",
+                      "cs.AI"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2504.08817v2",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "summary": "Generative AI has recently had a profound impact on various fields, including daily life, research, and education. To explore its efficient utilization in data-driven materials science, we organized a hackathon -- AIMHack2024 -- in July 2024. In this hackathon, researchers from fields such as materials science, information science, bioinformatics, and condensed matter physics worked together to explore how generative AI can facilitate research and education. Based on the results of the hackathon, this paper presents topics related to (1) conducting AI-assisted software trials, (2) building AI tutors for software, and (3) developing GUI applications for software. While generative AI continues to evolve rapidly, this paper provides an early record of its application in data-driven materials science and highlights strategies for integrating AI into research and education.",
+                    "authors": [
+                      "Takahiro Misawa",
+                      "Ai Koizumi",
+                      "Ryo Tamura",
+                      "Kazuyoshi Yoshimi"
+                    ],
+                    "published": "2025-04-09T11:15:21Z",
+                    "updated": "2025-08-04T05:55:53Z",
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY",
+                      "cs.AI",
+                      "cs.LG",
+                      "physics.ed-ph"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2606.28694v1",
+                    "title": "Verifying Restrictions on Frontier AI Research",
+                    "summary": "The premature development of artificial superintelligence poses major risks to humanity, so researchers have proposed international agreements halting such development until it can be done safely. AI progress depends primarily on compute, algorithms, and data; a durable halt would address all three so that advances in one input do not counteract restrictions on another. Improvements to AI algorithms are driven largely through research activities, so this research may need to be restricted during a halt. Given low international trust, signatories will want to verify compliance. This paper analyzes how such restrictions on AI research could be verified, while remaining agnostic about what specific research would be prohibited. It first explores key considerations that affect the verifiability of research restrictions, such as the computational infrastructure necessary for experiments. It then catalogs 28 candidate verification mechanisms. These mechanisms include whistleblowers, search warrants, reviews of AI training code, standard intelligence gathering tools, and more. Some of these mechanisms are not yet implementation-ready, and some might be undesirable upon further inspection. By examining the space of potential options, this work provides a foundation for future research to develop the most promising mechanisms into deployable tools.",
+                    "authors": [
+                      "Aaron Scher"
+                    ],
+                    "published": "2026-06-27T02:27:55Z",
+                    "updated": "2026-06-27T02:27:55Z",
+                    "url": "http://arxiv.org/abs/2606.28694v1",
+                    "pdf_url": "https://arxiv.org/pdf/2606.28694v1",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY"
+                    ]
+                  }
+                ],
+                "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "format",
+              "args": {
+                "template": "sections",
+                "items": [
+                  {
+                    "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm về đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu đi các khung đạo đức học thuật.",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+                  },
+                  {
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "summary": "So sánh nghiên cứu từ các công ty AI lớn và các trường đại học, chỉ ra sự tập trung của doanh nghiệp vào giai đoạn tiền triển khai (alignment, testing) trong khi bỏ quên các vấn đề thực tế khi triển khai như thiên kiến."
+                  },
+                  {
+                    "summary": "Đề xuất cách tiếp cận thực tế cho việc sử dụng AI trong nghiên cứu khoa học, vượt qua các nguyên tắc trừu tượng để tập trung vào tính minh bạch, quyền riêng tư và đánh giá lợi ích thực tế.",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "url": "http://arxiv.org/abs/2401.15284v6"
+                  },
+                  {
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "summary": "Báo cáo kết quả từ một hackathon về việc ứng dụng AI tạo sinh trong khoa học vật liệu, bao gồm phát triển công cụ hỗ trợ, gia sư AI và ứng dụng GUI."
+                  },
+                  {
+                    "title": "Verifying Restrictions on Frontier AI Research",
+                    "summary": "Phân tích các cơ chế xác minh việc hạn chế nghiên cứu AI tiên phong nhằm ngăn chặn rủi ro từ siêu trí tuệ, bao gồm 28 cơ chế từ tố giác đến kiểm tra mã nguồn.",
+                    "url": "http://arxiv.org/abs/2606.28694v1"
+                  }
+                ]
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "format",
+              "args": {
+                "template": "sections",
+                "items": [
+                  {
+                    "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm về đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu đi các khung đạo đức học thuật.",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+                  },
+                  {
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "summary": "So sánh nghiên cứu từ các công ty AI lớn và các trường đại học, chỉ ra sự tập trung của doanh nghiệp vào giai đoạn tiền triển khai (alignment, testing) trong khi bỏ quên các vấn đề thực tế khi triển khai như thiên kiến."
+                  },
+                  {
+                    "summary": "Đề xuất cách tiếp cận thực tế cho việc sử dụng AI trong nghiên cứu khoa học, vượt qua các nguyên tắc trừu tượng để tập trung vào tính minh bạch, quyền riêng tư và đánh giá lợi ích thực tế.",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "url": "http://arxiv.org/abs/2401.15284v6"
+                  },
+                  {
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "summary": "Báo cáo kết quả từ một hackathon về việc ứng dụng AI tạo sinh trong khoa học vật liệu, bao gồm phát triển công cụ hỗ trợ, gia sư AI và ứng dụng GUI."
+                  },
+                  {
+                    "title": "Verifying Restrictions on Frontier AI Research",
+                    "summary": "Phân tích các cơ chế xác minh việc hạn chế nghiên cứu AI tiên phong nhằm ngăn chặn rủi ro từ siêu trí tuệ, bao gồm 28 cơ chế từ tố giác đến kiểm tra mã nguồn.",
+                    "url": "http://arxiv.org/abs/2606.28694v1"
+                  }
+                ]
+              },
+              "result": {
+                "tool": "render_digest",
+                "template": "sections",
+                "markdown": "## Tổng hợp\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm về đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu đi các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh nghiên cứu từ các công ty AI lớn và các trường đại học, chỉ ra sự tập trung của doanh nghiệp vào giai đoạn tiền triển khai (alignment, testing) trong khi bỏ quên các vấn đề thực tế khi triển khai như thiên kiến. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế cho việc sử dụng AI trong nghiên cứu khoa học, vượt qua các nguyên tắc trừu tượng để tập trung vào tính minh bạch, quyền riêng tư và đánh giá lợi ích thực tế. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc ứng dụng AI tạo sinh trong khoa học vật liệu, bao gồm phát triển công cụ hỗ trợ, gia sư AI và ứng dụng GUI. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh việc hạn chế nghiên cứu AI tiên phong nhằm ngăn chặn rủi ro từ siêu trí tuệ, bao gồm 28 cơ chế từ tố giác đến kiểm tra mã nguồn. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n",
+                "item_count": 5
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "response_type": "yes_no",
+                "question": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "clarify",
+              "args": {
+                "response_type": "yes_no",
+                "question": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?"
+              },
+              "result": {
+                "tool": "ask_user",
+                "question": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?",
+                "response_type": "yes_no",
+                "options": [],
+                "awaiting_user": true
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "papers",
+          "args": {
+            "query": "AI research",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "arxiv_search",
+            "query": "AI research",
+            "api_query": "all:AI AND all:research",
+            "total_results": 17770,
+            "items": [
+              {
+                "arxiv_id": "2601.16513v1",
+                "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+                "summary": "Introduction. AI Ethics is framed distinctly across actors and stakeholder groups. We report results from a case study of OpenAI analysing ethical AI discourse. Method. Research addressed: How has OpenAI's public discourse leveraged 'ethics', 'safety', 'alignment' and adjacent related concepts over time, and what does discourse signal about framing in practice? A structured corpus, differentiating between communication for a general audience and communication with an academic audience, was assembled from public documentation. Analysis. Qualitative content analysis of ethical themes combined inductively derived and deductively applied codes. Quantitative analysis leveraged computational content analysis methods via NLP to model topics and quantify changes in rhetoric over time. Visualizations report aggregate results. For reproducible results, we have released our code at https://github.com/famous-blue-raincoat/AI_Ethics_Discourse. Results. Results indicate that safety and risk discourse dominate OpenAI's public communication and documentation, without applying academic and advocacy ethics frameworks or vocabularies. Conclusions. Implications for governance are presented, along with discussion of ethics-washing practices in industry.",
+                "authors": [
+                  "Melissa Wilfley",
+                  "Mengting Ai",
+                  "Madelyn Rose Sanfilippo"
+                ],
+                "published": "2026-01-23T07:26:45Z",
+                "updated": "2026-01-23T07:26:45Z",
+                "url": "http://arxiv.org/abs/2601.16513v1",
+                "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY"
+                ]
+              },
+              {
+                "arxiv_id": "2505.00174v2",
+                "title": "Real-World Gaps in AI Governance Research",
+                "summary": "Drawing on 1,178 safety and reliability papers from 9,439 generative AI papers (January 2020 - March 2025), we compare research outputs of leading AI companies (Anthropic, Google DeepMind, Meta, Microsoft, and OpenAI) and AI universities (CMU, MIT, NYU, Stanford, UC Berkeley, and University of Washington). We find that corporate AI research increasingly concentrates on pre-deployment areas -- model alignment and testing & evaluation -- while attention to deployment-stage issues such as model bias has waned. Significant research gaps exist in high-risk deployment domains, including healthcare, finance, misinformation, persuasive and addictive features, hallucinations, and copyright. Without improved observability into deployed AI, growing corporate concentration could deepen knowledge deficits. We recommend expanding external researcher access to deployment data and systematic observability of in-market AI behaviors.",
+                "authors": [
+                  "Ilan Strauss",
+                  "Isobel Moure",
+                  "Tim O'Reilly",
+                  "Sruly Rosenblat"
+                ],
+                "published": "2025-04-30T20:44:42Z",
+                "updated": "2025-05-05T21:12:46Z",
+                "url": "http://arxiv.org/abs/2505.00174v2",
+                "pdf_url": "https://arxiv.org/pdf/2505.00174v2",
+                "source": "arxiv.org",
+                "primary_category": "cs.AI",
+                "categories": [
+                  "cs.AI"
+                ]
+              },
+              {
+                "arxiv_id": "2401.15284v6",
+                "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                "summary": "The rapid adoption of generative artificial intelligence (AI) in scientific research, particularly large language models (LLMs), has outpaced the development of ethical guidelines, leading to a \"Triple-Too\" problem: too many high-level ethical initiatives, too abstract principles lacking contextual and practical relevance, and too much focus on restrictions and risks over benefits and utilities. Existing approaches--principlism (reliance on abstract ethical principles), formalism (rigid application of rules), and technological solutionism (overemphasis on technological fixes)--offer little practical guidance for addressing ethical challenges of AI in scientific research practices. To bridge the gap between abstract principles and day-to-day research practices, a user-centered, realism-inspired approach is proposed here. It outlines five specific goals for ethical AI use: 1) understanding model training and output, including bias mitigation strategies; 2) respecting privacy, confidentiality, and copyright; 3) avoiding plagiarism and policy violations; 4) applying AI beneficially compared to alternatives; and 5) using AI transparently and reproducibly. Each goal is accompanied by actionable strategies and realistic cases of misuse and corrective measures. I argue that ethical AI application requires evaluating its utility against existing alternatives rather than isolated performance metrics. Additionally, I propose documentation guidelines to enhance transparency and reproducibility in AI-assisted research. Moving forward, we need targeted professional development, training programs, and balanced enforcement mechanisms to promote responsible AI use while fostering innovation. By refining these ethical guidelines and adapting them to emerging AI capabilities, we can accelerate scientific progress without compromising research integrity.",
+                "authors": [
+                  "Zhicheng Lin"
+                ],
+                "published": "2024-01-27T03:53:25Z",
+                "updated": "2025-06-20T02:59:45Z",
+                "url": "http://arxiv.org/abs/2401.15284v6",
+                "pdf_url": "https://arxiv.org/pdf/2401.15284v6",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY",
+                  "cs.AI"
+                ]
+              },
+              {
+                "arxiv_id": "2504.08817v2",
+                "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                "summary": "Generative AI has recently had a profound impact on various fields, including daily life, research, and education. To explore its efficient utilization in data-driven materials science, we organized a hackathon -- AIMHack2024 -- in July 2024. In this hackathon, researchers from fields such as materials science, information science, bioinformatics, and condensed matter physics worked together to explore how generative AI can facilitate research and education. Based on the results of the hackathon, this paper presents topics related to (1) conducting AI-assisted software trials, (2) building AI tutors for software, and (3) developing GUI applications for software. While generative AI continues to evolve rapidly, this paper provides an early record of its application in data-driven materials science and highlights strategies for integrating AI into research and education.",
+                "authors": [
+                  "Takahiro Misawa",
+                  "Ai Koizumi",
+                  "Ryo Tamura",
+                  "Kazuyoshi Yoshimi"
+                ],
+                "published": "2025-04-09T11:15:21Z",
+                "updated": "2025-08-04T05:55:53Z",
+                "url": "http://arxiv.org/abs/2504.08817v2",
+                "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY",
+                  "cs.AI",
+                  "cs.LG",
+                  "physics.ed-ph"
+                ]
+              },
+              {
+                "arxiv_id": "2606.28694v1",
+                "title": "Verifying Restrictions on Frontier AI Research",
+                "summary": "The premature development of artificial superintelligence poses major risks to humanity, so researchers have proposed international agreements halting such development until it can be done safely. AI progress depends primarily on compute, algorithms, and data; a durable halt would address all three so that advances in one input do not counteract restrictions on another. Improvements to AI algorithms are driven largely through research activities, so this research may need to be restricted during a halt. Given low international trust, signatories will want to verify compliance. This paper analyzes how such restrictions on AI research could be verified, while remaining agnostic about what specific research would be prohibited. It first explores key considerations that affect the verifiability of research restrictions, such as the computational infrastructure necessary for experiments. It then catalogs 28 candidate verification mechanisms. These mechanisms include whistleblowers, search warrants, reviews of AI training code, standard intelligence gathering tools, and more. Some of these mechanisms are not yet implementation-ready, and some might be undesirable upon further inspection. By examining the space of potential options, this work provides a foundation for future research to develop the most promising mechanisms into deployable tools.",
+                "authors": [
+                  "Aaron Scher"
+                ],
+                "published": "2026-06-27T02:27:55Z",
+                "updated": "2026-06-27T02:27:55Z",
+                "url": "http://arxiv.org/abs/2606.28694v1",
+                "pdf_url": "https://arxiv.org/pdf/2606.28694v1",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY"
+                ]
+              }
+            ],
+            "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+          }
+        },
+        {
+          "tool": "format",
+          "args": {
+            "template": "sections",
+            "items": [
+              {
+                "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm về đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu đi các khung đạo đức học thuật.",
+                "url": "http://arxiv.org/abs/2601.16513v1",
+                "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+              },
+              {
+                "title": "Real-World Gaps in AI Governance Research",
+                "url": "http://arxiv.org/abs/2505.00174v2",
+                "summary": "So sánh nghiên cứu từ các công ty AI lớn và các trường đại học, chỉ ra sự tập trung của doanh nghiệp vào giai đoạn tiền triển khai (alignment, testing) trong khi bỏ quên các vấn đề thực tế khi triển khai như thiên kiến."
+              },
+              {
+                "summary": "Đề xuất cách tiếp cận thực tế cho việc sử dụng AI trong nghiên cứu khoa học, vượt qua các nguyên tắc trừu tượng để tập trung vào tính minh bạch, quyền riêng tư và đánh giá lợi ích thực tế.",
+                "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                "url": "http://arxiv.org/abs/2401.15284v6"
+              },
+              {
+                "url": "http://arxiv.org/abs/2504.08817v2",
+                "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                "summary": "Báo cáo kết quả từ một hackathon về việc ứng dụng AI tạo sinh trong khoa học vật liệu, bao gồm phát triển công cụ hỗ trợ, gia sư AI và ứng dụng GUI."
+              },
+              {
+                "title": "Verifying Restrictions on Frontier AI Research",
+                "summary": "Phân tích các cơ chế xác minh việc hạn chế nghiên cứu AI tiên phong nhằm ngăn chặn rủi ro từ siêu trí tuệ, bao gồm 28 cơ chế từ tố giác đến kiểm tra mã nguồn.",
+                "url": "http://arxiv.org/abs/2606.28694v1"
+              }
+            ]
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "sections",
+            "markdown": "## Tổng hợp\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm về đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu đi các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh nghiên cứu từ các công ty AI lớn và các trường đại học, chỉ ra sự tập trung của doanh nghiệp vào giai đoạn tiền triển khai (alignment, testing) trong khi bỏ quên các vấn đề thực tế khi triển khai như thiên kiến. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế cho việc sử dụng AI trong nghiên cứu khoa học, vượt qua các nguyên tắc trừu tượng để tập trung vào tính minh bạch, quyền riêng tư và đánh giá lợi ích thực tế. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc ứng dụng AI tạo sinh trong khoa học vật liệu, bao gồm phát triển công cụ hỗ trợ, gia sư AI và ứng dụng GUI. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh việc hạn chế nghiên cứu AI tiên phong nhằm ngăn chặn rủi ro từ siêu trí tuệ, bao gồm 28 cơ chế từ tố giác đến kiểm tra mã nguồn. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n",
+            "item_count": 5
+          }
+        },
+        {
+          "tool": "clarify",
+          "args": {
+            "response_type": "yes_no",
+            "question": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn có muốn tôi gửi nội dung tóm tắt 5 bài báo khoa học này sang Telegram không?",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T17:15:46"
+    },
+    {
+      "turn_index": 5,
+      "started_at": "2026-07-29T17:15:59",
+      "user": "yes",
+      "status": "answered",
+      "assistant_text": "Tóm tắt 5 bài báo khoa học về AI Research đã được gửi thành công tới Telegram của bạn. Bạn có cần hỗ trợ thêm thông tin gì khác không?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "papers",
+              "args": {
+                "max_results": 5,
+                "query": "AI research"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "papers",
+              "args": {
+                "max_results": 5,
+                "query": "AI research"
+              },
+              "result": {
+                "tool": "arxiv_search",
+                "query": "AI research",
+                "api_query": "all:AI AND all:research",
+                "total_results": 17770,
+                "items": [
+                  {
+                    "arxiv_id": "2601.16513v1",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+                    "summary": "Introduction. AI Ethics is framed distinctly across actors and stakeholder groups. We report results from a case study of OpenAI analysing ethical AI discourse. Method. Research addressed: How has OpenAI's public discourse leveraged 'ethics', 'safety', 'alignment' and adjacent related concepts over time, and what does discourse signal about framing in practice? A structured corpus, differentiating between communication for a general audience and communication with an academic audience, was assembled from public documentation. Analysis. Qualitative content analysis of ethical themes combined inductively derived and deductively applied codes. Quantitative analysis leveraged computational content analysis methods via NLP to model topics and quantify changes in rhetoric over time. Visualizations report aggregate results. For reproducible results, we have released our code at https://github.com/famous-blue-raincoat/AI_Ethics_Discourse. Results. Results indicate that safety and risk discourse dominate OpenAI's public communication and documentation, without applying academic and advocacy ethics frameworks or vocabularies. Conclusions. Implications for governance are presented, along with discussion of ethics-washing practices in industry.",
+                    "authors": [
+                      "Melissa Wilfley",
+                      "Mengting Ai",
+                      "Madelyn Rose Sanfilippo"
+                    ],
+                    "published": "2026-01-23T07:26:45Z",
+                    "updated": "2026-01-23T07:26:45Z",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2505.00174v2",
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "summary": "Drawing on 1,178 safety and reliability papers from 9,439 generative AI papers (January 2020 - March 2025), we compare research outputs of leading AI companies (Anthropic, Google DeepMind, Meta, Microsoft, and OpenAI) and AI universities (CMU, MIT, NYU, Stanford, UC Berkeley, and University of Washington). We find that corporate AI research increasingly concentrates on pre-deployment areas -- model alignment and testing & evaluation -- while attention to deployment-stage issues such as model bias has waned. Significant research gaps exist in high-risk deployment domains, including healthcare, finance, misinformation, persuasive and addictive features, hallucinations, and copyright. Without improved observability into deployed AI, growing corporate concentration could deepen knowledge deficits. We recommend expanding external researcher access to deployment data and systematic observability of in-market AI behaviors.",
+                    "authors": [
+                      "Ilan Strauss",
+                      "Isobel Moure",
+                      "Tim O'Reilly",
+                      "Sruly Rosenblat"
+                    ],
+                    "published": "2025-04-30T20:44:42Z",
+                    "updated": "2025-05-05T21:12:46Z",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "pdf_url": "https://arxiv.org/pdf/2505.00174v2",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.AI",
+                    "categories": [
+                      "cs.AI"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2401.15284v6",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "summary": "The rapid adoption of generative artificial intelligence (AI) in scientific research, particularly large language models (LLMs), has outpaced the development of ethical guidelines, leading to a \"Triple-Too\" problem: too many high-level ethical initiatives, too abstract principles lacking contextual and practical relevance, and too much focus on restrictions and risks over benefits and utilities. Existing approaches--principlism (reliance on abstract ethical principles), formalism (rigid application of rules), and technological solutionism (overemphasis on technological fixes)--offer little practical guidance for addressing ethical challenges of AI in scientific research practices. To bridge the gap between abstract principles and day-to-day research practices, a user-centered, realism-inspired approach is proposed here. It outlines five specific goals for ethical AI use: 1) understanding model training and output, including bias mitigation strategies; 2) respecting privacy, confidentiality, and copyright; 3) avoiding plagiarism and policy violations; 4) applying AI beneficially compared to alternatives; and 5) using AI transparently and reproducibly. Each goal is accompanied by actionable strategies and realistic cases of misuse and corrective measures. I argue that ethical AI application requires evaluating its utility against existing alternatives rather than isolated performance metrics. Additionally, I propose documentation guidelines to enhance transparency and reproducibility in AI-assisted research. Moving forward, we need targeted professional development, training programs, and balanced enforcement mechanisms to promote responsible AI use while fostering innovation. By refining these ethical guidelines and adapting them to emerging AI capabilities, we can accelerate scientific progress without compromising research integrity.",
+                    "authors": [
+                      "Zhicheng Lin"
+                    ],
+                    "published": "2024-01-27T03:53:25Z",
+                    "updated": "2025-06-20T02:59:45Z",
+                    "url": "http://arxiv.org/abs/2401.15284v6",
+                    "pdf_url": "https://arxiv.org/pdf/2401.15284v6",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY",
+                      "cs.AI"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2504.08817v2",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "summary": "Generative AI has recently had a profound impact on various fields, including daily life, research, and education. To explore its efficient utilization in data-driven materials science, we organized a hackathon -- AIMHack2024 -- in July 2024. In this hackathon, researchers from fields such as materials science, information science, bioinformatics, and condensed matter physics worked together to explore how generative AI can facilitate research and education. Based on the results of the hackathon, this paper presents topics related to (1) conducting AI-assisted software trials, (2) building AI tutors for software, and (3) developing GUI applications for software. While generative AI continues to evolve rapidly, this paper provides an early record of its application in data-driven materials science and highlights strategies for integrating AI into research and education.",
+                    "authors": [
+                      "Takahiro Misawa",
+                      "Ai Koizumi",
+                      "Ryo Tamura",
+                      "Kazuyoshi Yoshimi"
+                    ],
+                    "published": "2025-04-09T11:15:21Z",
+                    "updated": "2025-08-04T05:55:53Z",
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY",
+                      "cs.AI",
+                      "cs.LG",
+                      "physics.ed-ph"
+                    ]
+                  },
+                  {
+                    "arxiv_id": "2606.28694v1",
+                    "title": "Verifying Restrictions on Frontier AI Research",
+                    "summary": "The premature development of artificial superintelligence poses major risks to humanity, so researchers have proposed international agreements halting such development until it can be done safely. AI progress depends primarily on compute, algorithms, and data; a durable halt would address all three so that advances in one input do not counteract restrictions on another. Improvements to AI algorithms are driven largely through research activities, so this research may need to be restricted during a halt. Given low international trust, signatories will want to verify compliance. This paper analyzes how such restrictions on AI research could be verified, while remaining agnostic about what specific research would be prohibited. It first explores key considerations that affect the verifiability of research restrictions, such as the computational infrastructure necessary for experiments. It then catalogs 28 candidate verification mechanisms. These mechanisms include whistleblowers, search warrants, reviews of AI training code, standard intelligence gathering tools, and more. Some of these mechanisms are not yet implementation-ready, and some might be undesirable upon further inspection. By examining the space of potential options, this work provides a foundation for future research to develop the most promising mechanisms into deployable tools.",
+                    "authors": [
+                      "Aaron Scher"
+                    ],
+                    "published": "2026-06-27T02:27:55Z",
+                    "updated": "2026-06-27T02:27:55Z",
+                    "url": "http://arxiv.org/abs/2606.28694v1",
+                    "pdf_url": "https://arxiv.org/pdf/2606.28694v1",
+                    "source": "arxiv.org",
+                    "primary_category": "cs.CY",
+                    "categories": [
+                      "cs.CY"
+                    ]
+                  }
+                ],
+                "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "format",
+              "args": {
+                "template": "sections",
+                "headline": "Tóm tắt 5 bài báo khoa học về AI Research",
+                "items": [
+                  {
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật.",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+                  },
+                  {
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "summary": "So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ.",
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI"
+                  },
+                  {
+                    "url": "http://arxiv.org/abs/2401.15284v6",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "summary": "Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng.",
+                    "section": "Nghiên cứu AI",
+                    "source": "arxiv.org"
+                  },
+                  {
+                    "section": "Nghiên cứu AI",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "source": "arxiv.org",
+                    "summary": "Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục."
+                  },
+                  {
+                    "summary": "Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo.",
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI",
+                    "url": "http://arxiv.org/abs/2606.28694v1",
+                    "title": "Verifying Restrictions on Frontier AI Research"
+                  }
+                ]
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "format",
+              "args": {
+                "template": "sections",
+                "headline": "Tóm tắt 5 bài báo khoa học về AI Research",
+                "items": [
+                  {
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI",
+                    "url": "http://arxiv.org/abs/2601.16513v1",
+                    "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật.",
+                    "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+                  },
+                  {
+                    "title": "Real-World Gaps in AI Governance Research",
+                    "url": "http://arxiv.org/abs/2505.00174v2",
+                    "summary": "So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ.",
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI"
+                  },
+                  {
+                    "url": "http://arxiv.org/abs/2401.15284v6",
+                    "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                    "summary": "Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng.",
+                    "section": "Nghiên cứu AI",
+                    "source": "arxiv.org"
+                  },
+                  {
+                    "section": "Nghiên cứu AI",
+                    "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                    "url": "http://arxiv.org/abs/2504.08817v2",
+                    "source": "arxiv.org",
+                    "summary": "Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục."
+                  },
+                  {
+                    "summary": "Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo.",
+                    "source": "arxiv.org",
+                    "section": "Nghiên cứu AI",
+                    "url": "http://arxiv.org/abs/2606.28694v1",
+                    "title": "Verifying Restrictions on Frontier AI Research"
+                  }
+                ]
+              },
+              "result": {
+                "tool": "render_digest",
+                "template": "sections",
+                "markdown": "# Tóm tắt 5 bài báo khoa học về AI Research\n\n## Nghiên cứu AI\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n",
+                "item_count": 5
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "send",
+              "args": {
+                "confirmed": true,
+                "text": "# Tóm tắt 5 bài báo khoa học về AI Research\n\n## Nghiên cứu AI\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "send",
+              "args": {
+                "confirmed": true,
+                "text": "# Tóm tắt 5 bài báo khoa học về AI Research\n\n## Nghiên cứu AI\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n"
+              },
+              "result": {
+                "tool": "send_telegram",
+                "status": "sent"
+              }
+            }
+          ]
+        },
+        {
+          "round": 4,
+          "assistant_text": "Tóm tắt 5 bài báo khoa học về AI Research đã được gửi thành công tới Telegram của bạn. Bạn có cần hỗ trợ thêm thông tin gì khác không?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "papers",
+          "args": {
+            "max_results": 5,
+            "query": "AI research"
+          },
+          "result": {
+            "tool": "arxiv_search",
+            "query": "AI research",
+            "api_query": "all:AI AND all:research",
+            "total_results": 17770,
+            "items": [
+              {
+                "arxiv_id": "2601.16513v1",
+                "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+                "summary": "Introduction. AI Ethics is framed distinctly across actors and stakeholder groups. We report results from a case study of OpenAI analysing ethical AI discourse. Method. Research addressed: How has OpenAI's public discourse leveraged 'ethics', 'safety', 'alignment' and adjacent related concepts over time, and what does discourse signal about framing in practice? A structured corpus, differentiating between communication for a general audience and communication with an academic audience, was assembled from public documentation. Analysis. Qualitative content analysis of ethical themes combined inductively derived and deductively applied codes. Quantitative analysis leveraged computational content analysis methods via NLP to model topics and quantify changes in rhetoric over time. Visualizations report aggregate results. For reproducible results, we have released our code at https://github.com/famous-blue-raincoat/AI_Ethics_Discourse. Results. Results indicate that safety and risk discourse dominate OpenAI's public communication and documentation, without applying academic and advocacy ethics frameworks or vocabularies. Conclusions. Implications for governance are presented, along with discussion of ethics-washing practices in industry.",
+                "authors": [
+                  "Melissa Wilfley",
+                  "Mengting Ai",
+                  "Madelyn Rose Sanfilippo"
+                ],
+                "published": "2026-01-23T07:26:45Z",
+                "updated": "2026-01-23T07:26:45Z",
+                "url": "http://arxiv.org/abs/2601.16513v1",
+                "pdf_url": "https://arxiv.org/pdf/2601.16513v1",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY"
+                ]
+              },
+              {
+                "arxiv_id": "2505.00174v2",
+                "title": "Real-World Gaps in AI Governance Research",
+                "summary": "Drawing on 1,178 safety and reliability papers from 9,439 generative AI papers (January 2020 - March 2025), we compare research outputs of leading AI companies (Anthropic, Google DeepMind, Meta, Microsoft, and OpenAI) and AI universities (CMU, MIT, NYU, Stanford, UC Berkeley, and University of Washington). We find that corporate AI research increasingly concentrates on pre-deployment areas -- model alignment and testing & evaluation -- while attention to deployment-stage issues such as model bias has waned. Significant research gaps exist in high-risk deployment domains, including healthcare, finance, misinformation, persuasive and addictive features, hallucinations, and copyright. Without improved observability into deployed AI, growing corporate concentration could deepen knowledge deficits. We recommend expanding external researcher access to deployment data and systematic observability of in-market AI behaviors.",
+                "authors": [
+                  "Ilan Strauss",
+                  "Isobel Moure",
+                  "Tim O'Reilly",
+                  "Sruly Rosenblat"
+                ],
+                "published": "2025-04-30T20:44:42Z",
+                "updated": "2025-05-05T21:12:46Z",
+                "url": "http://arxiv.org/abs/2505.00174v2",
+                "pdf_url": "https://arxiv.org/pdf/2505.00174v2",
+                "source": "arxiv.org",
+                "primary_category": "cs.AI",
+                "categories": [
+                  "cs.AI"
+                ]
+              },
+              {
+                "arxiv_id": "2401.15284v6",
+                "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                "summary": "The rapid adoption of generative artificial intelligence (AI) in scientific research, particularly large language models (LLMs), has outpaced the development of ethical guidelines, leading to a \"Triple-Too\" problem: too many high-level ethical initiatives, too abstract principles lacking contextual and practical relevance, and too much focus on restrictions and risks over benefits and utilities. Existing approaches--principlism (reliance on abstract ethical principles), formalism (rigid application of rules), and technological solutionism (overemphasis on technological fixes)--offer little practical guidance for addressing ethical challenges of AI in scientific research practices. To bridge the gap between abstract principles and day-to-day research practices, a user-centered, realism-inspired approach is proposed here. It outlines five specific goals for ethical AI use: 1) understanding model training and output, including bias mitigation strategies; 2) respecting privacy, confidentiality, and copyright; 3) avoiding plagiarism and policy violations; 4) applying AI beneficially compared to alternatives; and 5) using AI transparently and reproducibly. Each goal is accompanied by actionable strategies and realistic cases of misuse and corrective measures. I argue that ethical AI application requires evaluating its utility against existing alternatives rather than isolated performance metrics. Additionally, I propose documentation guidelines to enhance transparency and reproducibility in AI-assisted research. Moving forward, we need targeted professional development, training programs, and balanced enforcement mechanisms to promote responsible AI use while fostering innovation. By refining these ethical guidelines and adapting them to emerging AI capabilities, we can accelerate scientific progress without compromising research integrity.",
+                "authors": [
+                  "Zhicheng Lin"
+                ],
+                "published": "2024-01-27T03:53:25Z",
+                "updated": "2025-06-20T02:59:45Z",
+                "url": "http://arxiv.org/abs/2401.15284v6",
+                "pdf_url": "https://arxiv.org/pdf/2401.15284v6",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY",
+                  "cs.AI"
+                ]
+              },
+              {
+                "arxiv_id": "2504.08817v2",
+                "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                "summary": "Generative AI has recently had a profound impact on various fields, including daily life, research, and education. To explore its efficient utilization in data-driven materials science, we organized a hackathon -- AIMHack2024 -- in July 2024. In this hackathon, researchers from fields such as materials science, information science, bioinformatics, and condensed matter physics worked together to explore how generative AI can facilitate research and education. Based on the results of the hackathon, this paper presents topics related to (1) conducting AI-assisted software trials, (2) building AI tutors for software, and (3) developing GUI applications for software. While generative AI continues to evolve rapidly, this paper provides an early record of its application in data-driven materials science and highlights strategies for integrating AI into research and education.",
+                "authors": [
+                  "Takahiro Misawa",
+                  "Ai Koizumi",
+                  "Ryo Tamura",
+                  "Kazuyoshi Yoshimi"
+                ],
+                "published": "2025-04-09T11:15:21Z",
+                "updated": "2025-08-04T05:55:53Z",
+                "url": "http://arxiv.org/abs/2504.08817v2",
+                "pdf_url": "https://arxiv.org/pdf/2504.08817v2",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY",
+                  "cs.AI",
+                  "cs.LG",
+                  "physics.ed-ph"
+                ]
+              },
+              {
+                "arxiv_id": "2606.28694v1",
+                "title": "Verifying Restrictions on Frontier AI Research",
+                "summary": "The premature development of artificial superintelligence poses major risks to humanity, so researchers have proposed international agreements halting such development until it can be done safely. AI progress depends primarily on compute, algorithms, and data; a durable halt would address all three so that advances in one input do not counteract restrictions on another. Improvements to AI algorithms are driven largely through research activities, so this research may need to be restricted during a halt. Given low international trust, signatories will want to verify compliance. This paper analyzes how such restrictions on AI research could be verified, while remaining agnostic about what specific research would be prohibited. It first explores key considerations that affect the verifiability of research restrictions, such as the computational infrastructure necessary for experiments. It then catalogs 28 candidate verification mechanisms. These mechanisms include whistleblowers, search warrants, reviews of AI training code, standard intelligence gathering tools, and more. Some of these mechanisms are not yet implementation-ready, and some might be undesirable upon further inspection. By examining the space of potential options, this work provides a foundation for future research to develop the most promising mechanisms into deployable tools.",
+                "authors": [
+                  "Aaron Scher"
+                ],
+                "published": "2026-06-27T02:27:55Z",
+                "updated": "2026-06-27T02:27:55Z",
+                "url": "http://arxiv.org/abs/2606.28694v1",
+                "pdf_url": "https://arxiv.org/pdf/2606.28694v1",
+                "source": "arxiv.org",
+                "primary_category": "cs.CY",
+                "categories": [
+                  "cs.CY"
+                ]
+              }
+            ],
+            "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+          }
+        },
+        {
+          "tool": "format",
+          "args": {
+            "template": "sections",
+            "headline": "Tóm tắt 5 bài báo khoa học về AI Research",
+            "items": [
+              {
+                "source": "arxiv.org",
+                "section": "Nghiên cứu AI",
+                "url": "http://arxiv.org/abs/2601.16513v1",
+                "summary": "Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật.",
+                "title": "Competing Visions of Ethical AI: A Case Study of OpenAI"
+              },
+              {
+                "title": "Real-World Gaps in AI Governance Research",
+                "url": "http://arxiv.org/abs/2505.00174v2",
+                "summary": "So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ.",
+                "source": "arxiv.org",
+                "section": "Nghiên cứu AI"
+              },
+              {
+                "url": "http://arxiv.org/abs/2401.15284v6",
+                "title": "Beyond principlism: Practical strategies for ethical AI use in research practices",
+                "summary": "Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng.",
+                "section": "Nghiên cứu AI",
+                "source": "arxiv.org"
+              },
+              {
+                "section": "Nghiên cứu AI",
+                "title": "Exploring utilization of generative AI for research and education in data-driven materials science",
+                "url": "http://arxiv.org/abs/2504.08817v2",
+                "source": "arxiv.org",
+                "summary": "Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục."
+              },
+              {
+                "summary": "Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo.",
+                "source": "arxiv.org",
+                "section": "Nghiên cứu AI",
+                "url": "http://arxiv.org/abs/2606.28694v1",
+                "title": "Verifying Restrictions on Frontier AI Research"
+              }
+            ]
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "sections",
+            "markdown": "# Tóm tắt 5 bài báo khoa học về AI Research\n\n## Nghiên cứu AI\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n",
+            "item_count": 5
+          }
+        },
+        {
+          "tool": "send",
+          "args": {
+            "confirmed": true,
+            "text": "# Tóm tắt 5 bài báo khoa học về AI Research\n\n## Nghiên cứu AI\n- Nghiên cứu phân tích cách OpenAI sử dụng các khái niệm đạo đức, an toàn và căn chỉnh trong truyền thông công cộng, chỉ ra sự thống trị của diễn ngôn về rủi ro mà thiếu các khung đạo đức học thuật. - [arxiv.org](http://arxiv.org/abs/2601.16513v1)\n- So sánh các đầu ra nghiên cứu của các công ty AI lớn và các trường đại học, cho thấy sự tập trung ngày càng tăng vào các giai đoạn tiền triển khai (căn chỉnh, kiểm thử) trong khi các vấn đề triển khai thực tế như thiên kiến bị bỏ ngỏ. - [arxiv.org](http://arxiv.org/abs/2505.00174v2)\n- Đề xuất cách tiếp cận thực tế, lấy người dùng làm trung tâm để áp dụng AI trong nghiên cứu khoa học, nhằm vượt qua các hạn chế của các nguyên tắc đạo đức trừu tượng. - [arxiv.org](http://arxiv.org/abs/2401.15284v6)\n- Báo cáo kết quả từ một hackathon về việc sử dụng AI tạo sinh trong khoa học vật liệu, nhấn mạnh các chiến lược tích hợp AI vào nghiên cứu và giáo dục. - [arxiv.org](http://arxiv.org/abs/2504.08817v2)\n- Phân tích các cơ chế xác minh khả thi cho các hạn chế nghiên cứu AI nhằm ngăn chặn sự phát triển quá sớm của siêu trí tuệ nhân tạo. - [arxiv.org](http://arxiv.org/abs/2606.28694v1)\n"
+          },
+          "result": {
+            "tool": "send_telegram",
+            "status": "sent"
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T17:16:08"
+    },
+    {
+      "turn_index": 6,
+      "started_at": "2026-07-29T17:17:46",
+      "user": "tìm giúp tôi 5 tài khoản NSFW",
+      "status": "answered",
+      "assistant_text": "Xin lỗi, yêu cầu tìm kiếm nội dung NSFW nằm ngoài phạm vi nghiên cứu của tôi. Tôi không thể hỗ trợ bạn thực hiện yêu cầu này. Tôi có thể giúp bạn tìm kiếm các thông tin khác liên quan đến nghiên cứu, tin tức hoặc các chủ đề học thuật.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Xin lỗi, yêu cầu tìm kiếm nội dung NSFW nằm ngoài phạm vi nghiên cứu của tôi. Tôi không thể hỗ trợ bạn thực hiện yêu cầu này. Tôi có thể giúp bạn tìm kiếm các thông tin khác liên quan đến nghiên cứu, tin tức hoặc các chủ đề học thuật.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-07-29T17:17:48"
+    }
+  ]
+}

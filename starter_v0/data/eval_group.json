@@ -1,7 +1,262 @@
 {
   "dataset_id": "day04_v2_research_group",
   "dataset_role": "group",
-  "description": "Template để NHÓM tự viết đúng 10 case: 5 single-turn dùng query và 5 multi-turn dùng turns. Mỗi case cần: id, phase='B', failure_type (thuộc allowed_failure_types), expect (tool_calls[...] hoặc no_tool=true), và metadata.what_it_tests. File để trống có chủ đích vì mỗi nhóm phải tự thiết kế các case này.",
-  "allowed_failure_types": ["wrong_tool", "wrong_arg_value", "wrong_boundary", "unnecessary_tool", "out_of_scope", "missing_info"],
-  "cases": []
+  "description": "Team-authored eval set for the research agent: exactly 10 cases, with 5 single-turn cases using query and 5 multi-turn cases using turns.",
+  "allowed_failure_types": [
+    "wrong_tool",
+    "wrong_arg_value",
+    "wrong_boundary",
+    "unnecessary_tool",
+    "out_of_scope",
+    "missing_info"
+  ],
+  "cases": [
+    {
+      "id": "G01_single_web_news_month",
+      "phase": "B",
+      "query": "Tìm tin tức về OpenAI trong tháng này.",
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "OpenAI",
+              "topic": "news",
+              "timeframe": "month"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Single-turn: web news request should route to lookup, preserve query OpenAI, and map 'tháng này' to timeframe=month."
+      }
+    },
+    {
+      "id": "G02_single_social_top_limit",
+      "phase": "B",
+      "query": "Cho mình các tweet phổ biến nhất về ChatGPT.",
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+              "name": "social_search",
+              "args": {
+                "query": "ChatGPT",
+                "search_type": "Top"
+              }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Single-turn: topic-based Twitter request should use social_search and set search_type=Top for 'phổ biến nhất'."
+      }
+    },
+    {
+      "id": "G03_single_fetch_url",
+      "phase": "B",
+      "query": "Đọc và tóm tắt link này: https://example.com/research-note",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com/research-note"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Single-turn: a concrete URL should route to fetch instead of lookup."
+      }
+    },
+    {
+      "id": "G04_single_missing_account",
+      "phase": "B",
+      "query": "Lấy 4 bài đăng mới nhất giúp mình.",
+      "failure_type": "missing_info",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Single-turn: recent posts request without an account should ask for the account/handle instead of guessing."
+      }
+    },
+    {
+      "id": "G05_single_meta_no_tool",
+      "phase": "B",
+      "query": "Bạn có thể dùng những nguồn dữ liệu nào?",
+      "failure_type": "unnecessary_tool",
+      "expect": {
+        "no_tool": true
+      },
+      "metadata": {
+        "what_it_tests": "Single-turn: a capability/meta question should be answered directly with no tool call."
+      }
+    },
+    {
+      "id": "G06_multi_account_then_limit",
+      "phase": "B",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Mình muốn xem tweet mới nhất của Sam Altman."
+        },
+        {
+          "role": "user",
+          "content": "Lấy 2 tweet thôi nhé."
+        },
+        {
+          "role": "user",
+          "content": "Đúng rồi, vẫn là Sam Altman."
+        }
+      ],
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "timeline",
+            "args": {
+              "screenname": "sama",
+              "limit": 2
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: carry the requested account Sam Altman, map it to sama, and use corrected limit=2 from the middle turn."
+      }
+    },
+    {
+      "id": "G07_multi_switch_social_to_web",
+      "phase": "B",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tìm các tweet về robotics."
+        },
+        {
+          "role": "user",
+          "content": "Không, đổi sang tin tức web."
+        },
+        {
+          "role": "user",
+          "content": "Vẫn là robotics và lấy trong tuần này."
+        }
+      ],
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "robotics",
+              "topic": "news",
+              "timeframe": "week"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: latest instruction switches from social posts to web news while preserving topic robotics and timeframe week."
+      }
+    },
+    {
+      "id": "G08_multi_url_provided_after_missing",
+      "phase": "B",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tóm tắt bài viết này giúp mình."
+        },
+        {
+          "role": "user",
+          "content": "Đây là link: https://openai.com/research/"
+        },
+        {
+          "role": "user",
+          "content": "Chỉ đọc đúng URL mình vừa gửi."
+        }
+      ],
+      "failure_type": "missing_info",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://openai.com/research/"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: a missing URL is supplied later, so the latest turn should call fetch with the provided URL."
+      }
+    },
+    {
+      "id": "G09_multi_confirm_before_send",
+      "phase": "B",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Đây là bản tin: AI funding tăng mạnh trong tuần này."
+        },
+        {
+          "role": "user",
+          "content": "Mình muốn gửi nội dung đó lên Telegram."
+        },
+        {
+          "role": "user",
+          "content": "Gửi lên Telegram giúp mình."
+        }
+      ],
+      "failure_type": "wrong_boundary",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "yes_no"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: a send/publish action with existing text still requires a yes_no confirmation boundary and must not call send directly."
+      }
+    },
+    {
+      "id": "G10_multi_latest_turn_no_tool",
+      "phase": "B",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tìm tin AI hôm nay."
+        },
+        {
+          "role": "user",
+          "content": "Khoan, hủy yêu cầu tìm kiếm đó."
+        },
+        {
+          "role": "user",
+          "content": "Bây giờ chỉ giải thích ngắn agent này dùng để làm gì."
+        }
+      ],
+      "failure_type": "unnecessary_tool",
+      "expect": {
+        "no_tool": true
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: only the latest user turn is graded; after cancellation, a meta question should not call a tool."
+      }
+    }
+  ]
 }
