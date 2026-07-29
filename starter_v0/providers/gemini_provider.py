@@ -5,6 +5,7 @@ import os
 from typing import Any
 
 from providers.base import ModelResponse, ToolCall
+from providers.openai_provider import OpenAIProvider
 
 
 def _to_gemini_declarations(tools: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
@@ -67,16 +68,18 @@ def _function_call_args(call: Any) -> dict[str, Any]:
 
 
 class GeminiProvider:
-    """Google Gemini API provider with normalized tool_calls output."""
+    """Gemini provider supporting native and OpenAI-compatible endpoints."""
 
     def __init__(
         self,
         *,
         api_key_env: str = "GEMINI_API_KEY",
-        default_model: str = "gemini-3.1-flash-lite",
+        base_url: str | None = None,
+        default_model: str | None = None,
     ) -> None:
         self.api_key_env = api_key_env
-        self.default_model = default_model
+        self.base_url = base_url or os.getenv("GEMINI_BASE_URL")
+        self.default_model = default_model or os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
 
     def complete(
         self,
@@ -87,6 +90,20 @@ class GeminiProvider:
         temperature: float = 0.0,
         tool_choice: Any | None = None,
     ) -> ModelResponse:
+        if self.base_url:
+            compatible_provider = OpenAIProvider(
+                api_key_env=self.api_key_env,
+                base_url=self.base_url,
+                default_model=self.default_model,
+            )
+            return compatible_provider.complete(
+                messages,
+                tools,
+                model=model,
+                temperature=temperature,
+                tool_choice=tool_choice,
+            )
+
         try:
             from google import genai
             from google.genai import types
