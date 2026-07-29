@@ -1,0 +1,374 @@
+{
+  "transcript_id": "v3_gemini_20260729T163958913130",
+  "version": "v3",
+  "artifact_version": "v3+p2cd7ea5ce654+t72feedfc2fe2",
+  "prompt_hash": "2cd7ea5ce65442087e86b82837d82bb3beba3f35ee9e3c971aefc43cc20ccdc6",
+  "tools_hash": "72feedfc2fe24277911c6ffb37cac9981f03f5151ea21d82f58276f4b49d4d7b",
+  "provider": "gemini",
+  "model": "",
+  "system_prompt": "C:\\Users\\Quynh Ho\\Documents\\GitHub\\DAY04_G34_E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\Quynh Ho\\Documents\\GitHub\\DAY04_G34_E403\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T16:39:58",
+  "updated_at": "2026-07-29T16:43:55",
+  "surface": "streamlit",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T16:41:24",
+      "user": "Bạn có muốn gửi sang Telegram không?",
+      "status": "waiting_for_user",
+      "assistant_text": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "question": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+                "response_type": "yes_no"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "clarify",
+              "args": {
+                "question": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+                "response_type": "yes_no"
+              },
+              "result": {
+                "tool": "ask_user",
+                "question": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+                "response_type": "yes_no",
+                "options": [],
+                "awaiting_user": true
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+            "response_type": "yes_no"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn có muốn gửi nội dung nào sang Telegram không? Vui lòng cung cấp nội dung và xác nhận.",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:41:27"
+    },
+    {
+      "turn_index": 2,
+      "started_at": "2026-07-29T16:41:58",
+      "user": "yes",
+      "status": "waiting_for_user",
+      "assistant_text": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "clarify",
+              "args": {
+                "response_type": "text",
+                "question": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "clarify",
+              "args": {
+                "response_type": "text",
+                "question": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?"
+              },
+              "result": {
+                "tool": "ask_user",
+                "question": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?",
+                "response_type": "text",
+                "options": [],
+                "awaiting_user": true
+              }
+            }
+          ]
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "clarify",
+          "args": {
+            "response_type": "text",
+            "question": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn vui lòng cung cấp nội dung bạn muốn gửi và xác nhận lại việc gửi nội dung này sang Telegram nhé?",
+            "response_type": "text",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:41:59"
+    },
+    {
+      "turn_index": 3,
+      "started_at": "2026-07-29T16:42:26",
+      "user": "Tìm 3 cập nhật AI mới nhất, tóm tắt ngắn gọn.",
+      "status": "answered",
+      "assistant_text": "Dưới đây là 3 cập nhật AI mới nhất:\n\n- **Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động.** - [about.fb.com](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts)\n- **NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực.** - [nsf.gov](https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled)\n- **Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu.** - [pewresearch.org](https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race)\n\nBạn có muốn tôi gửi nội dung này sang Telegram không?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "timeframe": "week",
+                "topic": "news",
+                "query": "AI"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "timeframe": "week",
+                "topic": "news",
+                "query": "AI"
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "AI",
+                "topic": "news",
+                "timeframe": "week",
+                "items": [
+                  {
+                    "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery",
+                    "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                    "source": "nsf.gov",
+                    "summary": "AI enables data processing and analysis at scales and speeds beyond human capacity, helping researchers identify previously hidden patterns and relationships. When paired with scientific datasets that are trusted, accessible, fit for their scientific purpose and curated, AI can advance scientific research and connect previously siloed disciplines.",
+                    "score": 0.43885794
+                  },
+                  {
+                    "title": "Opinion | If You’re Over 40, You’re Ready to Use A.I.",
+                    "url": "https://www.nytimes.com/2026/07/27/opinion/teaching-kabbalah-ai.html",
+                    "source": "nytimes.com",
+                    "summary": "Despite the agreement they signed and several serious reminders, we suspected that some students had indeed used A.I. in place of their own original writing. When we asked, they squirmed and then admitted they had used A.I. to augment and synthesize their writing. I found their use of the word “augment” especially revealing because it allowed the act to appear smaller than it was; it made the intervention of A.I. in their work sound cosmetic and clerical, when what was actually being altered [...] being altered was the student’s relationship to struggle, authorship and accountability. [...] We reminded them of these rules again at the beginning of the thesis process, because the thesis is not simply a deliverable or an exercise in presentation, but the place where their thinking is supposed to become visible. Because brand strategy is so dependent on the compelling communication of ideas, this is the part of the program in which students have to wrestle with language, evidence, doubt and the responsibility of making an argument they can confidently stand behind and defend.",
+                    "score": 0.31444037
+                  },
+                  {
+                    "title": "What Americans think about the global AI race",
+                    "url": "https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race",
+                    "source": "pewresearch.org",
+                    "summary": "Democrats are more likely than Republicans to say AI will increase inequality (60% vs. 45%). Americans with a bachelor’s degree are also more likely than those without one to think the gap between countries will widen (62% vs. 46%).\n\nAnd Americans who use AI chatbots are more likely than those who don’t use them to say this (55% vs. 47%).\n\nNote: Here are our survey questions for this analysis, the detailed responses and the survey methodology.\n\nTopics\n\n Artificial Intelligence [...] Source: Survey of U.S. adults conducted June 22-28, 2026.\n\nPEW RESEARCH CENTER\n\nAmid concerns about unequal access to AI across the world, 51% of Americans say AI will increase the gap between rich and poor countries. Fewer say AI will not make much of a difference (16%) or will decrease the gap (7%). A quarter are unsure. [...] In addition, 54% of Republicans say being the AI leader is important, compared with 34% of Democrats. President Donald Trump, a Republican, has declared that the U.S. “must have the most powerful AI systems in the world” and is “in a race to achieve global dominance in artificial intelligence.” Former President Joe Biden, a Democrat, also emphasized keeping AI technology away from adversaries like China to prevent them from using it for cyberattacks or military augmentation.",
+                    "score": 0.2808584
+                  },
+                  {
+                    "title": "Confessions of an award-winning AI memoirist — the 'slop' debate isn't really about good writing, and you know it",
+                    "url": "https://fortune.com/2026/07/22/award-winning-memoir-author-ai-detector-publishing-hypocrisy",
+                    "source": "fortune.com",
+                    "summary": "At the awards conference in Portland this spring, I saw that every AI workshop was standing room only. Publishers are running AI through their own workflows while trying to hold moral authority over how writers use it. Simon & Schuster’s Dutch group is trialing AI to translate novels into English. Amazon is beta-testing a whole AI voice studio inside Kindle Direct Publishing. HarperCollins is also producing audiobooks with synthetic voices and has licensed part of its nonfiction backlist as AI [...] I’m dyslexic. I can’t spell “again” correctly. Agian. Agian. Agian. My brain knows the word. My eyes do not. I couldn’t afford an editor. I never had a literary agent, and a publicist was a pipe dream. So I used AI to reach everything that was just out of my grasp. It was a copy editor, a brainstorm partner, a beta reader. AI didn’t lower the bar for talent. It lowered the bar for access. [...] I get what the industry paranoia is really about. It’s not the theft of art. Capitalism rarely makes business decisions on morality. I’m no judge. I’ve got a product to sell too. I spent a decade across Silicon Valley, crypto, and NFTs, watching sycophancy move markets. AI is the first time sycophancy has moved inside publishing. The problem was never whether AI can write. A human is always in that process. The danger is the digital yes-man. It tells you you’re brilliant until you stop pushing",
+                    "score": 0.27571365
+                  },
+                  {
+                    "title": "Meta AI Doesn't Just Think, It Acts",
+                    "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts",
+                    "source": "about.fb.com",
+                    "summary": "This is our next step toward personal superintelligence: an AI that knows your context, is there for you whenever you need it, and handles things so you don’t have to.\n\n## An AI Assistant That Plans and Follows Through\n\nYou’ve been using Meta AI to find answers, think through ideas, and create content. Now it can go further and actually get things done for you. Meta AI can now make plans, follow through on next steps, and keep you on track without needing to be reminded or re-prompted. [...] You don’t have to wait for Meta AI to finish before you weigh in. While it’s putting together a report, a presentation, or a plan for you, you can steer it in real time. Tell it to shift focus, change the tone, or cut a section, and it’ll course-correct on the spot so the end result is actually what you wanted. And everything Meta AI creates for you, from training schedules to slide decks to mood boards, now lives in one place, so you can revisit it, build on it, and share it with friends. [...] Meta AI can now give you a daily briefing, pulling what’s on your calendar, finding relevant updates like realizing when you’re double booked or when plans have changed, and giving you a quick summary at your preferred time. You only have to set up tasks with Meta AI once, then you can leave Meta AI to handle them, whether that’s a weekly meal plan, a heads-up on the latest sneaker drops, or an afternoon update on trends you care about. Tell Meta AI what you want and when, and it’ll keep",
+                    "score": 0.26653966
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "format",
+              "args": {
+                "items": [
+                  {
+                    "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts",
+                    "section": "Công nghệ AI mới",
+                    "title": "Meta AI Doesn't Just Think, It Acts",
+                    "summary": "Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động.",
+                    "source": "about.fb.com"
+                  },
+                  {
+                    "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                    "section": "Nghiên cứu khoa học",
+                    "source": "nsf.gov",
+                    "summary": "NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực.",
+                    "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery"
+                  },
+                  {
+                    "source": "pewresearch.org",
+                    "title": "What Americans think about the global AI race",
+                    "section": "Góc nhìn xã hội",
+                    "url": "https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race",
+                    "summary": "Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu."
+                  }
+                ],
+                "headline": "3 Cập nhật AI mới nhất",
+                "template": "bullets"
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "format",
+              "args": {
+                "items": [
+                  {
+                    "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts",
+                    "section": "Công nghệ AI mới",
+                    "title": "Meta AI Doesn't Just Think, It Acts",
+                    "summary": "Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động.",
+                    "source": "about.fb.com"
+                  },
+                  {
+                    "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                    "section": "Nghiên cứu khoa học",
+                    "source": "nsf.gov",
+                    "summary": "NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực.",
+                    "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery"
+                  },
+                  {
+                    "source": "pewresearch.org",
+                    "title": "What Americans think about the global AI race",
+                    "section": "Góc nhìn xã hội",
+                    "url": "https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race",
+                    "summary": "Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu."
+                  }
+                ],
+                "headline": "3 Cập nhật AI mới nhất",
+                "template": "bullets"
+              },
+              "result": {
+                "tool": "render_digest",
+                "template": "bullets",
+                "markdown": "- Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động. - [about.fb.com](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts)\n- NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực. - [nsf.gov](https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled)\n- Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu. - [pewresearch.org](https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race)",
+                "item_count": 3
+              }
+            }
+          ]
+        },
+        {
+          "round": 3,
+          "assistant_text": "Dưới đây là 3 cập nhật AI mới nhất:\n\n- **Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động.** - [about.fb.com](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts)\n- **NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực.** - [nsf.gov](https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled)\n- **Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu.** - [pewresearch.org](https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race)\n\nBạn có muốn tôi gửi nội dung này sang Telegram không?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "timeframe": "week",
+            "topic": "news",
+            "query": "AI"
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery",
+                "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                "source": "nsf.gov",
+                "summary": "AI enables data processing and analysis at scales and speeds beyond human capacity, helping researchers identify previously hidden patterns and relationships. When paired with scientific datasets that are trusted, accessible, fit for their scientific purpose and curated, AI can advance scientific research and connect previously siloed disciplines.",
+                "score": 0.43885794
+              },
+              {
+                "title": "Opinion | If You’re Over 40, You’re Ready to Use A.I.",
+                "url": "https://www.nytimes.com/2026/07/27/opinion/teaching-kabbalah-ai.html",
+                "source": "nytimes.com",
+                "summary": "Despite the agreement they signed and several serious reminders, we suspected that some students had indeed used A.I. in place of their own original writing. When we asked, they squirmed and then admitted they had used A.I. to augment and synthesize their writing. I found their use of the word “augment” especially revealing because it allowed the act to appear smaller than it was; it made the intervention of A.I. in their work sound cosmetic and clerical, when what was actually being altered [...] being altered was the student’s relationship to struggle, authorship and accountability. [...] We reminded them of these rules again at the beginning of the thesis process, because the thesis is not simply a deliverable or an exercise in presentation, but the place where their thinking is supposed to become visible. Because brand strategy is so dependent on the compelling communication of ideas, this is the part of the program in which students have to wrestle with language, evidence, doubt and the responsibility of making an argument they can confidently stand behind and defend.",
+                "score": 0.31444037
+              },
+              {
+                "title": "What Americans think about the global AI race",
+                "url": "https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race",
+                "source": "pewresearch.org",
+                "summary": "Democrats are more likely than Republicans to say AI will increase inequality (60% vs. 45%). Americans with a bachelor’s degree are also more likely than those without one to think the gap between countries will widen (62% vs. 46%).\n\nAnd Americans who use AI chatbots are more likely than those who don’t use them to say this (55% vs. 47%).\n\nNote: Here are our survey questions for this analysis, the detailed responses and the survey methodology.\n\nTopics\n\n Artificial Intelligence [...] Source: Survey of U.S. adults conducted June 22-28, 2026.\n\nPEW RESEARCH CENTER\n\nAmid concerns about unequal access to AI across the world, 51% of Americans say AI will increase the gap between rich and poor countries. Fewer say AI will not make much of a difference (16%) or will decrease the gap (7%). A quarter are unsure. [...] In addition, 54% of Republicans say being the AI leader is important, compared with 34% of Democrats. President Donald Trump, a Republican, has declared that the U.S. “must have the most powerful AI systems in the world” and is “in a race to achieve global dominance in artificial intelligence.” Former President Joe Biden, a Democrat, also emphasized keeping AI technology away from adversaries like China to prevent them from using it for cyberattacks or military augmentation.",
+                "score": 0.2808584
+              },
+              {
+                "title": "Confessions of an award-winning AI memoirist — the 'slop' debate isn't really about good writing, and you know it",
+                "url": "https://fortune.com/2026/07/22/award-winning-memoir-author-ai-detector-publishing-hypocrisy",
+                "source": "fortune.com",
+                "summary": "At the awards conference in Portland this spring, I saw that every AI workshop was standing room only. Publishers are running AI through their own workflows while trying to hold moral authority over how writers use it. Simon & Schuster’s Dutch group is trialing AI to translate novels into English. Amazon is beta-testing a whole AI voice studio inside Kindle Direct Publishing. HarperCollins is also producing audiobooks with synthetic voices and has licensed part of its nonfiction backlist as AI [...] I’m dyslexic. I can’t spell “again” correctly. Agian. Agian. Agian. My brain knows the word. My eyes do not. I couldn’t afford an editor. I never had a literary agent, and a publicist was a pipe dream. So I used AI to reach everything that was just out of my grasp. It was a copy editor, a brainstorm partner, a beta reader. AI didn’t lower the bar for talent. It lowered the bar for access. [...] I get what the industry paranoia is really about. It’s not the theft of art. Capitalism rarely makes business decisions on morality. I’m no judge. I’ve got a product to sell too. I spent a decade across Silicon Valley, crypto, and NFTs, watching sycophancy move markets. AI is the first time sycophancy has moved inside publishing. The problem was never whether AI can write. A human is always in that process. The danger is the digital yes-man. It tells you you’re brilliant until you stop pushing",
+                "score": 0.27571365
+              },
+              {
+                "title": "Meta AI Doesn't Just Think, It Acts",
+                "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts",
+                "source": "about.fb.com",
+                "summary": "This is our next step toward personal superintelligence: an AI that knows your context, is there for you whenever you need it, and handles things so you don’t have to.\n\n## An AI Assistant That Plans and Follows Through\n\nYou’ve been using Meta AI to find answers, think through ideas, and create content. Now it can go further and actually get things done for you. Meta AI can now make plans, follow through on next steps, and keep you on track without needing to be reminded or re-prompted. [...] You don’t have to wait for Meta AI to finish before you weigh in. While it’s putting together a report, a presentation, or a plan for you, you can steer it in real time. Tell it to shift focus, change the tone, or cut a section, and it’ll course-correct on the spot so the end result is actually what you wanted. And everything Meta AI creates for you, from training schedules to slide decks to mood boards, now lives in one place, so you can revisit it, build on it, and share it with friends. [...] Meta AI can now give you a daily briefing, pulling what’s on your calendar, finding relevant updates like realizing when you’re double booked or when plans have changed, and giving you a quick summary at your preferred time. You only have to set up tasks with Meta AI once, then you can leave Meta AI to handle them, whether that’s a weekly meal plan, a heads-up on the latest sneaker drops, or an afternoon update on trends you care about. Tell Meta AI what you want and when, and it’ll keep",
+                "score": 0.26653966
+              }
+            ]
+          }
+        },
+        {
+          "tool": "format",
+          "args": {
+            "items": [
+              {
+                "url": "https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts",
+                "section": "Công nghệ AI mới",
+                "title": "Meta AI Doesn't Just Think, It Acts",
+                "summary": "Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động.",
+                "source": "about.fb.com"
+              },
+              {
+                "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                "section": "Nghiên cứu khoa học",
+                "source": "nsf.gov",
+                "summary": "NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực.",
+                "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery"
+              },
+              {
+                "source": "pewresearch.org",
+                "title": "What Americans think about the global AI race",
+                "section": "Góc nhìn xã hội",
+                "url": "https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race",
+                "summary": "Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu."
+              }
+            ],
+            "headline": "3 Cập nhật AI mới nhất",
+            "template": "bullets"
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "bullets",
+            "markdown": "- Meta AI đã nâng cấp khả năng không chỉ dừng lại ở việc tư duy mà còn có thể thực hiện các tác vụ cụ thể như lập kế hoạch, theo dõi tiến độ và hỗ trợ người dùng quản lý công việc hàng ngày một cách chủ động. - [about.fb.com](https://about.fb.com/news/2026/07/meta-ai-muse-spark-doesnt-just-think-it-acts)\n- NSF khởi xướng sáng kiến mới nhằm khai thác giá trị của các bộ dữ liệu khoa học thông qua AI, giúp tăng tốc độ xử lý dữ liệu và khám phá các mô hình nghiên cứu mới trong nhiều lĩnh vực. - [nsf.gov](https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled)\n- Một khảo sát của Pew Research cho thấy 51% người Mỹ lo ngại AI sẽ làm gia tăng khoảng cách giàu nghèo giữa các quốc gia, đồng thời phản ánh sự khác biệt trong quan điểm chính trị về tầm quan trọng của việc dẫn đầu trong cuộc đua AI toàn cầu. - [pewresearch.org](https://www.pewresearch.org/short-reads/2026/07/23/what-americans-think-about-the-global-ai-race)",
+            "item_count": 3
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:43:55"
+    }
+  ]
+}
