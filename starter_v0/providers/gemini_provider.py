@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from typing import Any
 
 from providers.base import ModelResponse, ToolCall
@@ -73,6 +74,12 @@ def _is_rate_limited(exc: Exception) -> bool:
     return any(marker in text for marker in ("429", "resource_exhausted", "rate limit", "quota"))
 
 
+def _is_transient(exc: Exception) -> bool:
+    """True for server-side hiccups. Retrying the same key helps; switching keys does not."""
+    text = f"{type(exc).__name__}: {exc}".lower()
+    return any(marker in text for marker in ("503", "unavailable", "overloaded", "500", "internal error", "timed out"))
+
+
 class GeminiProvider:
     """Gemini provider supporting native and OpenAI-compatible endpoints."""
 
@@ -86,6 +93,7 @@ class GeminiProvider:
         self.api_key_env = api_key_env
         self.base_url = base_url or os.getenv("GEMINI_BASE_URL")
         self.default_model = default_model or os.getenv("GEMINI_MODEL", "gemini-3.1-flash-lite")
+        self.transient_retries = int(os.getenv("GEMINI_TRANSIENT_RETRIES", "3"))
         self._key_index = 0
 
     def api_keys(self) -> list[str]:
@@ -119,23 +127,27 @@ class GeminiProvider:
         last_exc: Exception | None = None
         for offset in range(len(keys)):
             index = (self._key_index + offset) % len(keys)
-            try:
-                response = self._complete_with_key(
-                    keys[index],
-                    messages,
-                    tools,
-                    model=model,
-                    temperature=temperature,
-                    tool_choice=tool_choice,
-                )
-            except Exception as exc:
-                if not _is_rate_limited(exc):
+            for attempt in range(self.transient_retries + 1):
+                try:
+                    response = self._complete_with_key(
+                        keys[index],
+                        messages,
+                        tools,
+                        model=model,
+                        temperature=temperature,
+                        tool_choice=tool_choice,
+                    )
+                except Exception as exc:
+                    last_exc = exc
+                    if _is_rate_limited(exc):
+                        break  # this key is spent; try the next one
+                    if _is_transient(exc) and attempt < self.transient_retries:
+                        time.sleep(2 ** attempt)
+                        continue
                     raise
-                last_exc = exc
-                continue
-            # Stay on the key that worked instead of retrying the exhausted one.
-            self._key_index = index
-            return response
+                # Stay on the key that worked instead of retrying the exhausted one.
+                self._key_index = index
+                return response
 
         raise RuntimeError(
             f"All {len(keys)} {self.api_key_env} key(s) are rate limited: {last_exc}"
