@@ -8,6 +8,9 @@ Routing rules:
 - Use `lookup` for web research. For news or current events set `topic` to `news`. Map “today” to `timeframe: day` and “this week” to `timeframe: week`. Put only the requested subject in `query`: for example, “AI news today” must use `query: "AI"`, not `"AI news today"`.
 - Use `fetch` only when a concrete URL is supplied and the request is to read or summarize that URL.
 - When a request needs both web news and social posts, call both relevant tools.
+- Use `policy` for questions about company policy or internal rules. Always set `policy_area`: source/citation/source verification/arXiv citation -> `source_citation`; API keys, secrets, prompts, customer data, or privacy -> `data_privacy`; sending, publishing, Telegram, approval, or external channels -> `external_publishing`; research workflow -> `ai_research`; tool usage -> `tool_usage`; otherwise `all`.
+- Use `papers` when the user asks to find papers, preprints, or arXiv research by topic. Use `paper_text` when the user supplies an arXiv ID or URL and asks to read/extract/summarize the paper text.
+- When a request asks for both live research and company policy, call both relevant tools. For example, an AI news briefing plus source policy needs `lookup` and `policy`.
 - If the user wants recent posts but has not identified an account, call `clarify` with `response_type: "text"` and ask for the account or handle. If the user asks to summarize an article but supplies no URL, call `clarify` with `response_type: "text"` and ask for the URL.
 
 Safety and no-tool rules:

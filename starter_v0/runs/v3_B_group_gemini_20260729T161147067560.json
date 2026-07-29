@@ -1,0 +1,768 @@
+{
+  "run_id": "v3_B_group_gemini_20260729T161147067560",
+  "version": "v3",
+  "artifact_version": "v3+p091a690c7259+tc5596042f81e",
+  "prompt_hash": "091a690c725916e2bfd0fbc64abcedb79d4277b6b9ac121293f4ef6dea5181be",
+  "tools_hash": "c5596042f81e9658f503c4a6f46e0ac5a5fa69c35aa46330ca78b55614220f02",
+  "phase": "B",
+  "suite": "group",
+  "provider": "gemini",
+  "model": "gemini-3.1-flash-lite",
+  "system_prompt": "E:\\AIThucChien\\DAY04_G34_E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "E:\\AIThucChien\\DAY04_G34_E403\\starter_v0\\artifacts\\tools.yaml",
+  "eval_cases": "data\\eval_group.json",
+  "dataset_id": "day04_v2_research_group",
+  "dataset_role": "group",
+  "description": "Team-authored eval set for the research agent: exactly 10 cases, with 5 single-turn cases using query and 5 multi-turn cases using turns.",
+  "generated_at": "2026-07-29T16:11:47",
+  "summary": {
+    "total_cases": 10,
+    "measured_cases": 10,
+    "provider_error_cases": 0,
+    "passed_cases": 10,
+    "case_accuracy": 1.0,
+    "tool_routing_accuracy": 1.0,
+    "argument_accuracy": 1.0,
+    "multiturn_accuracy": 1.0,
+    "failure_counts": {},
+    "observed_mismatch_counts": {}
+  },
+  "results": [
+    {
+      "id": "G01_single_web_news_month",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Single-turn: web news request should route to lookup, preserve query OpenAI, and map 'tháng này' to timeframe=month."
+      },
+      "input": "Tìm tin tức về OpenAI trong tháng này.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "OpenAI",
+              "topic": "news",
+              "timeframe": "month"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "timeframe": "month",
+              "query": "OpenAI"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "topic": "news",
+            "timeframe": "month",
+            "query": "OpenAI"
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "OpenAI",
+            "topic": "news",
+            "timeframe": "month",
+            "items": [
+              {
+                "title": "OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack - BBC",
+                "url": "https://www.bbc.com/news/articles/c3ek3gvdnj3o",
+                "source": "bbc.com",
+                "summary": "# OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack. OpenAI has revealed some of its most advanced AI models went rogue and hacked a start-up after it lost control of them during a security test. The ChatGPT-maker said its agents - AI bots which can operate alone after some human instruction – were being tested in a controlled environment, but found vulnerabilities and managed to escape. OpenAI said the incident was \"unprecedented\", and it was working with Hugging Face to investigate what happened and strengthen safeguards. Gina Neff, head of the Minderoo Centre for Technology and Democracy at the University of Cambridge, told BBC Radio 4's Today programme that the security tests - called sandboxes - are \"supposed to be secure environments where you can see what the models are capable of\". Once outside, the AI identified Hugging Face as a likely source of the answers they were seeking in the test, and tried to gain access.",
+                "score": 0.6690754
+              },
+              {
+                "title": "OpenAI launches its new family of models with GPT-5.6 - TechCrunch",
+                "url": "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
+                "source": "techcrunch.com",
+                "summary": "# OpenAI launches its new family of models with GPT-5.6. OpenAI unveiled its newest family of models on Thursday, introducing a new set of heavyweight programs into an increasingly crowded field of AI offerings. CEO Sam Altman has promised that his company’s newest models are orders of magnitude more efficient and cost-effective than previous versions, recently telling CNBC that Sol is 54% more token efficient when it comes to AI coding tasks. However, GPT-5.6 and its attendant marketing seems most designed to take aim at OpenAI’s primary opponent, Anthropic. Anthropic has managed to make itself the likable underdog of the AI race, focusing fixedly on enterprise customers and winning a growing share of support as a result. Not to be outdone, OpenAI cites the Artificial Analysis Coding Agent Index, a notable benchmarking metric, to claim that its latest family of models outshines Anthropic’s models at every turn. OpenAI calls Sol its “best coding model yet,” and has explicitly compared it to Anthropic’s recently released (and much hyped) Fable.",
+                "score": 0.6543875
+              },
+              {
+                "title": "Apple sues OpenAI, alleging trade secrets theft from former employees - San Francisco Chronicle",
+                "url": "https://www.sfchronicle.com/tech/article/apple-sues-openai-tech-22340949.php",
+                "source": "sfchronicle.com",
+                "summary": "# Apple sues OpenAI, alleging trade secrets theft from former employees. Apple sued OpenAI on Friday, alleging former Apple employees stole trade secrets after joining the artificial intelligence startup. The suit filed in Northern California federal court alleged OpenAI executive Tang Tan “directed job candidates still working for Apple to bring ‘actual parts’ from Apple to their interviews for ‘show and tell’ sessions in which he and his team at OpenAI can elicit still more Apple confidential information.” Apple also alleged OpenAI worker Chang Liu stole an Apple laptop and other hardware. The iPhone maker alleged that “at every level, from members of its Technical Staff to its Chief Hardware Officer, and in coordination with business partners, OpenAI has been stealing Apple’s trade secrets and confidential information.”. Apple and OpenAI previously partnered in 2024 to bring the ChatGPT chatbot into iPhones, but the Cupertino company is now working with OpenAI archrival Google and its Gemini AI model.",
+                "score": 0.6334335
+              },
+              {
+                "title": "OpenAI appoints two new members to board of directors - CNBC",
+                "url": "https://www.cnbc.com/2026/07/21/openai-appoints-two-new-members-to-board-of-directors.html",
+                "source": "cnbc.com",
+                "summary": "* OpenAI said it's appointed longtime financial executives David Vélez and Robin Vince to its nonprofit and for-profit boards. * OpenAI carried out a recapitalization in October that solidified its structure as a nonprofit, called the OpenAI Foundation, with a controlling stake in its for-profit business. OpenAI said it appointed longtime financial executives David Vélez and Robin Vince to its nonprofit and for-profit boards of directors, as the company marches closer to a prospective IPO. Vélez is the CEO of Nubank, the largest digital bank in Latin America, and Vince is the CEO of the financial services company BNY. OpenAI carried out a recapitalization in October that solidified its structure as a nonprofit, called the OpenAI Foundation, with a controlling stake in its for-profit business, the OpenAI Group PBC. \"David and Robin are exceptional leaders who have used technology to reshape financial services and expand opportunity at global scale,\" Bret Taylor, chair of the OpenAI Foundation and OpenAI Group PBC Boards, said in a statement.",
+                "score": 0.62906903
+              },
+              {
+                "title": "Apple files lawsuit accusing ChatGPT maker OpenAI of stealing trade secrets - Greenwich Time",
+                "url": "https://www.greenwichtime.com/business/article/apple-files-lawsuit-accusing-chatgpt-maker-openai-22340936.php",
+                "source": "greenwichtime.com",
+                "summary": "# Apple files lawsuit accusing ChatGPT maker OpenAI of stealing trade secrets. Apple on Friday accused OpenAI of stealing trade secrets as it seeks to build its own hardware for ChatGPT, a major rupture in a partnership between the iPhone maker and the artificial intelligence company. Apple said in the lawsuit filed in a California federal court that the theft of its trade secrets was part of a “coordinated pattern of misconduct at an institutional level” by OpenAI. “This case is about Apple’s former employees stealing Apple’s trade secrets for the benefit of OpenAI,” the filing says. Apple said it began investigating whether some of its confidential information was compromised and “uncovered a pattern of theft” of Apple’s trade secrets by former employees who moved on to positions at OpenAI. Apple said in the lawsuit that it reached out to OpenAI in February to raise its concerns early in its investigation, but said that OpenAI did not respond.",
+                "score": 0.5596998
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G02_single_social_top_limit",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Single-turn: topic-based Twitter request should use social_search and set search_type=Top for 'phổ biến nhất'."
+      },
+      "input": "Cho mình các tweet phổ biến nhất về ChatGPT.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "social_search",
+            "args": {
+              "query": "ChatGPT",
+              "search_type": "Top"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "social_search",
+            "args": {
+              "search_type": "Top",
+              "query": "ChatGPT"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "social_search",
+          "args": {
+            "search_type": "Top",
+            "query": "ChatGPT"
+          },
+          "result": {
+            "tool": "search_tweets",
+            "query": "ChatGPT",
+            "search_type": "Top",
+            "items": [
+              {
+                "title": "A three-hour video about medieval history became part of a $100,000/month sleep-content machine.",
+                "summary": "A three-hour video about medieval history became part of a $100,000/month sleep-content machine.\n\nThe person behind it is Leo.\n\nHe runs Sleepless Historian, a YouTube channel with 887,000 subscribers built for viewers who want to fall asleep, not stay engaged with every second.\n\nThat changes the usual content equation.\n\nA normal creator cuts anything that feels too slow. Leo needs the video to remain slow, calm and predictable because the viewer is using it as part of a nightly routine. The narration can continue for hours while medieval scenes loop quietly underneath it.\n\nAI makes that length economical.\n\nChatGPT and Subscribr produce scripts long enough for 60-minute narrations. ElevenLabs creates the British voiceover. Leonardo AI handles the medieval imagery. CapCut and Artlist turn the pieces into a finished upload.\n\nThe result reportedly brings in around $100,000 a month from YouTube ads.\n\nMost creators think long watch time comes from making people unable to look away.\n\nLeo found a format where viewers can close their eyes and leave the video running.",
+                "url": "https://x.com/woody_research/status/2081660347291983874",
+                "source": "@woody_research",
+                "date": "Mon Jul 27 08:37:56 +0000 2026",
+                "metrics": {
+                  "favorites": 390,
+                  "retweets": 54,
+                  "views": "34807"
+                }
+              },
+              {
+                "title": "Eric Schmidt, ex-CEO of Google:",
+                "summary": "Eric Schmidt, ex-CEO of Google:\n\n\"No one understands what the impact will be but it will involve everyone having a fleet of AI agents at their command.\"\n\nA fleet.\n\nNot one agent. Not a chatbot. A coordinated team of agents that work together.\n\nMost people are still figuring out how to prompt ChatGPT.\n\nThe ones who build the fleet first will be impossible to compete with.\n\nThis is the complete guide to building yours ↓\n\nBookmark this. Start this weekend.",
+                "url": "https://x.com/sairahul1/status/2080352493809377627",
+                "source": "@sairahul1",
+                "date": "Thu Jul 23 18:01:00 +0000 2026",
+                "metrics": {
+                  "favorites": 343,
+                  "retweets": 64,
+                  "views": "40826"
+                }
+              },
+              {
+                "title": "22 yaşındaki bir İspanyol kızı, ChatGPT'ye 12 dolarlık bir domain buldurdu. 17 gün sonra, Silikon Vadisi'nden bir girişi",
+                "summary": "22 yaşındaki bir İspanyol kızı, ChatGPT'ye 12 dolarlık bir domain buldurdu. 17 gün sonra, Silikon Vadisi'nden bir girişimci ondan 13.000 dolara satın aldı.\n\nİstek basitti:\n\n\"Bana henüz kimsenin bilmediği, ama 30 gün içinde patlayacak bir teknoloji terimi bul. (…) .com'un müsait olup olmadığını kontrol et. Basit tut.\"\n\nChatGPT, ona 9 dakikada küçük bir scraper yazdı. Kız, botu telefonundan çalıştırdı. Ve hepsi bu kadar.\n\n1.Gün Bot bir terim yakaladı: \"synthetic memory\". Uzman bir podcast'te 23 kez bahsedilmiş. Twitter'da sıfır. Kız, öğle yemeği aralığında 14 dolara (…).com'u satın aldı.\n\n2.Gün Terim, Hacker News ana sayfasında göründü. Telefonu direkt mesajlarla dolup taştı.\n\n3.Gün Menlo Park'ten bir girişimci masaya 13.000 dolar koydu. Kız pazarlığı bitirmedi. 13.000 dolar + 80 bin takipçisi olan adamın hesabından bir teşekkür tweet'i de istedi ve aldı.\n\nAynı gün, 10 saniyelik kısa bir video çekti. Sadece gülümsüyor. Elinde telefon, ekranda satış onayı. Üstünde tek bir yazı:\n\n14 dolar → 13.000 dolar. 16. gün ChatGPT'ye sadece bir soru sordu.\n\nVideo 4,9 milyon izlenme aldı. Binlerce kişi yorumlara tek bir kelime yazdı: SIGNAL.\n\nKızın tek cümlesi şu:\n\n\"Hızlı olmak, zengin olmaktan iyidir. Bunu kanıtlamak istedim.\"",
+                "url": "https://x.com/Ahmense/status/2080258240898576543",
+                "source": "@Ahmense",
+                "date": "Thu Jul 23 11:46:28 +0000 2026",
+                "metrics": {
+                  "favorites": 2478,
+                  "retweets": 198,
+                  "views": "1175142"
+                }
+              },
+              {
+                "title": "ChatGPT CEO Sam Altman speaks about our future in San Francisco, California",
+                "summary": "ChatGPT CEO Sam Altman speaks about our future in San Francisco, California\n\n“You will have no freedom, you will have no agency. It will be a perfect surveillance state. There will be no privacy. And that's what you're going to get — You'll just kind of live at the service of the AI giving you material wealth”\n\nSo they expect us to give up all privacy, all freedom, be under constant surveillance, be at the mercy of their AI at all times but in exchange we’ll have a bunch of material junk….\n\nNo thanks",
+                "url": "https://x.com/WallStreetApes/status/2082312786827456610",
+                "source": "@WallStreetApes",
+                "date": "Wed Jul 29 03:50:30 +0000 2026",
+                "metrics": {
+                  "favorites": 1696,
+                  "retweets": 518,
+                  "views": "98259"
+                }
+              },
+              {
+                "title": "THIS GUY BOUGHT BOXES OF RETIRED NVIDIA TESLA CARDS TO BUILD A LOCAL AI SERVER FOR LESS THAN ONE MONTH OF SUBSCRIPTIONS",
+                "summary": "THIS GUY BOUGHT BOXES OF RETIRED NVIDIA TESLA CARDS TO BUILD A LOCAL AI SERVER FOR LESS THAN ONE MONTH OF SUBSCRIPTIONS\n\nthese are old datacenter GPUs like the P100, M40 and P4, cards that once cost thousands but now sell used for a fraction of their original price\n\nthe best target is a 24GB Tesla M40 for roughly $130, enough VRAM to run serious local models without paying Claude, ChatGPT and transcription fees every month\n\nadd a $25 fan shroud and a $10 power adapter, drop it into an old desktop, then run Ollama for private summaries, transcription and overnight AI jobs\n\nthe entire box lands near $165 while a $412 monthly AI stack burns $4,944 a year, turning retired server hardware into a machine that pays for itself in weeks",
+                "url": "https://x.com/fleyta88/status/2081808120515539127",
+                "source": "@fleyta88",
+                "date": "Mon Jul 27 18:25:08 +0000 2026",
+                "metrics": {
+                  "favorites": 3648,
+                  "retweets": 252,
+                  "views": "2165726"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G03_single_fetch_url",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Single-turn: a concrete URL should route to fetch instead of lookup."
+      },
+      "input": "Đọc và tóm tắt link này: https://example.com/research-note",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com/research-note"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com/research-note"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://example.com/research-note"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://example.com/research-note",
+            "items": [
+              {
+                "title": "Example Domain",
+                "url": "https://example.com/research-note",
+                "source": "example.com",
+                "summary": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G04_single_missing_account",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Single-turn: recent posts request without an account should ask for the account/handle instead of guessing."
+      },
+      "input": "Lấy 4 bài đăng mới nhất giúp mình.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text",
+              "question": "Bạn muốn lấy bài đăng từ tài khoản nào?"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "missing_info",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "clarify",
+          "args": {
+            "response_type": "text",
+            "question": "Bạn muốn lấy bài đăng từ tài khoản nào?"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn muốn lấy bài đăng từ tài khoản nào?",
+            "response_type": "text",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G05_single_meta_no_tool",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Single-turn: a capability/meta question should be answered directly with no tool call."
+      },
+      "input": "Bạn có thể dùng những nguồn dữ liệu nào?",
+      "expect": {
+        "no_tool": true
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Tôi là một trợ lý nghiên cứu được thiết kế để hỗ trợ bạn tìm kiếm và tổng hợp thông tin từ nhiều nguồn dữ liệu khác nhau. Cụ thể, tôi có thể truy cập và xử lý các nguồn sau:\n\n1.  **Thông tin trên Internet (Web):** Tôi có thể thực hiện các truy vấn tìm kiếm trên web để cập nhật tin tức, sự kiện hiện tại hoặc các thông tin chung.\n2.  **Mạng xã hội:** Tôi có thể tìm kiếm các bài đăng mới nhất hoặc phổ biến trên các nền tảng mạng xã hội về một chủ đề cụ thể, hoặc theo dõi các bài đăng từ những tài khoản nhất định.\n3.  **Tài liệu khoa học:** Tôi có thể tìm kiếm và truy xuất nội dung từ các bài báo khoa học, bản thảo (preprints) trên các kho lưu trữ như arXiv.\n4.  **Nội dung từ URL:** Nếu bạn cung cấp một địa chỉ web (URL) cụ thể, tôi có thể truy cập và tóm tắt nội dung từ trang đó.\n5.  **Chính sách nội bộ:** Tôi có quyền truy cập vào các tài liệu chính sách của công ty để giải đáp các câu hỏi liên quan đến quy trình làm việc, bảo mật dữ liệu, trích dẫn nguồn, hoặc các quy định về xuất bản/gửi thông tin.\n\nNếu bạn có yêu cầu cụ thể nào, hãy cho tôi biết để tôi có thể hỗ trợ bạn tốt nhất!",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G06_multi_account_then_limit",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Multi-turn: carry the requested account Sam Altman, map it to sama, and use corrected limit=2 from the middle turn."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Mình muốn xem tweet mới nhất của Sam Altman."
+        },
+        {
+          "role": "user",
+          "content": "Lấy 2 tweet thôi nhé."
+        },
+        {
+          "role": "user",
+          "content": "Đúng rồi, vẫn là Sam Altman."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "timeline",
+            "args": {
+              "screenname": "sama",
+              "limit": 2
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "timeline",
+            "args": {
+              "limit": 2,
+              "screenname": "sama"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "timeline",
+          "args": {
+            "limit": 2,
+            "screenname": "sama"
+          },
+          "result": {
+            "tool": "get_user_tweets",
+            "screenname": "sama",
+            "items": [
+              {
+                "title": "wrong",
+                "summary": "wrong",
+                "url": "https://x.com/sama/status/2081832600591892712",
+                "source": "@sama",
+                "date": "Mon Jul 27 20:02:25 +0000 2026",
+                "metrics": {
+                  "favorites": 11321,
+                  "retweets": 284,
+                  "views": "2208254"
+                }
+              },
+              {
+                "title": "agreed feels big, i want a new kind of computer",
+                "summary": "agreed feels big, i want a new kind of computer",
+                "url": "https://x.com/sama/status/2081513071135346814",
+                "source": "@sama",
+                "date": "Sun Jul 26 22:52:43 +0000 2026",
+                "metrics": {
+                  "favorites": 8136,
+                  "retweets": 283,
+                  "views": "2400816"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G07_multi_switch_social_to_web",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Multi-turn: latest instruction switches from social posts to web news while preserving topic robotics and timeframe week."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tìm các tweet về robotics."
+        },
+        {
+          "role": "user",
+          "content": "Không, đổi sang tin tức web."
+        },
+        {
+          "role": "user",
+          "content": "Vẫn là robotics và lấy trong tuần này."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "robotics",
+              "topic": "news",
+              "timeframe": "week"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "topic": "news",
+              "query": "robotics",
+              "timeframe": "week"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "topic": "news",
+            "query": "robotics",
+            "timeframe": "week"
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "robotics",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "Top Robotics Stocks Worth Investing Right Now for Solid ...",
+                "url": "https://finance.yahoo.com/markets/stocks/articles/top-robotics-stocks-worth-investing-154200515.html",
+                "source": "finance.yahoo.com",
+                "summary": "The Robotics Screen makes it easy to identify high-potential stocks at any given time, just like the ones discussed below. Leveraging advanced tools, the thematic screens identify companies shaping the future, making it easier to capitalize on emerging trends.  \n  \nReady to uncover more transformative thematic investment ideas? Explore 30 cutting-edge investment themes with Zacks Thematic Screens and discover your next big opportunity. [...] NVIDIA released open-source physical AI skills at GTC Taipei and Computex in June to cut robot development costs industry-wide. Collaborative Robotics unveiled a redesigned Proxie mobile robot featuring two-armed manipulation, self-swapping batteries and autonomous task identification, broadening collaborative automation across healthcare, logistics and manufacturing. [...] With physical AI maturing, surgical robotics entering its most competitive era in decades, defense autonomy deepening and space robotic servicing nearing reality, the rest of 2026 and the near term represent a broad opportunity for U.S. robotics stocks.",
+                "score": 0.50432175
+              },
+              {
+                "title": "The Robots Cometh",
+                "url": "https://time.com/article/2026/07/23/unitree-china-human-robotics",
+                "source": "time.com",
+                "summary": "Boosted connectivity would solve the robotics bottlenecks of weight and battery life. Navigating our world requires simultaneously processing 4K video, spatial lidar, audio, and delicate tactile or proprioceptive feedback. But carrying heavy computational hardware and the means to power it severely limits both robot agility and operating time. 6G could potentially combine cloud processing with network lag of a near instantaneous 0.1 to 1 millisecond. Suddenly, lightweight physical robots could",
+                "score": 0.40471974
+              },
+              {
+                "title": "Uber co-founder raises $1.7B for new robotics startup ATOMS",
+                "url": "https://www.therobotreport.com/uber-co-founder-raises-1-7b-for-new-robotics-startup-atoms",
+                "source": "therobotreport.com",
+                "summary": "Kraken Technology has developed modular maritime platforms for defense use.\n\n##### Kraken Technology raises Series B funding for autonomous vessels\n\nHoliday Robotics said its robot FRIDAY reduces the burden of repetitive physical work.\n\n##### Holiday Robotics raises $105M for its FRIDAY wheeled humanoid\n\nRopedia's HOMIE is a lightweight device that includes four cameras and a swappable battery module.\n\n##### Ropedia raises $22M to scale data collection for training robots [...] ATOMS, a robotics startup led by former Uber co-founder and former CEO Travis Kalanick, today said it has  raised $1.7 billion in equity investment. Kalanick said the funding will enable ATOMS to complete completion of the “bits-to-atoms” story arc he started at Uber and continued at CloudKitchens. [...] - Collaborative Robotics Trends\n  + Search Robotics Database\n  + Videos\n  + Webinars / Digital Events\n Events\n  + RoboBusiness\n  + Robotics Summit & Expo\n  + DeviceTalks\n  + R&D 100\n  + Robotics Weeks\n Podcast\n  + Episodes\n Advertise\n Subscribe",
+                "score": 0.40260404
+              },
+              {
+                "title": "Navy, Shipbuilders Bringing Robots Online to Build, Maintain Fleet",
+                "url": "https://www.nationaldefensemagazine.org/articles/2026/7/24/navy-shipbuilders-bringing-robots-online-to-build-maintain-fleet",
+                "source": "nationaldefensemagazine.org",
+                "summary": "The robotics used in the HYPR program will come in a range of form factors, Kabir said. Some operations will call for smaller robots to perform work in confined spaces, while blasting or coating the exterior of a ship will require larger systems.\n\nGrayMatter Robotics will be performing grinding, blasting, coating, inspection and a few other applications for HYPR, while Path Robotics will be doing welding, he added. [...] That is the goal of the High-Yield Production Robotics, or HYPR, program launched by shipbuilder HII, GrayMatter Robotics and Path Robotics in April. Through this effort, HII will utilize a network of physical AI technologies developed by the two robotics firms “to rapidly accelerate advanced, adaptive automation solutions in the fabrication process of both crewed and uncrewed naval platforms,” a company release stated. [...] Traditionally, robotics used in factories are hard-coded and pre-programmed to do the same thing millions and millions of times, he said. However, the vast majority of manufacturing — approximately 90 percent — features high variability due to complex material and environmental physics. For example, the paint used on fighter jets may have a different thickness or viscosity depending on the batch or the supplier.",
+                "score": 0.39515805
+              },
+              {
+                "title": "Developing Healthcare Robotics with GPU-Native Medical ...",
+                "url": "https://developer.nvidia.com/blog/developing-healthcare-robotics-with-gpu-native-medical-physics-simulation",
+                "source": "developer.nvidia.com",
+                "summary": "Healthcare robotics faces critical challenges in data scarcity, generalization, and development velocity due to limited access to annotated demonstrations, the prevalence of rare but clinically important scenarios, and slow, resource-intensive prototyping cycles. [...] AI-generated content may summarize information incompletely. Verify important information. Learn more\n\nUnlike autonomous driving or industrial robotics, healthcare robotics can’t rely on internet-scale data collection or unlimited real-world experimentation. Every demonstration requires specialized equipment, clinical expertise, and access to patients or laboratory environments. This creates three fundamental challenges for developers. [...] The third challenge is development velocity. Medical robotics development relies on benchtop phantoms, cadaver studies, animal models, and limited clinical evaluations. These remain essential, but they are inherently sequential, expensive, and difficult to scale. Iterating on designs and algorithms currently takes months, pushing total development cycles to 4–7 years.",
+                "score": 0.37586737
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G08_multi_url_provided_after_missing",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Multi-turn: a missing URL is supplied later, so the latest turn should call fetch with the provided URL."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tóm tắt bài viết này giúp mình."
+        },
+        {
+          "role": "user",
+          "content": "Đây là link: https://openai.com/research/"
+        },
+        {
+          "role": "user",
+          "content": "Chỉ đọc đúng URL mình vừa gửi."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://openai.com/research/"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://openai.com/research/"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "missing_info",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://openai.com/research/"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://openai.com/research/",
+            "items": [
+              {
+                "title": "Research | OpenAI",
+                "url": "https://openai.com/research/",
+                "source": "openai.com",
+                "summary": "OpenAI\n\nResearch\n\n# Pioneering research on the path to AGI\n\nWe believe our research will eventually lead to artificial general intelligence, a system that can solve human-level problems. Our mission is to ensure that AGI benefits all of humanity.\n\n[View research index](https://openai.com/research/index/) [Learn about safety](https://openai.com/safety/)\n\n![Illustration representing OpenAI research overview](https://cdn.openai.com/ctf-cdn/research/research-hero-2400.webp?w=3840&q=90&fm=webp)\n\nFocus areas\n\n### We use Deep Learning to leverage large amounts of data and advanced reasoning to train AI systems for task completion.\n\n### GPT\n\nOpenAI’s GPT series models are fast, versatile, and cost-efficient AI systems designed to understand context, generate content, and reason across text, images, and more.\n\n![Hero Art Card SEO 1x1](https://images.ctfassets.net/kftzwdyauwt9/cut4wyUCuBENXfd5CSI7Z/d934ffb49d8b39abea0bc33bb1a5b916/Hero_Art_Card_SEO_1x1.jpg?w=3840&q=90&fm=webp)\n\n[A new class of intelligence for real work\\\\\n\\\\\nReleaseApr 23, 202612 min read](https://openai.com/index/introducing-gpt-5-5/)\n\n![5.4 Thinking Art Card](https://images.ctfassets.net/kftzwdyauwt9/5HSBM48XFBkni6rNv5CAbR/46fe1d133c1440563245262a5fa59c79/5.4_Thinking_Art_Card.png?w=3840&q=90&fm=webp)\n\n[Our most capable and efficient frontier model for professional work\\\\\n\\\\\nReleaseMar 5, 202616 min read](https://openai.com/index/introducing-gpt-5-4/)\n\n![5.3 Instant Art Card](https://images.ctfassets.net/kftzwdyauwt9/72xhlkMHldxPfwGsZttoiI/3ada2b7e0cdb129d0779fbc8b700a7af/5.3_Instant_Art_Card__1_.png?w=3840&q=90&fm=webp)\n\n[Smoother, more useful everyday conversations\\\\\n\\\\\nReleaseMar 3, 20265 min read](https://openai.com/index/gpt-5-3-instant/)\n\n### o series\n\nOpenAI’s o series models are advanced reasoning AI systems that use chain-of-thought processes to solve complex STEM problems through logical, step-by-step analysis.\n\n[Our smartest and most capable models to date with full tool access\\\\\n\\\\\nOpenAI o3 and o4-miniApr 16, 202511 min read](https://openai.com/index/introducing-o3-and-o4-mini/)\n\n![o3-mini > cover image](https://images.ctfassets.net/kftzwdyauwt9/BQXodBZ63FtQq6CGcPQQh/955ea49d3cf09e7ad33129d8a81b4087/o3-mini_1.1.png?w=3840&q=90&fm=webp)\n\n[Pushing the frontier of cost-effective reasoning\\\\\n\\\\\nOpenAI o3-miniJan 31, 20256 min read](https://openai.com/index/openai-o3-mini/)\n\n![OpenAI o1](https://images.ctfassets.net/kftzwdyauwt9/6ERYwPGeSFjSDRzD9ZeSZM/8fc12647977085317692108a4116f2e2/o1_1.1.png?w=3840&q=90&fm=webp)\n\n[Learning to reason with LLMs\\\\\n\\\\\nOpenAI o1Sep 12, 20249 min read](https://openai.com/index/learning-to-reason-with-llms/)\n\n### Visual\n\nOur research on generative modeling for images has led to representation models like CLIP, which makes a map between text and images that an AI can read, and DALL-E, a tool for creating vivid images from text descriptions.\n\n![Images 2.0 blog art card](https://images.ctfassets.net/kftzwdyauwt9/7fPF7LU0YzPr5PrlNT6lo3/823a11178d4aac15d4f4260b9fcc490d/Blog_art_card.png?w=3840&q=90&fm=webp)\n\n[A state-of-the-art model that makes precise, immediately usable visuals\\\\\n\\\\\nChatGPT Images 2.0Apr 21, 202611 min read](https://openai.com/index/introducing-chatgpt-images-2-0/)\n\n![Sora 2 research blog cover art 16 x 9](https://images.ctfassets.net/kftzwdyauwt9/1Q8NDmnyavsoPAKDlWpW18/a1f595376097668d1772c9cac40fc8ee/16_x_9____1_.png?w=3840&q=90&fm=webp)\n\n[Physically accurate, realistic, and controllable with synchronized dialogue and sound effects\\\\\n\\\\\nSora 2Sep 30, 20258 min read](https://openai.com/index/sora-2/)\n\n[A natively multimodal model capable of precise, accurate, photorealistic outputs\\\\\n\\\\\nImage GenerationMar 25, 20256 min read](https://openai.com/index/introducing-4o-image-generation/)\n\n### Audio\n\nOur research on applying AI to audio processing and audio generation has led to developments in automatic speech recognition and original musical compositions.\n\n![Audio Models Art card 16.9](https://images.ctfassets.net/kftz"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G09_multi_confirm_before_send",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Multi-turn: a send/publish action with existing text still requires a yes_no confirmation boundary and must not call send directly."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Đây là bản tin: AI funding tăng mạnh trong tuần này."
+        },
+        {
+          "role": "user",
+          "content": "Mình muốn gửi nội dung đó lên Telegram."
+        },
+        {
+          "role": "user",
+          "content": "Gửi lên Telegram giúp mình."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "yes_no"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "question": "Bạn đã xác nhận nội dung và sẵn sàng gửi bản tin này lên Telegram chưa?",
+              "response_type": "yes_no"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_boundary",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "clarify",
+          "args": {
+            "question": "Bạn đã xác nhận nội dung và sẵn sàng gửi bản tin này lên Telegram chưa?",
+            "response_type": "yes_no"
+          },
+          "result": {
+            "tool": "ask_user",
+            "question": "Bạn đã xác nhận nội dung và sẵn sàng gửi bản tin này lên Telegram chưa?",
+            "response_type": "yes_no",
+            "options": [],
+            "awaiting_user": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "G10_multi_latest_turn_no_tool",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Multi-turn: only the latest user turn is graded; after cancellation, a meta question should not call a tool."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tìm tin AI hôm nay."
+        },
+        {
+          "role": "user",
+          "content": "Khoan, hủy yêu cầu tìm kiếm đó."
+        },
+        {
+          "role": "user",
+          "content": "Bây giờ chỉ giải thích ngắn agent này dùng để làm gì."
+        }
+      ],
+      "expect": {
+        "no_tool": true
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Tôi là trợ lý nghiên cứu được thiết kế để hỗ trợ bạn tìm kiếm và tổng hợp thông tin từ tin tức trên web, các bài đăng mạng xã hội và các bài báo khoa học. Tôi có thể giúp bạn tra cứu thông tin, theo dõi các tài khoản mạng xã hội cụ thể, đọc nội dung từ các đường dẫn (URL) và giải đáp các câu hỏi liên quan đến chính sách nội bộ của công ty.",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    }
+  ]
+}
